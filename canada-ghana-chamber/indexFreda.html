@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CANADA GHANA CHAMBER OF COMMERCE – CALGARY CHAPTER</title>
 
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Space+Grotesk:wght@300..700&display=swap');
+    </style>
     <!-- Google Fonts: Merriweather and Open Sans -->
     <link
         href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;700&family=Space+Grotesk:wght@300;700&display=swap"
@@ -43,32 +47,366 @@
         }
     </script>
 </head>
+
 <body>
-    <div class=" h-13 w-full bg-[#FF69B4]  font-sans">
-     <p>Hello</p><br>
+    <header class="bg-[#0B1633] w-full h-16">
+        <nav class="flex mx-auto">
+            <div class="pl-16 flex items-center pt-2">
+                <div class=" w-[40px] h-[40px] bg-white rounded-full">
+                    <img class=" border-white overflow-hidden" src="./assets/images/logo.png" alt="C.G.C.C.C. Logo">
+                </div>
+            </div>
+            <div class="pt-4 pl-2">
+                <div class="bg-white w-px h-[41px]"></div>
+            </div>
+            <span class="text-xs font-[IBM-Plex-Serif] pl-2 pt-4 text-white">CANADA GHANA CHAMBER OF COMMERCE,
+                <br> CALGARY CHAPTER</span>
+            <div class="flex items-center justify-center pl-56 pt-4 gap-4">
+                <a class="text-sm text-white" href="home">Home</a>
+                <a class="text-sm text-white" href="#About">About Us</a>
+                <a class="text-sm text-white" href="#Partners">Partners</a>
+                <a class="text-sm text-white" href="#Team">The Team</a>
+                <a class="text-sm text-white" href="#Member">Membership</a>
+                <a class="text-sm text-white" href="#Gallery">Gallery</a>
+                <a class="text-sm text-white" href="#Contact">Contact Us</a>
+            </div>
+    </header>
+    </nav>
+    <img class="object-cover w-full h-72" src="./assets/images/AboutImage.jpg" alt="AboutImage">
+
+    <!--About -->
+    <div class="px-32 py-8">
+        <h1 class="font-serif text-5xl  font-semibold">About C.G.C.C.C.</h1>
+        <p class="leading-[140%] pt-4 font-Space Grotesk text-base/6"> We act as a strategic connector of entrepreneurs,
+            executives, institutions, and policymakers,
+            creating cross-border trade opportunities, expanding professional networks, and facilitating impactful
+            investment partnerships. CGCC–Calgary brings over 30 years of collective expertise in fostering
+            public-private
+            partnerships, regional integration, and diaspora-led development initiatives.</p>
     </div>
 
-    <div class="bg-[#AFEEEE]  h-[100px] mb-5">
-     <p>Hello</p>
+    <!--Our Vision-->
+    <div class="flex justify-between px-32 gap-4">
+        <div class="bg-[#EDB96B] w-1/2 pt-8 text-[#6D6150]">
+            <h2 class="text-sm px-8 ">Our Vision</h2><br>
+            <p class="text-sm px-8">To be a catalyst for Africa–Canada economic integration and a bridge for shared
+                prosperity between communities,
+                institutions, and industries. The Chamber seeks to position Calgary and Alberta as leading gateways for
+                trade
+                and investment with Ghana and the wider West African region.
+                <br><br>
+                We envision CGCC–Calgary as a recognized hub of influence, advancing industrial policy, technology
+                transfer,
+                renewable energy investment, youth entrepreneurship, and infrastructure innovation between both nations.
+            </p>
+        </div>
+        <!--The default widths like w-xl were not affecting the image that's why I customized it-->
+        <img class="w-1/2 h-[302px]" src="./assets/images/VisionImage.jpg" alt="Checkered Image">
     </div>
 
-     <div class="flex justify-between ">
-     <p class="mb-7 bg-[#DA70D6] w-[40%] h-[150px] ml-[10px]">Hello</p>
-        <p class=" mb-7 bg-[#87CEFA] w-[40%] h-[150px] mr-[10px]">Hello</p>
-    
+    <!--Our Mission-->
+
+    <div class="flex justify-between px-32 gap-4 mt-4">
+        <img class="w-1/2 h-[302px]" src="./assets/images/MissionImage.png" alt="Checkered Image">
+        <div class="bg-[#061432] text-white w-1/2 pt-8">
+            <h3 class="text-sm px-8 ">Our Mission</h3><br><br>
+            <p class="text-sm px-8">To create an inclusive and transformative platform for professionals, entrepreneurs,
+                and
+                institutions—particularly from the Ghanaian Canadian and Alberta business communities—to collaborate,
+                innovate, and lead economic growth in both Canada and Ghana. We are dedicated to supporting business
+                development, international expansion, and strategic policy engagement through high-value programming
+                and advocacy.</p>
+        </div>
     </div>
 
-     <!--<div class="mx-[80%] mt-px items-start">
-     <p>Hello</p>
-    </div>-->
-
-     <div  class="flex justify-center items-center">
-     <p class="bg-[#F08080] w-[90%] h-[150px]">Hello</p>
+    <!--Values-->
+    <!--FIRST ROW-->
+    <div class="pt-16">
+        <h4 class="font-serif text-center text-4xl font-semibold">Our Core Values</h4>
+        <p class="text-center text-[#9A989B]">Our operations and member services are guided by the following
+            foundational values:</p>
     </div>
 
-     <br>
-     <footer class="bg-[#A52A2A] w-[100%] h-[65px] pl-4"> Hello</footer>
-     
+    <div class="flex pt-16 justify-between gap-2 px-32">
+        <div class="bg-[#F5F5F5] w-[30%] h-568 rounded-2xl">
+            <!--When I tried using material-symbols-outlined (show him the picture)-->
+            <div class="flex pl-8 gap-4">
+                <img class="pt-4" src="./assets/images/finance_mode.png">
+                <span class="text-base pt-4 font-semibold">Intergrity & Anti-<br>Corruption</span>
+            </div>
+            <p class="text-sm px-8 pt-4">Promote adherence to anti-corruption principles aligned with international best
+                practices and the
+                legal frameworks of both Ghana and Canada</p>
+        </div>
+
+        <div class="bg-[#F5F5F5] w-[30%] h-56 rounded-2xl">
+            <!--When I tried using material-symbols-outlined (show him the picture)-->
+            <div class="flex pl-8 gap-4">
+                <img class="pt-4" src="./assets/images/finance_mode.png">
+                <span class="text-base pt-4 font-semibold">Social Justice & Human Rights</span>
+            </div>
+            <p class="text-sm px-8 pt-4">Champion respect for social justice and human rights in all member business
+                activities and
+                partnerships.</p>
+        </div>
+
+
+
+        <div class="bg-[#F5F5F5] w-[30%] h-56 rounded-2xl">
+            <!--When I tried using material-symbols-outlined (show him the picture)-->
+            <div class="flex pl-8 gap-4">
+                <img class=" pt-4" src="./assets/images/finance_mode.png">
+                <!--I used semibold because the text weight in the UI was 500 i.e. medium in taliwind
+            but medium didn't give me the bold look that is why I used semi-bold instead-->
+                <span class="text-base pt-4 font-semibold">Corporate Social Responsibilities(CSR)</span>
+            </div>
+            <p class="text-sm px-8 pt-4">Encourage the progressive adoption of globally recognized CSR standards to
+                ensure responsible
+                and sustainable business practices.</p>
+        </div>
+
     </div>
+
+
+
+
+    <!--SECOND ROW-->
+    <div class="flex pt-16 justify-between gap-2 px-32">
+        <div class="bg-[#F5F5F5] w-[30%] h-568 rounded-2xl">
+            <!--When I tried using material-symbols-outlined (show him the picture)-->
+            <div class="flex pl-8 gap-4">
+                <img class="pt-4" src="./assets/images/finance_mode.png">
+                <span class="text-base pt-4 font-semibold">Ethical Free <br>Enterprise</span>
+            </div>
+            <p class="text-sm px-8 pt-4">Promote the principles of free enterprise and high ethical standards in
+                commerce and entrepreneurship among members.</p>
+        </div>
+
+        <div class="bg-[#F5F5F5] w-[30%] h-56 rounded-2xl">
+            <!--When I tried using material-symbols-outlined (show him the picture)-->
+            <div class="flex pl-8 gap-4">
+                <img class="pt-4" src="./assets/images/finance_mode.png">
+                <span class="text-base pt-4 font-semibold">Business <br>Networking & <br>Collaboration</span>
+            </div>
+            <p class="text-sm px-8 pt-4">Foster common interests, friendship, and professional networking
+                opportunities among members to strengthen economic ties</p>
+        </div>
+
+
+
+        <div class="bg-[#F5F5F5] w-[30%] h-56 rounded-2xl">
+            <!--When I tried using material-symbols-outlined (show him the picture)-->
+            <div class="flex pl-8 gap-4">
+                <img class=" pt-4" src="./assets/images/finance_mode.png">
+                <!--I used semibold because the text weight in the UI was 500 i.e. medium in taliwind
+            but medium didn't give me the bold look that is why I used semi-bold instead-->
+                <span class="text-base pt-4 font-semibold">Technology &<br> Knowledge Transfer</span>
+            </div>
+            <p class="text-sm px-8 pt-4">Support the development and exchange of technology and expertise to
+                enhance innovation and bilateral trade.</p>
+        </div>
+
+    </div>
+
+
+
+    <!--THIRD ROW-->
+    <div class="flex pt-16 justify-between gap-2 px-32">
+        <div class="bg-[#F5F5F5] w-[30%] h-568 rounded-2xl">
+            <!--When I tried using material-symbols-outlined (show him the picture)-->
+            <div class="flex pl-8 gap-4">
+                <img class="pt-4" src="./assets/images/finance_mode.png">
+                <span class="text-base pt-4 font-semibold">Trade Facilitation &<br> Information Sharing</span>
+            </div>
+            <p class="text-sm px-8 pt-4">Provide relevant information and guidance to facilitate trade, investment,
+                and business collaboration between Ghana and Canada.</p>
+        </div>
+
+        <div class="bg-[#F5F5F5] w-[30%] h-56 rounded-2xl">
+            <!--When I tried using material-symbols-outlined (show him the picture)-->
+            <div class="flex pl-8 gap-4">
+                <img class="pt-4" src="./assets/images/finance_mode.png">
+                <span class="text-base pt-4 font-semibold">Bilateral Trade &<br> Investment<br> Promotion</span>
+            </div>
+            <p class="text-sm px-8 pt-4">Advance mutually beneficial trade and investment relationships through
+                advocacy,
+                dialogue, and strategic partnerships.</p>
+        </div>
+
+
+
+        <div class="bg-[#F5F5F5] w-[30%] h-56 rounded-2xl">
+            <!--When I tried using material-symbols-outlined (show him the picture)-->
+            <div class="flex pl-8 gap-4">
+                <img class=" pt-4" src="./assets/images/finance_mode.png">
+                <!--I used semibold because the text weight in the UI was 500 i.e. medium in taliwind
+            but medium didn't give me the bold look that is why I used semi-bold instead-->
+                <span class="text-base pt-4 font-semibold">Member Advancement</span>
+            </div>
+            <p class="text-sm px-8 pt-4">Advocate for and protect the business interests of members through
+                continuous support, engagement, and resource mobilization.</p>
+        </div>
+
+    </div>
+
+
+
+
+    <!--BUSINESS FACILITATION-->
+    <div class="pt-32 px-32">
+        <h4 class="font-serif text-center text-4xl font-semibold">Business Facilitation
+            & Operation Models</h4>
+        <p class="text-center text-[#9A989B] pt-8">Our Chamber adopts multiple facilitation frameworks to accelerate
+            international <br>business engagement and sustainable development. These include:</p>
+    </div>
+
+    <!--LISTING 1-->
+    <div class="flex px-32 gap-64 pt-16">
+        <div class="">
+            <h5>Market Entry Support</h5>
+            <!--I customized my red line because the default measurements in tailwind could not give me the exact
+  same length in the UI design-->
+            <div class="bg-red-600 w-[75px] h-1"></div>
+            <ul class="list-disc list-inside">
+                <li class="">Trade & regulatory briefings</li>
+                <li class="">Local partner sourcing & due diligence</li>
+                <li class="">Business incorporation assistance</li>
+                <li class="">Legal, tax, and labor compliance support</li>
+            </ul>
+        </div>
+        <div>
+            <h5>Investment Pipeline Development</h5>
+            <div class="bg-yellow-400 w-[75px] h-1"></div>
+            <ul class="list-disc list-inside">
+                <li>Deal origination and validation</li>
+                <li class="">Project profiling and pitch preparation</li>
+                <li class="">Capital access strategies</li>
+                <li class="">Coordination with investment authorities (e.g., GIPC, Invest Alberta)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!--LISTING 2-->
+    <div class="flex px-32 gap-16 pt-16">
+        <div class="">
+            <h5>Capacity Building and Knowledge Exchange</h5>
+
+            <div class="bg-blue-600 w-[75px] h-1"></div>
+            <ul class="list-disc list-inside">
+                <li>Executive education and certification programs</li>
+                <li>Innovation labs and incubation for startups</li>
+                <li>ESG (Environmental, Social, Governance) compliance training</li>
+                <li>Smart technology & green energy transformation support</li>
+            </ul>
+        </div>
+        <div>
+            <h5>Investment Pipeline Development</h5>
+            <div class="bg-green-400 w-[75px] h-1"></div>
+            <ul class="list-disc list-inside">
+                <li>Skills and knowledge repatriation platforms</li>
+                <li>Think Tank initiatives</li>
+                <li>Youth entrepreneurship support</li>
+                <li>Diaspora Bond and community investment projects</li>
+            </ul>
+        </div>
+    </div>
+
+    <!--LISTING 3-->
+    <div class="px-32  pt-16">
+        <h5>Bilateral And Multilateral Engagement</h5>
+
+        <div class="bg-yellow-800 w-[75px] h-1"></div>
+        <ul class="list-disc list-inside">
+            <li>Ministerial roundtables and industry consultations</li>
+            <li>Diaspora capital mobilizationCanada–Africa business forums</li>
+            <li>Participation in government missions</li>
+        </ul>
+    </div>
+    <br>
+
+    <!--Contact Us-->
+    <!--<div>
+        <div class="bg-[#F5C567] w-7xl h-[800px]">
+            <!--The contact us.png that was already in the folder wasn't showing when I used it
+        It was instead showing the alt so I had to redownload the image
+            <div class="flex">
+                <img class="absolute object-center w-[600px] h-88 pt-16" src="./assets/images/ContactUs.png"
+                    alt="Contact Us Logo">
+                <div class="pl-64 bg-[#010F28] w-[600px] h-96"></div>
+            </div>
+
+        </div>-->
+    <div class="bg-[#F5C567] w-7xl h-[1100px] mt-16 ">
+
+        <div class="flex pt-16">
+
+            <img class="w-[650px] h-[500px] pt-4" src="./assets/images/ContactUs.png" alt="Contact Us Image">
+            <div class="flex flex-row">
+                <div class="bg-[#061432] w-[614px] h-[520px] rounded-2xl">
+
+                    <div class="pt-32 px-8">
+                        <h6 class="text-white text-5xl font-semibold font-[IBM-Plex-Serif]">Contact Us</h6>
+                        <p class="text-white pt-4">Together, let’s build a resilient and inclusive trade corridor<br>
+                            between Canada and Ghana.</p>
+                    </div>
+                    <div class="flex pt-4">
+                        <!--I also had to download the phone and mail icon
+                but the image were too big and the smallest size I could reduce it to was
+                w-32 so I had to customize it-->
+                        <img class="px-8 w-[120px]" src="./assets/images/PhoneIcon.png" alt="PhoneIcon Image">
+                        <a href="tel:+1 587-585-7324" class="text-white pt-4">+1 587-585-7324</a>
+                    </div>
+
+                    <div class="flex pt-4">
+                        <img class="px-8 w-[120px]" src="./assets/images/EmailIcon.png" alt="EmailIcon Image">
+                        <a href="mailto:membership@canadaghanachambercalgary.org" class="text-white pt-4">
+                            membership@canadaghanachambercalgary.org</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="pt-40 pl-32 flex ">
+            <div class="">
+                <div class="flex flex-row">
+                    <div class=" w-[55px] h-[55px] bg-white rounded-full">
+                        <img class=" border-white overflow-hidden" src="./assets/images/logo.png" alt="C.G.C.C.C. Logo">
+                    </div>
+
+                    <span class="text-xs font-[IBM-Plex-Serif]  pt-2 pl-2 text-[#6D6150]">CANADA GHANA CHAMBER OF
+                        COMMERCE,
+                        <br> CALGARY CHAPTER</span>
+                </div>
+                <span class="pt-8 text-[#6D6150]">Connecting Businesses to Nations</span>
+            </div>
+            <!--Quick Links-->
+            <div class="text-[#6D6150] pl-72">
+                <div>
+                    <span class="font-semibold">Quick Links</span>
+                    <ul class="pt-8">
+                        <div class="leading-[35px]">
+                        <li>Home</li>
+                        <li>Events</li>
+                        <li>Projects</li>
+                        <li>Gallery</li>
+                        <li>About Us</li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <footer class="mt-16 bg-[#061432] w-full h-16">
+            <p class="text-white text-center pt-4">© 2025 Canada Ghana Chamber of Commerce, Calgary Chapter,
+                CGCCCC. All rights reserved.</p>
+        </footer>
+    </div>
+
 </body>
+
 </html>
