@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upenza Receipt</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom gradient for the background */
+        .gradient-bg {
+            background: linear-gradient(180deg, #8549D4 0%, #5906C4 100%);
+        }
+        
+        /* Custom font families */
+        .font-arial-regular {
+            font-family: 'Arial', sans-serif;
+            font-weight: normal;
+        }
+        
+        .font-arial-bold {
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+        }
+        
+        /* Custom transforms */
+        .rotate-180-scale-y-neg {
+            transform: rotate(180deg) scaleY(-1);
+        }
+    </style>
+</head>
+<body class="m-0 p-0 overflow-hidden">
+    <!-- Main container with full viewport -->
+    <div class="relative w-screen h-screen" data-name="upenza-opengraph-receipt-image">
+        
+        <!-- Background gradient -->
+        <div class="absolute inset-0 gradient-bg" data-name="Vector">
+        </div>
+        
+        <!-- DATE text -->
+        <div class="absolute font-arial-regular text-white text-2xl text-center whitespace-nowrap" 
+             style="left: 994.5px; top: 184px; transform: translateX(-50%); line-height: 0;">
+            <p style="line-height: normal; white-space: pre;">DATE: mmm dd, yyyy</p>
+        </div>
+        
+        <!-- Receipt title -->
+        <div class="absolute font-arial-bold text-white text-6xl text-center whitespace-nowrap" 
+             style="left: 994px; top: 46px; transform: translateX(-50%); line-height: 0;">
+            <p style="line-height: normal; white-space: pre;">Receipt</p>
+        </div>
+        
+        <!-- Receipt number -->
+        <div class="absolute font-arial-regular text-white text-2xl text-center whitespace-nowrap" 
+             style="left: 1031.5px; top: 136px; transform: translateX(-50%); line-height: 0;">
+            <p style="line-height: normal; white-space: pre;">NO. #0000000</p>
+        </div>
+        
+        <!-- Thank you message -->
+        <div class="absolute font-arial-bold text-white text-5xl text-center whitespace-nowrap" 
+             style="left: 600px; top: 326px; transform: translateX(-50%); line-height: 0;">
+            <p style="line-height: normal; white-space: pre;">Thank you for your payment</p>
+        </div>
+        
+        <!-- Powered by text -->
+        <div class="absolute font-arial-bold text-white text-2xl text-center whitespace-nowrap" 
+             style="left: 996.5px; top: 558px; transform: translateX(-50%); line-height: 0;">
+            <p style="line-height: normal; white-space: pre;">Powered by Upenza</p>
+        </div>
+        
+        <!-- Phone number -->
+        <div class="absolute font-arial-regular text-neutral-100 text-3xl text-center" 
+             style="left: 170px; top: 556px; transform: translateX(-50%); width: 270px; height: 55px; line-height: 0;">
+            <p style="line-height: normal;">000 00 0000</p>
+        </div>
+        
+        <!-- White circle background for logo -->
+        <div class="absolute" style="left: 46px; top: 46px; width: 220px; height: 220px;">
+            <svg class="block w-full h-full" fill="none" preserveAspectRatio="none" viewBox="0 0 220 220">
+                <circle cx="110" cy="110" fill="white" r="110" />
+            </svg>
+        </div>
+        
+        <!-- Logo placeholder - replace with actual Upenza logo -->
+        <div class="absolute bg-center bg-cover bg-no-repeat" 
+             style="left: 61px; top: 138px; width: 189px; height: 53px; background-color: #8549D4;">
+            <!-- Logo would go here - replace this div with actual logo image -->
+            <div class="w-full h-full flex items-center justify-center text-white font-bold text-xl">
+                UPENZA LOGO
+            </div>
+        </div>
+        
+        <!-- Barcode 1 -->
+        <div class="absolute" style="left: 47px; top: 476px; width: 88px; height: 88px;" data-name="barcode">
+            <svg class="block w-full h-full" fill="none" preserveAspectRatio="none" viewBox="0 0 88 88">
+                <g>
+                    <mask height="88" id="mask0_1_33" maskUnits="userSpaceOnUse" style="mask-type: alpha;" width="88" x="0" y="0">
+                        <rect fill="#8B8888" height="88" width="88" />
+                    </mask>
+                    <g mask="url(#mask0_1_33)">
+                        <path d="M3.66661 69.6667V18.3333H10.9999V69.6667H3.66661ZM14.6666 69.6667V18.3333H21.9999V69.6667H14.6666ZM25.6666 69.6667V18.3333H29.3333V69.6667H25.6666ZM36.6666 69.6667V18.3333H44V69.6667H36.6666ZM47.6666 69.6667V18.3333H58.6666V69.6667H47.6666ZM62.3333 69.6667V18.3333H66V69.6667H62.3333ZM73.3333 69.6667V18.3333H84.3333V69.6667H73.3333Z" fill="#F5F5F5" />
+                    </g>
+                </g>
+            </svg>
+        </div>
+        
+        <!-- Barcode 2 (rotated) -->
+        <div class="absolute flex items-center justify-center" style="left: 180.34px; top: 476px; width: 88px; height: 88px;">
+            <div class="rotate-180-scale-y-neg" style="width: 88px; height: 88px;">
+                <svg class="block w-full h-full" fill="none" preserveAspectRatio="none" viewBox="0 0 88 88">
+                    <g>
+                        <mask height="88" id="mask0_1_45" maskUnits="userSpaceOnUse" style="mask-type: alpha;" width="88" x="0" y="0">
+                            <rect fill="#8B8888" height="88" width="88" />
+                        </mask>
+                        <g mask="url(#mask0_1_45)">
+                            <path d="M3.66653 69.6667V18.3333H10.9999V69.6667H3.66653ZM14.6665 69.6667V18.3333H21.9999V69.6667H14.6665ZM25.6665 69.6667V18.3333H29.3332V69.6667H25.6665ZM36.6665 69.6667V18.3333H43.9999V69.6667H36.6665ZM47.6665 69.6667V18.3333H58.6665V69.6667H47.6665ZM62.3332 69.6667V18.3333H65.9999V69.6667H62.3332ZM73.3332 69.6667V18.3333H84.3332V69.6667H73.3332Z" fill="#F5F5F5" />
+                        </g>
+                    </g>
+                </svg>
+            </div>
+        </div>
+        
+        <!-- Barcode 3 -->
+        <div class="absolute" style="left: 222px; top: 476px; width: 88px; height: 88px;" data-name="barcode">
+            <svg class="block w-full h-full" fill="none" preserveAspectRatio="none" viewBox="0 0 88 88">
+                <g>
+                    <mask height="88" id="mask0_1_39" maskUnits="userSpaceOnUse" style="mask-type: alpha;" width="88" x="0" y="0">
+                        <rect fill="#8B8888" height="88" width="88" />
+                    </mask>
+                    <g mask="url(#mask0_1_39)">
+                        <path d="M3.66661 69.6666V18.3333H10.9999V69.6666H3.66661ZM14.6666 69.6666V18.3333H21.9999V69.6666H14.6666ZM25.6666 69.6666V18.3333H29.3333V69.6666H25.6666ZM36.6666 69.6666V18.3333H44V69.6666H36.6666ZM47.6666 69.6666V18.3333H58.6666V69.6666H47.6666ZM62.3333 69.6666V18.3333H66V69.6666H62.3333ZM73.3333 69.6666V18.3333H84.3333V69.6666H73.3333Z" fill="#F5F5F5" />
+                    </g>
+                </g>
+            </svg>
+        </div>
+        
+    </div>
+</body>
+</html>
