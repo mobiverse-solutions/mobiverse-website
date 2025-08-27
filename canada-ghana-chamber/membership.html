@@ -4,12 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CANADA GHANA CHAMBER OF COMMERCE - CALGARY CHAPTER::Membership</title>
+    <title>CANADA GHANA CHAMBER OF COMMERCE – CALGARY CHAPTER</title>
 
-    <!-- Google Fonts: Merriweather and Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;700&family=Space+Grotesk:wght@300;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Space+Grotesk:wght@300..700&display=swap"
         rel="stylesheet">
+
     <!-- Google Material Symbols Outlined -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@200;300;400" rel="stylesheet" />
 
@@ -31,6 +33,7 @@
             scroll-behavior: smooth;
         }
     </style>
+
     <script>
         tailwind.config = {
             theme: {
@@ -45,474 +48,599 @@
     </script>
 </head>
 
-<body class="bg-gray-100 text-gray-800 font-sans">
-
-    <!-- Header & Navigation -->
-    <header class="bg-[#0B1633] shadow-md sticky top-0 z-50 w-full">
-        <nav x-data="{ mobileMenuOpen: false }"
-            class="max-w-screen-xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between text-white">
-            <!-- <a href="#" class="flex items-center space-x-2">
-                <img src="./assets/images/logo.png" alt="Logo"
-                    class="h-10 w-10 rounded-full border-2 border-white bg-white object-cover">
-                <span class="text-lg md:text-2xl font-bold">C.G.C.C.C</span>
-            </a> -->
+<body class=" text-gray-800 font-sans">
+    <header class="bg-[#0B1633] w-full">
+        <nav class="flex max-w-screen-xl mx-auto px-8 py-4 justify-between items-center text-white">
             <div class="flex items-center">
                 <div class=" w-[40px] h-[40px] bg-white rounded-full">
                     <img class=" border-white overflow-hidden" src="./assets/images/logo.png" alt="C.G.C.C.C. Logo">
                 </div>
                 <div class="flex h-8 w-[1px] bg-white mx-2">
+                    <!-- <div class="bg-white w-[1px] h-full"></div> -->
                 </div>
-                <span class="text-xs font-[IBM-Plex-Serif] text-white">CANADA GHANA CHAMBER OF COMMERCE,
-                    <br> CALGARY CHAPTER ( C.G.C.C.C. )</span>
+                <span class="text-xs font-headers text-white">CANADA GHANA CHAMBER OF COMMERCE,
+                    <br> CALGARY CHAPTER</span>
             </div>
-            <div class="hidden md:flex items-center space-x-6">
-                <a href="#hero" class="hover:text-indigo-600 font-medium">Home</a>
-                <a href="#who-we-are" class="hover:text-indigo-600 font-medium">About Us</a>
-                <a href="#business-facilitation" class="hover:text-indigo-600 font-medium">The Team</a>
-                <a href="#who-we-are" class="hover:text-indigo-600 font-medium">Partners</a>
-                <a href="#what-we-do" class="hover:text-indigo-600 font-medium">Membership</a>
-                <a href="#key-partners" class="hover:text-indigo-600 font-medium">Gallery</a>
-                <a href="#contact" class="hover:text-indigo-600 font-medium">Contact Us</a>
-            </div>
-            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden focus:outline-none">
-                <span class="material-symbols-outlined text-3xl">menu</span>
-            </button>
-            <div x-show="mobileMenuOpen" x-transition
-                class="absolute top-full left-0 w-full bg-[#0B1633] text-white flex flex-col md:hidden shadow-lg z-50">
-                <a href="#hero" @click="mobileMenuOpen = false" class="py-3 px-6 hover:bg-indigo-900">Home</a>
-                <a href="#who-we-are" @click="mobileMenuOpen = false" class="py-3 px-6 hover:bg-indigo-900">About Us</a>
-                <a href="#what-we-do" @click="mobileMenuOpen = false"
-                    class="py-3 px-6 hover:bg-indigo-900">Membership</a>
-                <a href="#business-facilitation" @click="mobileMenuOpen = false"
-                    class="py-3 px-6 hover:bg-indigo-900">The Team</a>
-                <a href="#key-partners" @click="mobileMenuOpen = false"
-                    class="py-3 px-6 hover:bg-indigo-900">Gallery</a>
-                <a href="#contact" @click="mobileMenuOpen = false" class="py-3 px-6 hover:bg-indigo-900">Contact Us</a>
+
+            <div class="flex items-center justify-center space-x-6">
+                <a class="hover:text-indigo-600" href="home">Home</a>
+                <a class="hover:text-indigo-600" href="#About">About Us</a>
+                <a class="hover:text-indigo-600" href="#Team">The Team</a>
+                <a class="hover:text-indigo-600" href="#Partners">Partners</a>
+                <a class="hover:text-indigo-600" href="#Member">Membership</a>
+                <a class="hover:text-indigo-600" href="#Gallery">Gallery</a>
+                <a class="hover:text-indigo-600" href="#Contact">Contact Us</a>
             </div>
         </nav>
     </header>
 
-    <main>
-        <!-- HERO + CAROUSEL -->
-        <section id="hero" class="relative w-full overflow-hidden h-56">
-            <img src="./assets/images/banner.png" alt="Hero Background" class="w-full h-full object-cover">
-        </section>
+    <img class="object-cover w-full h-80" src="./assets/images/MembershipImage.png" alt="AboutImage">
 
-        <!-- Who We Are Section -->
-        <section id="our-partners" class="py-12 bg-white">
-            <div class="max-w-screen-xl mx-auto px-4 md:px-8">
-                <div class="">
-                    <div data-aos="fade-up" data-aos-delay="200">
-                        <div class="text-left">
-                            <h2 class="text-2xl md:text-4xl font-bold text-gray-900 font-serif">Why Join CGCC Calgary?
-                            </h2>
-                            <p class="text-gray-600 text-base md:text-lg mt-4">
-                                We are not only a Chamber, we are a strategic launchpad for global business success. Our
-                                leadership team offers cross-sectoral expertise, deep diplomatic relationships, and
-                                hands-on experience in deal facilitation, strategic policy engagement, and community
-                                development.
-                                Whether you're a company looking to expand to Ghana, a policymaker seeking partnerships,
-                                or a young entrepreneur building your global footprint, CGCC-Calgary is your trusted
-                                partner.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+    <div class="max-w-screen-xl mx-auto px-8 py-16">
+        <h1 class="font-serif font-semibold text-5xl">Why Join CGCC Calgary?</h1>
+        <p class="leading-[140%] text-lg pt-4 font-sans">We are not only a Chamber, we are a strategic
+            launchpad for global business success. Our leadership
+            team offers cross-sectoral expertise, deep diplomatic relationships, and hands-on experience in deal
+            facilitation, strategic policy engagement, and community development. <br>Whether you’re a company
+            looking to expand to Ghana, a policymaker seeking partnerships, or a young entrepreneur building your
+            global footprint, CGCC–Calgary is your trusted partner.</p>
+    </div>
+
+    <!--Who Can Join?-->
+    <div class="max-w-screen-xl mx-auto px-8 py-16">
+        <div class="flex flex-row gap-8">
+            <div>
+                <img class="" src="./assets/images/MembershipBenefits.png" alt="MembershipBenefits">
             </div>
-        </section>
+            <div>
+                <h2 class="font-serif text-5xl font-semibold">Who Can Join?</h2>
+                <p class="pt-4 pl-2 font-sans text-lg">We welcome individuals and organizations from across
+                    the spectrum of public
+                    and private sectors including:</p>
 
-        <!-- Founder Section -->
-        <section class="bg-white py-12 md:py-24" x-data="{ 'showModal': false }" @keydown.escape="showModal = false">
-            <div class="max-w-screen-xl mx-auto px-4 md:px-8" data-aos="zoom-in">
-                <div class="flex gap-8 md:gap-16 items-start">
-                    <div class="">
-                        <!-- Placeholder for image, can be replaced with actual image -->
-                        <img src="./assets/images/membership.png" alt="Innovation for Impact 2025"
-                            class="h-64 md:h-[478px] w-64 md:w-[478px] object-cover mx-auto" data-aos="fade-up">
-
-                    </div>
-                    <div class="flex-1">
-                        <h2 class="text-2xl md:text-4xl font-bold text-gray-900 font-serif mb-4">
-                            Who Can Join?
-                        </h2>
-                        <p class="text-base md:text-lg text-gray-700 mb-6">
-                            We welcome individuals and organizations from across the spectrum of public and private
-                            sectors including:
-                        <p class="text-base md:text-lg text-gray-700 mb-1">&bull; Entrepreneurs, SMEs, and corporate
-                            entities</p>
-                        <p class="text-base md:text-lg text-gray-700 mb-1">&bull; Professionals, consultants, and trade
-                            advisors</p>
-                        <p class="text-base md:text-lg text-gray-700 mb-1">&bull; Government agencies and public
-                            institutions</p>
-                        <p class="text-base md:text-lg text-gray-700 mb-1">&bull; Investment firms, financiers, and
-                            export houses</p>
-                        <p class="text-base md:text-lg text-gray-700 mb-1">&bull; Educational, research, and development
-                            institutions</p>
-                        <p class="text-base md:text-lg text-gray-700 mb-1">&bull; Diaspora networks and youth-led
-                            enterprises</p>
-                        </p>
-
-                    </div>
-                </div>
+                <ul class="list list-disc pt-4 pl-8 font-sans text-lg">
+                    <li>Entrepreneurs, SMEs, and corporate entities</li>
+                    <li>Professionals, consultants, and trade advisors</li>
+                    <li>Government agencies and public institutions</li>
+                    <li>Investment firms, financiers, and export houses</li>
+                    <li>Educational, research, and development institutions</li>
+                    <li>Diaspora networks and youth-led enterprises</li>
+                </ul>
             </div>
-        </section>
-
-
-        <!-- What We Do Section -->
-        <section id="what-we-do" class="bg-white py-12">
-            <div class="max-w-screen-xl mx-auto px-4 md:px-8 text-center" data-aos="zoom-in">
-                <h2 class="text-2xl md:text-4xl font-bold text-gray-900 font-serif mb-4 md:mb-8">Member Benefits</h2>
-                <p class="text-base md:text-lg text-gray-700 mb-16">Our operations and member services are guided by the
-                    following foundational values:</p>
-                <div class="grid grid-cols-3 sm:grid-cols-3 gap-16">
-                    <div class="flex justify-center text-center bg-gray-100 p-8 rounded-lg">
-                        <span class="text-xl md:text-4xl material-symbols-outlined"
-                            style="font-variation-settings: 'wght' 300">finance_mode
-                        </span>
-                        <h3 class="flex-1 text-xl text-gray-900 mb-4 pl-2 text-left">
-                            Access to a high-impact Canada-Africa business network
-                        </h3>
-                    </div>
-                    <div class="flex justify-center text-center bg-gray-100 p-8 rounded-lg">
-                        <span class="text-xl md:text-4xl material-symbols-outlined"
-                            style="font-variation-settings: 'wght' 300">finance_mode
-                        </span>
-                        <h3 class="flex-1 text-xl text-gray-900 mb-4 pl-2 text-left">
-                            Participation in our Diaspora Engagement “Think Tank” (Skills Bank)
-                        </h3>
-                    </div>
-                    <div class="flex justify-center text-center bg-gray-100 p-8 rounded-lg">
-                        <span class="text-xl md:text-4xl material-symbols-outlined"
-                            style="font-variation-settings: 'wght' 300">finance_mode
-                        </span>
-                        <h3 class="flex-1 text-xl text-gray-900 mb-4 pl-2 text-left">
-                            Exclusive listing in the CGCC–Calgary Member Directory
-                        </h3>
-                    </div>
-                    <div class="flex justify-center text-center bg-gray-100 p-8 rounded-lg">
-                        <span class="text-xl md:text-4xl material-symbols-outlined"
-                            style="font-variation-settings: 'wght' 300">finance_mode
-                        </span>
-                        <h3 class="flex-1 text-xl text-gray-900 mb-4 pl-2 text-left">
-                            Access to a high-impact Canada-Africa business network
-                        </h3>
-                    </div>
-                    <div class="flex justify-center text-center bg-gray-100 p-8 rounded-lg">
-                        <span class="text-xl md:text-4xl material-symbols-outlined"
-                            style="font-variation-settings: 'wght' 300">finance_mode
-                        </span>
-                        <h3 class="flex-1 text-xl text-gray-900 mb-4 pl-2 text-left">
-                            Participation in our Diaspora Engagement “Think Tank” (Skills Bank)
-                        </h3>
-                    </div>
-                    <div class="flex justify-center text-center bg-gray-100 p-8 rounded-lg">
-                        <span class="text-xl md:text-4xl material-symbols-outlined"
-                            style="font-variation-settings: 'wght' 300">finance_mode
-                        </span>
-                        <h3 class="flex-1 text-xl text-gray-900 mb-4 pl-2 text-left">
-                            Exclusive listing in the CGCC–Calgary Member Directory
-                        </h3>
-                    </div>
-                    <div class="flex justify-center text-center bg-gray-100 p-8 rounded-lg">
-                        <span class="text-xl md:text-4xl material-symbols-outlined"
-                            style="font-variation-settings: 'wght' 300">finance_mode
-                        </span>
-                        <h3 class="flex-1 text-xl text-gray-900 mb-4 pl-2 text-left">
-                            Access to a high-impact Canada-Africa business network
-                        </h3>
-                    </div>
-                    <div class="flex justify-center text-center bg-gray-100 p-8 rounded-lg">
-                        <span class="text-xl md:text-4xl material-symbols-outlined"
-                            style="font-variation-settings: 'wght' 300">finance_mode
-                        </span>
-                        <h3 class="flex-1 text-xl text-gray-900 mb-4 pl-2 text-left">
-                            Participation in our Diaspora Engagement “Think Tank” (Skills Bank)
-                        </h3>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- What We Do Section -->
-        <section id="what-we-do" class="bg-white py-12 md:py-24">
-            <div class="max-w-screen-xl mx-auto px-4 md:px-8 text-center" data-aos="zoom-in">
-                <h2 class="text-2xl md:text-4xl font-bold text-gray-900 font-serif mb-16 md:mb-24">
-                    Membership Packages and Annual Fees
-                </h2>
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-16 md:gap-8 items-start">
-                    <div class="flex flex-col text-left border border-[#F5C567] p-8 rounded-[16px] bg-white h-[700px]">
-                        <h1 class="text-lg md:text-3xl font-bold text-gray-900 font-serif mb-4">
-                            Individual Membership
-                        </h1>
-                        <h3 class="text-base md:text-3xl font-semibold text-[#F5C567]">$150 CAD</h3>
-                        <p class="text-base md:text-sm text-gray-700 mb-6">per year</p>
-                        <p class="text-base text-gray-700 mb-6">For professionals, consultants, students, and
-                            entrepreneurs seeking networking, career development, and diaspora engagement.</p>
-                        <p class="text-base text-gray-700 mb-2">Benefits Include</p>
-                        <ul class="list-disc">
-                            <li class="flex items-center mb-2">
-                                <span class="material-symbols-outlined text-[#F5C567] mr-2">check_circle</span>
-                                Access to all Chamber events and webinars
-                            </li>
-                            <li class="flex items-center mb-2">
-                                <span class="material-symbols-outlined text-[#F5C567] mr-2">check_circle</span>
-                                Member discounts on training, programs & trade missions
-                            </li>
-                            <li class="flex items-center mb-2">
-                                <span class="material-symbols-outlined text-[#F5C567] mr-2">check_circle</span>
-                                Access to Chamber newsletters and market updates
-                            </li>
-                            <li class="flex items-center mb-2">
-                                <span class="material-symbols-outlined text-[#F5C567] mr-2">check_circle</span>
-                                Listing in member directory
-                            </li>
-                            <li class="flex items-center mb-2">
-                                <span class="material-symbols-outlined text-[#F5C567] mr-2">check_circle</span>
-                                Eligible for mentorship & diaspora business programs
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="flex flex-col text-left border border-[#F5C567] p-8 rounded-[16px] bg-white h-[700px]">
-                        <h1 class="text-lg md:text-3xl font-bold text-gray-900 font-serif mb-4">
-                            SME / Startup Membership
-                        </h1>
-                        <h3 class="text-base md:text-3xl font-semibold text-[#F5C567]">$350 CAD</h3>
-                        <p class="text-base md:text-sm text-gray-700 mb-6">per year</p>
-                        <p class="text-base text-gray-700 mb-6">For professionals, consultants, students, and
-                            entrepreneurs seeking networking, career development, and diaspora engagement.</p>
-                        <p class="text-base text-gray-700 mb-2">Benefits Include</p>
-                        <ul class="list-disc">
-                            <li class="flex items-center mb-2">
-                                <span class="material-symbols-outlined text-[#F5C567] mr-2">check_circle</span>
-                                Access to all Chamber events and webinars
-                            </li>
-                            <li class="flex items-center mb-2">
-                                <span class="material-symbols-outlined text-[#F5C567] mr-2">check_circle</span>
-                                Member discounts on training, programs & trade missions
-                            </li>
-                            <li class="flex items-center mb-2">
-                                <span class="material-symbols-outlined text-[#F5C567] mr-2">check_circle</span>
-                                Access to Chamber newsletters and market updates
-                            </li>
-                            <li class="flex items-center mb-2">
-                                <span class="material-symbols-outlined text-[#F5C567] mr-2">check_circle</span>
-                                Listing in member directory
-                            </li>
-                            <li class="flex items-center mb-2">
-                                <span class="material-symbols-outlined text-[#F5C567] mr-2">check_circle</span>
-                                Eligible for mentorship & diaspora business programs
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="flex flex-col text-left border border-[#F5C567] p-8 rounded-[16px] bg-white h-[700px]">
-                        <h1 class="text-lg md:text-3xl font-bold text-gray-900 font-serif mb-4">
-                            Corporate Membership
-                        </h1>
-                        <h3 class="text-base md:text-3xl font-semibold text-[#F5C567]">$750 CAD</h3>
-                        <p class="text-base md:text-sm text-gray-700 mb-6">per year</p>
-                        <p class="text-base text-gray-700 mb-6">For professionals, consultants, students, and
-                            entrepreneurs seeking networking, career development, and diaspora engagement.</p>
-                        <p class="text-base text-gray-700 mb-2">Benefits Include</p>
-                        <ul class="list-disc">
-                            <li class="flex items-center mb-2">
-                                <span class="material-symbols-outlined text-[#F5C567] mr-2">check_circle</span>
-                                Access to all Chamber events and webinars
-                            </li>
-                            <li class="flex items-center mb-2">
-                                <span class="material-symbols-outlined text-[#F5C567] mr-2">check_circle</span>
-                                Member discounts on training, programs & trade missions
-                            </li>
-                            <li class="flex items-center mb-2">
-                                <span class="material-symbols-outlined text-[#F5C567] mr-2">check_circle</span>
-                                Access to Chamber newsletters and market updates
-                            </li>
-                            <li class="flex items-center mb-2">
-                                <span class="material-symbols-outlined text-[#F5C567] mr-2">check_circle</span>
-                                Listing in member directory
-                            </li>
-                            <li class="flex items-center mb-2">
-                                <span class="material-symbols-outlined text-[#F5C567] mr-2">check_circle</span>
-                                Eligible for mentorship & diaspora business programs
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="flex flex-col text-left border border-[#F5C567] p-8 rounded-[16px] bg-white h-[700px]">
-                        <h1 class="text-lg md:text-3xl font-bold text-gray-900 font-serif mb-4">
-                            Strategic Partner Member
-                        </h1>
-                        <h3 class="text-base md:text-3xl font-semibold text-[#F5C567]">$1500 CAD</h3>
-                        <p class="text-base md:text-sm text-gray-700 mb-6">per year</p>
-                        <p class="text-base text-gray-700 mb-6">For professionals, consultants, students, and
-                            entrepreneurs seeking networking, career development, and diaspora engagement.</p>
-                        <p class="text-base text-gray-700 mb-2">Benefits Include</p>
-                        <ul class="list-disc">
-                            <li class="flex items-center mb-2">
-                                <span class="material-symbols-outlined text-[#F5C567] mr-2">check_circle</span>
-                                Access to all Chamber events and webinars
-                            </li>
-                            <li class="flex items-center mb-2">
-                                <span class="material-symbols-outlined text-[#F5C567] mr-2">check_circle</span>
-                                Member discounts on training, programs & trade missions
-                            </li>
-                            <li class="flex items-center mb-2">
-                                <span class="material-symbols-outlined text-[#F5C567] mr-2">check_circle</span>
-                                Access to Chamber newsletters and market updates
-                            </li>
-                            <li class="flex items-center mb-2">
-                                <span class="material-symbols-outlined text-[#F5C567] mr-2">check_circle</span>
-                                Listing in member directory
-                            </li>
-                            <li class="flex items-center mb-2">
-                                <span class="material-symbols-outlined text-[#F5C567] mr-2">check_circle</span>
-                                Eligible for mentorship & diaspora business programs
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="flex flex-col text-left p-8 rounded-[16px] bg-[#0B1633] h-[700px]">
-                        <h1 class="text-lg md:text-3xl font-bold text-white font-serif mb-4">
-                            Honorary & Institutional Membership
-                        </h1>
-                        <h3 class="text-base md:text-3xl font-semibold text-[#F5C567]">By invitation only</h3>
-                        <p class="text-base md:text-sm text-white mb-6">per year</p>
-                        <p class="text-base text-white mb-6">For professionals, consultants, students, and
-                            entrepreneurs seeking networking, career development, and diaspora engagement.</p>
-                        <p class="text-base text-white mb-2">Benefits Include</p>
-                        <ul class="list-disc text-white">
-                            <li class="flex items-center mb-2">
-                                <span class="material-symbols-outlined text-[#F5C567] mr-2">check_circle</span>
-                                Access to all Chamber events and webinars
-                            </li>
-                            <li class="flex items-center mb-2">
-                                <span class="material-symbols-outlined text-[#F5C567] mr-2">check_circle</span>
-                                Member discounts on training, programs & trade missions
-                            </li>
-                            <li class="flex items-center mb-2">
-                                <span class="material-symbols-outlined text-[#F5C567] mr-2">check_circle</span>
-                                Access to Chamber newsletters and market updates
-                            </li>
-                            <li class="flex items-center mb-2">
-                                <span class="material-symbols-outlined text-[#F5C567] mr-2">check_circle</span>
-                                Listing in member directory
-                            </li>
-                            <li class="flex items-center mb-2">
-                                <span class="material-symbols-outlined text-[#F5C567] mr-2">check_circle</span>
-                                Eligible for mentorship & diaspora business programs
-                            </li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-
-
-
-
-        <!-- Contact Us Section -->
-        <section class="bg-[#F5C567] py-12 md:py-24">
-            <div class="mx-auto" data-aos="zoom-in">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-0 items-center">
-                    <div>
-                        <img src="./assets/images/contact-us.png" alt="Innovation for Impact 2025"
-                            class="h-64 md:h-[575px] w-full object-cover" data-aos="fade-up">
-                    </div>
-                    <div
-                        class="h-auto md:h-[621px] flex flex-col bg-[#0B1633] pl-4 md:pl-16 pr-4 md:pr-[128px] py-8 md:py-40 md:rounded-l-2xl">
-                        <h2 class="text-3xl md:text-5xl font-bold text-white font-serif mb-4">
-                            Contact Us
-                        </h2>
-                        <p class="text-base md:text-lg text-white mb-6">
-                            Together, let’s build a resilient and inclusive trade corridor between Canada and Ghana.
-                        </p>
-                        <div class="flex gap-4 items-center">
-                            <span
-                                class="hidden md:block text-2xl md:text-4xl material-symbols-outlined bg-[#F5C567] rounded-full p-2"
-                                style="font-variation-settings: 'wght' 200">call
-                            </span>
-                            <a href="tel:+1 587-585-7324" class="underline text-white text-sm md:text-base">+1
-                                587-585-7324</a>
-                        </div>
-                        <div class="flex gap-4 items-center mt-4">
-                            <span
-                                class="hidden md:block text-2xl md:text-4xl material-symbols-outlined bg-[#F5C567] rounded-full p-2"
-                                style="font-variation-settings: 'wght' 200">mail
-                            </span>
-                            <a href="mailto:membership@canadaghanachambercalgary.org"
-                                class="underline text-white text-sm md:text-base">membership@canadaghanachambercalgary.org</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer Section -->
-        <section class="bg-[#F5C567] pb-12 md:pb-24 h-auto md:h-[336px]">
-            <div class="max-w-screen-xl mx-auto px-4 md:px-8 text-center">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-0 items-start text-[#6D6150]">
-                    <div class="flex flex-col items-start">
-                        <div class="flex items-center">
-                            <img src="./assets/images/logo.png" alt="Logo"
-                                class="h-10 md:h-12 w-auto mr-4 rounded-full border-2 border-white bg-white object-cover">
-                            <span class="text-xs md:text-sm text-left font-serif w-48 md:w-80">CANADA GHANA CHAMBER OF
-                                COMMERCE, CALGARY CHAPTER</span>
-                        </div>
-                        <p class="text-left text-xs md:text-sm mt-2">Connecting Businesses to Nations</p>
-                    </div>
-                    <div class="items-start mt-8 md:mt-0">
-                        <p class="text-left text-base mb-2 font-semibold">Quick Links</p>
-                        <ul>
-                            <li class="text-left text-xs md:text-sm mb-2"><a href="#hero"
-                                    class="hover:text-indigo-600">Home</a></li>
-                            <li class="text-left text-xs md:text-sm mb-2"><a href="#who-we-are"
-                                    class="hover:text-indigo-600">Who We Are</a></li>
-                            <li class="text-left text-xs md:text-sm mb-2"><a href="#what-we-do"
-                                    class="hover:text-indigo-600">What We Do</a></li>
-                            <li class="text-left text-xs md:text-sm mb-2"><a href="#business-facilitation"
-                                    class="hover:text-indigo-600">Business Facilitation</a></li>
-                            <li class="text-left text-xs md:text-sm mb-2"><a href="#key-partners"
-                                    class="hover:text-indigo-600">Key Partners</a></li>
-                            <li class="text-left text-xs md:text-sm mb-2"><a href="#contact"
-                                    class="hover:text-indigo-600">Contact Us</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-[#0B1633] text-white py-6 md:py-8">
-        <div class="max-w-screen-xl mx-auto px-4 md:px-6 text-center">
-            <p class="text-xs md:text-base">&copy; 2025 Canada Ghana Chamber of Commerce, Calgary Chapter, CGCCCC. All
-                Rights Reserved.</p>
         </div>
+    </div>
+
+    <!-- Member Benefits -->
+    <div class="max-w-screen-xl mx-auto px-8 pt-8">
+        <h3 class="text-center font-serif font-semibold text-5xl">Member Benefits</h3>
+        <p class="text-center text-[#9A989B] pt-16 font-sans">Our operations and member services are guided by the
+            following
+            foundational values:</p>
+
+
+        <div class=" grid grid-cols-3 gap-16 pt-8">
+            <div class="bg-gray-200 p-8 rounded-2xl">
+                <div class="flex items-start gap-4">
+                    <span class="text-lg md:text-4xl material-symbols-outlined"
+                        style="font-variation-settings: 'wght' 400 ">finance_mode
+                    </span>
+                    <span class="text-xl font-semibold w-[193px] font-sans">Access to a high- <br>impact
+                        Canada–<br>Africa business network</span>
+                </div>
+            </div>
+
+            <div class="bg-gray-200 p-8 rounded-2xl">
+                <div class="flex items-start gap-4">
+                    <span class="text-xl md:text-4xl material-symbols-outlined"
+                        style="font-variation-settings: 'wght' 400 mt-4">finance_mode
+                    </span>
+                    <span class="text-xl font-semibold w-[193px] font-sans">Participation in our Diaspora Engagement
+                        “Think Tank”
+                        (Skills Bank)</span>
+                </div>
+            </div>
+
+            <div class="bg-gray-200 p-8 rounded-2xl">
+                <div class="flex items-start gap-4">
+                    <span class="text-xl md:text-4xl material-symbols-outlined"
+                        style="font-variation-settings: 'wght' 400 mt-8">finance_mode
+                    </span>
+                    <span class="text-xl font-semibold w-[193px] font-sans">Exclusive listing in the CGCC–Calgary Member
+                        Directory</span>
+                </div>
+            </div>
+            <div class="bg-gray-200 p-8 rounded-2xl">
+                <div class="flex items-start gap-4">
+                    <span class="text-xl md:text-4xl material-symbols-outlined"
+                        style="font-variation-settings: 'wght' 400 mt-4">finance_mode
+                    </span>
+                    <span class="text-xl font-semibold w-[193px] font-sans">Business incubation, mentorship, and funding
+                        readiness support</span>
+                </div>
+            </div>
+
+            <div class="bg-gray-200 p-8 rounded-2xl">
+                <div class="flex items-start gap-4">
+                    <span class="text-xl md:text-4xl material-symbols-outlined"
+                        style="font-variation-settings: 'wght' 400 mt-4">finance_mode
+                    </span>
+                    <span class="text-xl font-semibold w-[193px] font-sans">Complimentary promotion in newsletters
+                        and digital assets</span>
+                </div>
+            </div>
+            <div class="bg-gray-200 p-8 rounded-2xl">
+                <div class="flex items-start gap-4">
+                    <span class="text-xl md:text-4xl material-symbols-outlined"
+                        style="font-variation-settings: 'wght' 400">finance_mode
+                    </span>
+                    <span class="text-xl font-semibold w-[193px] font-sans">Invitations to investment forums, policy
+                        briefings, and trade missions</span>
+                </div>
+            </div>
+
+            <div class="bg-gray-200 p-8 rounded-2xl">
+                <div class="flex items-start gap-4">
+                    <span class="text-xl md:text-4xl material-symbols-outlined"
+                        style="font-variation-settings: 'wght' 400">finance_mode
+                    </span>
+                    <span class="text-xl font-semibold w-[193px] font-sans">Direct connections to government agencies
+                        in Ghana and Canada</span>
+                </div>
+            </div>
+
+            <div class="bg-gray-200 p-8 rounded-2xl">
+                <div class="flex items-start gap-4">
+                    <span class="text-xl md:text-4xl material-symbols-outlined"
+                        style="font-variation-settings: 'wght' 400">finance_mode
+                    </span>
+                    <span class="text-xl font-semibold w-[193px] font-sans">Market intelligence and tailored advisory
+                        for
+                        international growth</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Membership Packages -->
+    <div class="max-w-screen-xl mx-auto px-8 pt-32">
+        <h4 class="font-semibold font-serif text-center text-5xl text-blue-950">Membership Packages and
+            Annual Fees</h4>
+        <p class="font-sans text-[#9A989B] text-center pt-16">Join our dynamic business community and
+            gain access to cross-border trade, strategic networking,<br> and investment opportunities between
+            Canada and Ghana.</p>
+
+        <div class="grid grid-cols-3 gap-8 pt-8">
+            <!-- Individual Member -->
+            <div class="border border-yellow-500 h-[950px] rounded-2xl pt-8 px-8">
+                <h5 class="text-[#0B1633] font-semibold text-3xl font-serif">Individual<br> Membership</h5>
+                <p class="text-yellow-500 text-4xl pt-2 font-sans">$150 CAD</p>
+                <p class="text-sm text-[#757575] font-bold pt-2 font-sans">per year</p>
+                <p class="font-semibold pt-8 text-lg font-sans">For professionals, consultants, students, and
+                    entrepreneurs
+                    seeking networking,
+                    career development, and diaspora engagement.</p>
+                <p class="pt-8 font-semibold text-lg font-sans">Benefits Include</p>
+                <ul class="list list-disc marker:text-yellow-500 font-semibold pt-4 pl-8 leading-[150%] text-lg 
+    marker:text-3xl font-sans">
+
+                    <li class="">Access to all Chamber events and webinars</li>
+                    <li>Member discounts on training, programs & trade missions</li>
+                    <li>Access to Chamber newsletters and market updates</li>
+                    <li>Access to Chamber newsletters and market updates</li>
+                    <li>Listing in member directory</li>
+                    <li>Eligible for mentorship & diaspora business programs</li>
+                </ul>
+                <div class="pt-16 text-lg text-white ">
+                    <!-- w-full worked but h-full did not work -->
+                    <button class=" bg-[#0B1633] w-full h-[78px] rounded-2xl font-bold font-sans">Register as an
+                        individual <br> member</button>
+                </div>
+            </div>
+
+            <!-- SME Startup -->
+            <div class="border border-yellow-500 h-[950px] rounded-2xl pt-8 px-8">
+                <h5 class="text-[#0B1633] font-semibold text-3xl font-serif">SME / Startup <br> Membership
+                </h5>
+                <p class="text-yellow-500 text-4xl pt-2 font-sans">$350 CAD</p>
+                <p class="text-sm text-[#757575] font-bold pt-2 font-sans">per year</p>
+                <p class="font-semibold pt-8 text-lg font-sans">For small businesses (under 20 employees) expanding into
+                    Canada–Ghana markets through trade and partnerships</p>
+                <p class="pt-8 font-semibold text-lg font-sans">Benefits Include</p>
+                <ul class="list-disc marker:text-yellow-500 font-semibold  pt-4 pl-8 leading-[150%] text-lg 
+    marker:text-3xl font-sans">
+
+                    <li class="">All Individual Member benefits</li>
+                    <li>Priority access to B2B matchmaking</li>
+                    <li>Business promotion on Chamber platforms</li>
+                    <li>Discounted rates for trade shows & business forums</li>
+                    <li>Eligibility for SME Spotlights & product showcases</li>
+                </ul>
+                <div class="pt-40 text-lg text-white ">
+                    <!-- w-full worked but h-full did not work -->
+                    <button class=" bg-[#0B1633] w-full h-[78px] rounded-2xl font-bold font-sans">Register as an
+                        SME/<br>
+                        Startup member</button>
+                </div>
+            </div>
+
+            <!-- Corporate Member -->
+            <div class="border border-yellow-500 h-[950px] rounded-2xl pt-8 px-8">
+                <h5 class="text-[#0B1633] font-semibold text-3xl font-serif">Corporate <br> Membership</h5>
+                <p class="text-yellow-500 text-4xl pt-2 font-sans">$750 CAD</p>
+                <p class="text-sm text-[#757575] font-bold pt-2 font-sans">per year</p>
+                <p class="font-semibold pt-8 text-lg font-sans">For medium to large enterprises, financial institutions,
+                    and firms exploring or operating in Ghana or Canada.</p>
+                <p class="pt-8 font-semibold text-lg">Benefits Include</p>
+                <ul class="list list-disc marker:text-yellow-500 font-semibold pt-4 pl-8 leading-[150%] text-lg 
+    marker:text-3xl font-sans">
+                    <li class="">All SME benefits</li>
+                    <li>Invitations to high-level networking & private briefings</li>
+                    <li>Business logo listing on Chamber website</li>
+                    <li>Access to investment projects & bilateral tenders</li>
+                    <li>Advisory support (regulatory, immigration, market entry)</li>
+                    <li>One complimentary trade mission annually</li>
+                </ul>
+                <div class="pt-24 text-lg text-white ">
+                    <!-- w-full worked but h-full did not work -->
+                    <button class=" bg-[#0B1633] w-full h-[78px] rounded-2xl font-bold font-sans">Register as a <br>
+                        corporate member</button>
+                </div>
+            </div>
+
+            <!-- Startegic Partner -->
+            <div class="border border-yellow-500 h-[930px] rounded-2xl pt-8 px-8">
+                <h5 class="text-[#0B1633] font-semibold text-3xl font-serif">Strategic Partner<br>
+                    Member</h5>
+                <p class="text-yellow-500 text-4xl pt-2 font-sans">$1,500 CAD</p>
+                <p class="text-sm text-[#757575] font-bold pt-2 font-sans">per year</p>
+                <p class="font-semibold pt-8 text-lg font-sans">For international institutions, trade bodies,
+                    and multinationals seeking high-level engagement and influence.</p>
+                <p class="pt-8 font-semibold text-lg font-sans">Benefits Include</p>
+                <ul class="list list-disc marker:text-yellow-500 font-semibold pt-4 pl-8 leading-[150%] 
+                text-lg marker:text-3xl font-sans">
+                    <li class="">All Corporate benefits</li>
+                    <li>Co-branding at major Chamber events</li>
+                    <li>Speaking slots at select missions and summits</li>
+                    <li>Participation in policy roundtables & advocacy groups</li>
+                    <li>Priority sponsorship options</li>
+                    <li>Access to executive market insight reports</li>
+                </ul>
+                <div class="pt-24 text-lg text-white ">
+                    <!-- w-full worked but h-full did not work -->
+                    <button class=" bg-[#0B1633] w-full h-[78px] rounded-2xl font-bold font-sans">Register as a <br>
+                        strategic partner</button>
+                </div>
+            </div>
+
+
+            <!-- Honorary Partner -->
+            <div class=" bg-[#0B1633]  h-[930px] rounded-2xl pt-8 px-8">
+                <h5 class="text-white font-semibold text-3xl font-serif">Honorary & Institutional Membership
+                </h5>
+                <p class="text-yellow-500 text-4xl pt-2 font-sans">By invitation Only</p>
+                <p class="pt-8 text-lg text-white font-sans">Reserved for government institutions, diplomatic missions,
+                    and honorary members recognized for their contributions.</p>
+                <p class="pt-8 text-lg text-white font-sans">Benefits Include</p>
+                <ul class="list list-disc marker:text-yellow-500 pt-4 pl-8 leading-[150%] text-lg 
+    marker:text-3xl text-white font-sans">
+                    <li class="">Access to select briefings and official events</li>
+                    <li>Partnership on formal missions</li>
+                    <li>Recognition on official Chamber platforms</li>
+                </ul>
+                <div class="pt-64 text-lg">
+                    <!-- w-full worked but h-full did not work -->
+                    <button class=" bg-[#F5C567] w-full h-[78px] rounded-2xl font-bold font-sans">Contact us
+                        to enquire</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Optional Add-Ons -->
+    <div class="py-32">
+        <div class=" bg-gray-100 w-full h-full">
+            <div class=" max-w-screen-xl mx-auto px-8 py-16">
+                <h6 class="text-[#0B1633] font-semibold font-serif text-5xl text-center ">
+                    Optional Add-Ons</h6>
+                <div class="grid grid-cols-3 pt-16 pl-16">
+                    <div>
+                        <p class="text-lg font-semibold font-sans">Event Sponsorship Packages</p>
+                        <p class="text-sm text-[#757575] py-4 pl-8 font-semibold font-sans">Starting from $500 CAD</p>
+                    </div>
+
+                    <div>
+                        <p class="text-lg font-semibold font-sans">Premium Business Listing Upgrade</p>
+                        <p class="text-sm text-[#757575] py-4 pl-8 font-semibold font-sans">Starting from $100 CAD/a
+                            year</p>
+                    </div>
+
+                    <div>
+                        <p class="text-lg font-semibold font-sans">Access to Training & Certification Courses</p>
+                        <p class="text-sm text-[#757575] py-4 pl-32  font-semibold font-sans">Variable pricing</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- VVIP Membership -->
+    <div class="max-w-screen-xl mx-auto px-8">
+        <div class="text-center">
+            <p class=" text-5xl text-[#0B1633] font-serif font-semibold">VIP & VVIP Membership Plans</p>
+            <p class="py-8 text-[#757575] text-lg font-serif">Exclusive tiers for distinguished leaders,
+                diaspora investors, and multinational executives.</p>
+        </div>
+        <!-- SILVER PLAN -->
+        <div class="grid grid-cols-3 gap-8">
+
+            <div class="bg-gray-100 border border-[#7D7D7D] h-[1080px] rounded-2xl pt-8 px-8">
+                <h5 class="text-[#0B1633] font-semibold  text-3xl font-serif">Silver Plan - VIP</h5>
+                <p class="text-[#757575] text-4xl pt-2 font-semibold">$500 CAD</p>
+                <p class="text-bsse text-[#757575] font-bold pt-2">per year</p>
+                <p class="font-semibold pt-8 text-lg"> For senior professionals, diaspora leaders, and
+                    business executives.</p>
+                <p class="pt-8 font-semibold text-lg">Includes:</p>
+                <ul class="list list-disc marker:text-[#757575] font-semibold pt-4 pl-8 text-lg 
+    marker:text-3xl font-sans">
+                    <li>All Corporate Membership benefits</li>
+                    <li>VIP badge & directory recognition</li>
+                    <li>Invitations to private VIP events and forums</li>
+                    <li>Early access to registration for major events</li>
+                    <li>Quarterly policy briefings & mentorship program access</li>
+                    <li>Discounted VIP travel packages</li>
+                </ul>
+                <div class="pt-80 text-lg text-white ">
+                    <button class=" bg-[#0B1633] w-full h-[55px] rounded-2xl font-bold font-sans">Join the Silver VIP
+                        Plan</button>
+                </div>
+            </div>
+
+
+
+            <!-- GOLD PLAN -->
+            <div class="bg-[#F5C567]  h-[1080px] rounded-2xl pt-8 px-8">
+                <h5 class="text-[#0B1633] font-semibold  text-3xl font-serif">Gold Plan - VVIP</h5>
+                <p class="text-[#757575] text-4xl pt-2 font-semibold">$2,000 CAD</p>
+                <p class="text-bsse text-[#757575] font-bold pt-2">per year</p>
+                <p class="font-semibold pt-8 text-lg"> For business influencers and captains of industry.</p>
+                <p class="pt-8 font-semibold text-lg">Includes:</p>
+                <ul class="list list-disc marker:text-[#757575] font-semibold pt-4 pl-8 text-lg 
+    marker:text-3xl font-sans">
+                    <li class="">All Silver Plan benefits</li>
+                    <li>Priority event seating & speaking opportunities</li>
+                    <li>Bi-annual business spotlight on Chamber platforms</li>
+                    <li>Direct facilitation for Canada–Ghana trade and diplomatic B2B support</li>
+                    <li>Exclusive VVIP Roundtables & private investor forums</li>
+                    <li>One-on-one executive session with Chamber President or VP</li>
+                </ul>
+                <!-- The default pt values were not allowing the buttons to be on the same line so I had to customize these 2 -->
+                <div class="pt-[294px] text-lg text-white ">
+                    <button class=" bg-[#0B1633] w-full h-[55px] rounded-2xl font-bold font-sans">Join the Gold
+                        VIP Plan</button>
+                </div>
+            </div>
+            <!-- PLATINUM PLAN -->
+            <div class="bg-gray-200 h-[1080px] rounded-2xl pt-8 px-8">
+                <h5 class="text-[#0B1633] font-semibold  text-3xl font-[IBM-Plex-Serif]">Platinum Plan - Presidential
+                    VVIP</h5>
+                <p class="text-[#757575] text-4xl pt-2 font-semibold">$4,000 CAD</p>
+                <p class="text-bsse text-[#757575] font-bold pt-2">per year</p>
+                <p class="font-semibold pt-8 text-lg">For multinational executives, corporate board leaders,
+                    and high-level stakeholders.</p>
+                <p class="pt-8 pb-[] font-semibold text-lg">Includes:</p>
+                <ul class="list list-disc marker:text-[#757575] font-semibold pt-4 pl-8 text-lg 
+    marker:text-3xl font-sans">
+                    <li>All Gold Plan benefits</li>
+                    <li>Presidential VVIP recognition at all Chamber events</li>
+                    <li>Co-branding opportunities on strategic Chamber initiatives</li>
+                    <li>VIP concierge service for trade missions</li>
+                    <li>Influence in Chamber policy and strategic planning</li>
+                    <li>Dedicated liaison officer for trade & investment matchmaking</li>
+                    <li>Annual Platinum Roundtable with top-tier government & business leaders</li>
+                </ul>
+                <!-- The default pt values were not allowing the buttons to be on the same line so I had to customize these 2 -->
+                <div class="pt-[166px] text-lg text-white ">
+                    <button class=" bg-[#0B1633] w-full h-[55px] rounded-2xl font-bold font-sans">Join the Platinum VVIP
+                        Plan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- BECOME A MEMBER -->
+    <div class="max-w-screen-xl mx-auto px-8 pt-40">
+        <div class="text-center">
+            <p class="text-[#0B1633] text-5xl font-serif font-semibold">Become a Member</p>
+            <p class="py-4 text-[#757575] text-lg font-sans">Join the Canada Ghana Chamber of Commerce – Calgary Chapter
+                and
+                gain <br> exclusive access to a powerful business network, strategic partnerships, <br>bilateral trade
+                missions,
+                and market insights across Canada and Ghana.</p>
+        </div>
+
+        <!-- Step 1 -->
+        <div class="pt-8">
+            <div class="border rounded-xl py-4">
+                <div class="flex flex-row gap-4 px-4">
+                    <div class="bg-[#F5C567] w-[40px] h-[41px] rounded-full">
+                        <p class="text-xl w-[8px] h-[25px] py-2 pl-4 font-semibold">1</p>
+                    </div>
+                    <p class="text-2xl font-serif font-semibold ">Step 1: Choose Your Membership Package</p>
+                </div>
+                <!-- Both px and pl's default dimensions were not making the review on the same line with the 
+         step that's why I had to customize it -->
+                <p class="text-gray-500 px-[70px] font-sans">Review the membership plans above and select the package
+                    that best aligns with your business goals
+                    and needs. Each tier offers different levels of access and benefits.</p>
+            </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="py-2">
+            <div class="border rounded-xl py-4">
+                <div class="flex flex-row gap-4 px-4">
+                    <div class="bg-[#F5C567] w-[40px] h-[41px] rounded-full">
+                        <p class="text-xl w-[8px] h-[25px] py-2 pl-4 font-semibold">2</p>
+                    </div>
+                    <p class="text-2xl font-serif font-semibold ">Step 1: Register Online</p>
+                </div>
+                <!-- Both px and pl's default dimensions were not making the review on the same line with the 
+         step that's why I had to customize it -->
+                <p class="text-gray-500 px-[70px] font-sans">To streamline your membership process, click the
+                    appropriate link below to
+                    fill out your secure application form</p>
+                <ul class="list list-disc marker:text-yellow-500 pt-2  text-lg px-[70px]
+    marker:text-3xl font-sans">
+                    <!-- Is it necessary to add the underline like in the design
+     if yes, then it also has to be blue  -->
+                    <li class=" text-sky-400"><a href="#" class="underline underline-offset-4">📝 Individual / SME /
+                            Corporate Registration Form </a></li>
+                    <li class=" text-sky-400"><a href="#" class="underline underline-offset-4">📝 Strategic Partner /
+                            Institutional
+                            Membership Form </a></li>
+                    <li class=" text-sky-400"><a href="#" class="underline underline-offset-4">📝 VIP & VVIP Membership
+                            Application </a></li>
+                </ul>
+
+            </div>
+        </div>
+        <!-- Step 3 -->
+        <div class="py-2">
+            <div class="border rounded-xl py-4">
+                <div class="flex flex-row gap-4 px-4">
+                    <div class="bg-[#F5C567] w-[40px] h-[41px] rounded-full">
+                        <p class="text-xl w-[8px] h-[25px] py-2 pl-4 font-semibold">3</p>
+                    </div>
+                    <p class="text-2xl font-serif font-semibold ">Step 3: Payment & Activation</p>
+                </div>
+                <!-- Both px and pl's default dimensions were not making the review on the same line with the 
+         step that's why I had to customize it -->
+                <p class="text-gray-500 px-[70px] font-sans">Once you submit your application, a confirmation email with
+                    payment details and onboarding instructions will be sent to your registered email</p>
+                <ul class="px-[70px] leading-[40px] text-lg font-sans">
+                    <p>💳 Bank transfer or mobile money options available</p>
+                    <p>📧 Email confirmation within 24–48 hours</p>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="pt-2">
+            <div class="border rounded-xl py-4">
+                <div class="flex flex-row gap-4 px-4">
+                    <div class="bg-[#F5C567] w-[40px] h-[41px] rounded-full">
+                        <p class="text-xl w-[8px] h-[25px] py-2 pl-4 font-semibold">4</p>
+                    </div>
+                    <p class="text-2xl font-serif font-semibold ">Step 4: Member Onboarding</p>
+                </div>
+                <!-- Both px and pl's default dimensions were not making the review on the same line with the 
+         step that's why I had to customize it -->
+                <p class="text-gray-500 px-[70px] font-sans">After payment confirmation:</p>
+                <ul class="list list-disc marker:text-yellow-500 pt-2  text-lg px-[70px]
+    marker:text-3xl font-sans">
+                    <li>Receive your digital membership certificate</li>
+                    <li>Access member directory login</li>
+                    <li>Begin receiving newsletters and exclusive invitations</li>
+                </ul>
+            </div>
+        </div>
+
+    </div> <!--End od div for steps-->
+
+    <!-- Ready to Join? -->
+    <!-- I did the pt and pb separate because in the UI the ready to join is very close to become a member
+      hence I could not use py -->
+    <div class="max-w-screen-xl mx-auto px-8 pt-4 pb-16">
+        <div class="px-64">
+            <div class="bg-[#0B1633] rounded-xl text-center w-[750px] py-4 ">
+                <p class="font-semibold font-serif text-white text-xl py-2">Ready to Join?</p>
+                <p class="text-white font-sans">Start your journey with CGCC–Calgary today and unlock exclusive
+                    opportunities for
+                    business growth and international partnerships.</p>
+                <div class="py-4">
+                    <button class="bg-[#F5C567] rounded-xl py-2 px-4 font-sans">Join Our Community</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--Contact Us-->
+    <div class="bg-[#F5C567] mt-16 flex flex-col w-full">
+
+        <div class=" flex pt-16 w-full">
+
+            <img class=" h-[500px] w-[50%] pt-4" src="./assets/images/ContactUs.png" alt="Contact Us Image">
+            <div class="flex w-[50%] flex-row">
+                <div class="bg-[#061432]  w-full h-[520px] rounded-l-2xl">
+
+                    <div class="pt-32 px-8">
+                        <h6 class="text-white text-5xl font-semibold font-serif">Contact Us</h6>
+                        <p class="text-white pt-4 font-sans">Together, let’s build a resilient and inclusive trade
+                            corridor<br>
+                            between Canada and Ghana.</p>
+                    </div>
+                    <div class="flex pt-4">
+
+                        <img class="px-8 w-[120px]" src="./assets/images/PhoneIcon.png" alt="PhoneIcon Image">
+                        <a href="tel:+1 587-585-7324" class="text-white pt-4">+1 587-585-7324</a>
+                    </div>
+
+                    <div class="flex pt-4">
+                        <img class="px-8 w-[120px]" src="./assets/images/EmailIcon.png" alt="EmailIcon Image">
+                        <a href="mailto:membership@canadaghanachambercalgary.org" class="text-white pt-4 font-sans">
+                            membership@canadaghanachambercalgary.org</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+    <section class="bg-[#F5C567]">
+        <div class="py-32 flex max-w-screen-xl mx-auto px-8 ">
+            <div class="w-[50%]">
+                <div class="flex flex-row mb-4">
+                    <div class=" w-[55px] h-[55px] bg-white rounded-full">
+                        <img class=" border-white overflow-hidden" src="./assets/images/logo.png" alt="C.G.C.C.C. Logo">
+                    </div>
+
+                    <span class="text-xs font-[IBM-Plex-Serif]  pt-2 pl-2 text-[#6D6150]">CANADA GHANA CHAMBER OF
+                        COMMERCE,
+                        <br> CALGARY CHAPTER</span>
+                </div>
+                <span class="text-[#6D6150]">Connecting Businesses to Nations</span>
+            </div>
+            <!--Quick Links-->
+            <div class="text-[#6D6150] pl-48 w-[50%]">
+                <div>
+                    <span class="font-semibold">Quick Links</span>
+                    <ul class="pt-8">
+                        <div class="leading-[35px] font-sans">
+                            <li>Home</li>
+                            <li>Events</li>
+                            <li>Projects</li>
+                            <li>Gallery</li>
+                            <li>About Us</li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class=" bg-[#061432] w-full">
+        <p class="text-white text-center py-8 font-sans">© 2025 Canada Ghana Chamber of Commerce, Calgary Chapter,
+            CGCCCC. All rights reserved.</p>
     </footer>
 
-    <!-- AOS.js (Animate On Scroll) JS CDN -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 800,
-            once: true,
-        });
-    </script>
-    <script>
-        new Splide('.splide', {
-            type: 'slide',
-            perPage: window.innerWidth < 640 ? 2 : window.innerWidth < 1024 ? 3 : 6,
-            gap: '1rem',
-            breakpoints: {
-                640: { perPage: 2 },
-                1024: { perPage: 3 },
-                1280: { perPage: 6 }
-            }
-        }).mount();
-    </script>
 </body>
 
 </html>
