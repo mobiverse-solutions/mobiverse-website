@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CANADA GHANA CHAMBER OF COMMERCE – CALGARY CHAPTER</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet">
 
     <!-- Google Material Symbols Outlined -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@200;300;400" rel="stylesheet" />
@@ -29,8 +32,21 @@
         html {
             scroll-behavior: smooth;
         }
+
+        .splide__slide img {
+            width: 100%;
+            height: auto;
+        }
+
+        .splide__slide {
+            opacity: 0.2;
+        }
+
+        .splide__slide.is-active {
+            opacity: 1;
+        }
     </style>
-    
+
     <script>
         tailwind.config = {
             theme: {
@@ -70,84 +86,118 @@
             </div>
         </nav>
     </header>
- <img class="object-cover w-full h-72" src="./assets/images/MissionImage.png" alt="AboutImage">
-    
- <!-- Gallery -->
-  <div class="max-w-screen-xl px-8 mx-auto py-16">
-    <h1 class="font-semibold font-serif text-5xl">Gallery</h1>
-    <p class="font-sans text-lg leading-[140%] py-8"> We act as a strategic connector of entrepreneurs, executives, institutions, and policymakers, 
-        creating cross-border trade opportunities, expanding professional networks, and facilitating 
-        impactful investment partnerships. CGCC–Calgary brings over 30 years of collective expertise 
-        in fostering public-private partnerships, regional integration, and diaspora-led development
-         initiatives.</p>
+    <img class="object-cover w-full h-72" src="./assets/images/MissionImage.png" alt="AboutImage">
 
-  </div>
+    <!-- Gallery -->
+    <div class="max-w-screen-xl px-8 mx-auto py-16">
+        <h1 class="font-semibold font-serif text-5xl">Gallery</h1>
+        <p class="font-sans text-lg leading-[140%] py-8"> We act as a strategic connector of entrepreneurs, executives,
+            institutions, and policymakers,
+            creating cross-border trade opportunities, expanding professional networks, and facilitating
+            impactful investment partnerships. CGCC–Calgary brings over 30 years of collective expertise
+            in fostering public-private partnerships, regional integration, and diaspora-led development
+            initiatives.</p>
 
-  <!-- Event 1 -->
-   <div class="bg-[#F5C567] h-[962px] text-center">
-    <div class="max-w-screen-xl mx-auto px-8">
-   <h2 class="font-serif font-semibold text-5xl pt-32">Event 1</h2>
-   <p class="font-sans text-lg leading-[140%] py-12">blurb blurb blurb blurblurb blurb blurb blurblurb blurb blurb blurblurb blurb blurb
-     blurblurb blurb blurb blurblurb blurb blurb blurblurb blurb blurb blurblurb blurb blurb 
-     blurblurb blurb blurb blur</p>
-     <div class="grid grid-cols-2 gap-4">
-     <img class="h-[502px]" src="./assets/images/Event1_Image1.png" alt="EventImage">
-     <img class="h-[502px]" src="./assets/images/Event1_Image2.png" alt="EventImage">
-     </div>
-   </div>
-   </div>
+    </div>
 
-   <!-- Event 2 -->
+    <!-- Event 1 -->
+    <div class="bg-[#F5C567] pb-8 text-center">
+        <div class="max-w-screen-xl mx-auto px-8">
+            <h2 class="font-serif font-semibold text-5xl pt-32">Event 1</h2>
+            <p class="font-sans text-lg leading-[140%] py-12">blurb blurb blurb blurblurb blurb blurb blurblurb blurb
+                blurb blurblurb blurb blurb
+                blurblurb blurb blurb blurblurb blurb blurb blurblurb blurb blurb blurblurb blurb blurb
+                blurblurb blurb blurb blur</p>
+            <div id="main-carousel" class="splide" aria-label="Splide Basic HTML Example">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <img class="" src="./assets/images/Event1_Image1.png" alt="EventImage">
+                        </li>
+                        <li class="splide__slide">
+                            <img class="" src="./assets/images/Event1_Image2.png" alt="EventImage">
+                        </li>
+                        <li class="splide__slide">
+                            <img class="" src="./assets/images/Event1_Image2.png" alt="EventImage">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="thumbnail-carousel" class="splide" aria-label="Splide Basic HTML Example">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <img class="" src="./assets/images/Event1_Image1.png" alt="EventImage">
+                        </li>
+                        <li class="splide__slide">
+                            <img class="" src="./assets/images/Event1_Image2.png" alt="EventImage">
+                        </li>
+                        <li class="splide__slide">
+                            <img class="" src="./assets/images/Event1_Image2.png" alt="EventImage">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Event 2 -->
     <div class="max-w-screen-xl mx-auto px-8 text-center">
-<h3 class="font-semibold text-5xl pt-32">Event 2</h3>
-<p class="font-sans text-lg leading-[140%] py-12">blurb blurb blurb blurblurb blurb blurb blurblurb blurb blurb blurblurb blurb blurb blurblurb 
-    blurb blurb blurblurb blurb blurb blurblurb blurb blurb blurblurb blurb blurb blurblurb blurb
-     blurb blur</p>
-     <div class="grid grid-cols-3 gap-4">
-        <!-- I don't know how to resize the image to look exactly like the design due to the grid -->
-         <!-- some of the images are also spilling out the webpage how do I make them like that 
+        <h3 class="font-semibold text-5xl pt-32">Event 2</h3>
+        <p class="font-sans text-lg leading-[140%] py-12">blurb blurb blurb blurblurb blurb blurb blurblurb blurb blurb
+            blurblurb blurb blurb blurblurb
+            blurb blurb blurblurb blurb blurb blurblurb blurb blurb blurblurb blurb blurb blurblurb blurb
+            blurb blur</p>
+        <div class="grid grid-cols-3 gap-4">
+            <!-- I don't know how to resize the image to look exactly like the design due to the grid -->
+            <!-- some of the images are also spilling out the webpage how do I make them like that 
           since I used grid cols -->
-     <img class="h-[502px] w-[581px] object-cover" src="./assets/images/MissionImage.png" alt="EventImage">
-     <img class="h-[502px] w-[581px] object-cover" src="./assets/images/Event2_Image1.png" alt="EventImage">
-     <img class="h-[502px] w-[581px] object-cover" src="./assets/images/Event2_Image2.png" alt="EventImage">
-</div>
+            <img class="h-[502px] w-[581px] object-cover" src="./assets/images/MissionImage.png" alt="EventImage">
+            <img class="h-[502px] w-[581px] object-cover" src="./assets/images/Event2_Image1.png" alt="EventImage">
+            <img class="h-[502px] w-[581px] object-cover" src="./assets/images/Event2_Image2.png" alt="EventImage">
+        </div>
 
     </div>
 
     <!-- Event 3 -->
-     <div class="py-32">
-    <div class="bg-[#0B1633] h-[962px] text-center text-white">
-        <div class="max-w-screen-xl mx-auto px-8">
-        <h4 class="text-5xl font-semibold pt-32">Event 3</h4>
-        <p class="font-sans text-lg leading-[140%] py-12">blurb blurb blurb blurblurb blurb blurb blurblurb blurb blurb blurblurb
-             blurb blurb blurblurb blurb blurb blurblurb blurb blurb blurblurb blurb blurb
-              blurblurb blurb blurb blurblurb blurb blurb blur</p>
-<div class="grid grid-cols-2 gap-2">
-        <img class="h-[502px] w-[590px] object-cover" src="./assets/images/Event3_Image1.png" alt="EventImage">
-        <img class="h-[502px] w-[590px] object-cover" src="./assets/images/Event3_Image2.png" alt="EventImage">
+    <div class="py-32">
+        <div class="bg-[#0B1633] h-[962px] text-center text-white">
+            <div class="max-w-screen-xl mx-auto px-8">
+                <h4 class="text-5xl font-semibold pt-32">Event 3</h4>
+                <p class="font-sans text-lg leading-[140%] py-12">blurb blurb blurb blurblurb blurb blurb blurblurb
+                    blurb blurb blurblurb
+                    blurb blurb blurblurb blurb blurb blurblurb blurb blurb blurblurb blurb blurb
+                    blurblurb blurb blurb blurblurb blurb blurb blur</p>
+                <div class="grid grid-cols-2 gap-2">
+                    <img class="h-[502px] w-[590px] object-cover" src="./assets/images/Event3_Image1.png"
+                        alt="EventImage">
+                    <img class="h-[502px] w-[590px] object-cover" src="./assets/images/Event3_Image2.png"
+                        alt="EventImage">
+                </div>
+            </div>
         </div>
-</div>
-    </div>
     </div>
 
     <!-- Event 4 -->
     <div class="max-w-screen-xl mx-auto px-8 text-center">
-<h3 class="font-semibold text-5xl">Event 4</h3>
-<p class="font-sans text-lg leading-[140%] py-12">blurb blurb blurb blurblurb blurb blurb blurblurb blurb blurb blurblurb blurb blurb blurblurb 
-    blurb blurb blurblurb blurb blurb blurblurb blurb blurb blurblurb blurb blurb blurblurb blurb
-     blurb blur</p>
-     <div class="grid grid-cols-3 gap-4">
-        <!-- I don't know how to resize the image to look exactly like the design due to the grid -->
-         <!-- some of the images are also spilling out the webpage how do I make them like that 
+        <h3 class="font-semibold text-5xl">Event 4</h3>
+        <p class="font-sans text-lg leading-[140%] py-12">blurb blurb blurb blurblurb blurb blurb blurblurb blurb blurb
+            blurblurb blurb blurb blurblurb
+            blurb blurb blurblurb blurb blurb blurblurb blurb blurb blurblurb blurb blurb blurblurb blurb
+            blurb blur</p>
+        <div class="grid grid-cols-3 gap-4">
+            <!-- I don't know how to resize the image to look exactly like the design due to the grid -->
+            <!-- some of the images are also spilling out the webpage how do I make them like that 
           since I used grid cols -->
-     <img class="h-[500px] w-[581px] object-cover" src="./assets/images/Event2_Image2.png" alt="EventImage">
-     <img class="h-[500px] w-[581px] object-cover" src="./assets/images/Event4_Image2.png" alt="EventImage">
-     <img class="h-[500px] w-[581px] object-cover" src="./assets/images/Event4_Image3.png" alt="EventImage">
-</div>
+            <img class="h-[500px] w-[581px] object-cover" src="./assets/images/Event2_Image2.png" alt="EventImage">
+            <img class="h-[500px] w-[581px] object-cover" src="./assets/images/Event4_Image2.png" alt="EventImage">
+            <img class="h-[500px] w-[581px] object-cover" src="./assets/images/Event4_Image3.png" alt="EventImage">
+        </div>
 
     </div>
 
-     <div class="bg-[#F5C567] mt-16 flex flex-col w-full">
+    <div class="bg-[#F5C567] mt-16 flex flex-col w-full">
 
         <div class=" flex pt-16 w-full">
 
@@ -218,5 +268,35 @@
             CGCCCC. All rights reserved.</p>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var mainSplide = new Splide('#main-carousel', {
+                type: 'fade',
+                rewind: true,
+                pagination: false,
+                arrows: false,
+            });
+        
+
+            var thumbnailSplide = new Splide('#thumbnail-carousel', {
+                fixedWidth: 100,
+                gap: 10,
+                rewind: true,
+                pagination: false,
+                isNavigation: true,
+                breakpoints: {
+                    600: {
+                        fixedWidth: 60,
+                        fixedHeight: 44,
+                    },
+                },
+            });
+            
+            mainSplide.sync( thumbnailSplide );
+            mainSplide.mount();
+            thumbnailSplide.mount();
+        });
+    </script>
 </body>
+
 </html>
