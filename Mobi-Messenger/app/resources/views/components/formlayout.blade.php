@@ -25,17 +25,6 @@
                                     <form action="/contactform" method="POST">
                                         @csrf
                                         <div class="grid grid-cols-1 justify-center">
-                                            <div class="pb-2">
-                                                <label for="fullname" class=""><span
-                                                        class="font-medium text-sm">Full Name<span
-                                                            class="text-red-500">*</span></span></label>
-                                            </div>
-                                            <div class="pb-2 md:pb-4">
-                                                <input
-                                                    class="border-2 focus:outline-none focus:border-red-600 
-                                        w-full px-2 rounded-lg py-1"
-                                                    type="text" id="fullname" name="fullname" required>
-                                            </div>
 
                                             <div class="pb-2">
                                                 <label for="fullname" class=""><span
