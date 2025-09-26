@@ -97,7 +97,7 @@
 
 
         <!--Key Features-->
-        <section id="features" class="max-w-screen-xl mx-auto px-8 sm:px-16 py-20">
+        <section id="features" class="max-w-screen-xl mx-auto px-8 sm:px-16 py-16">
 
             <div class=" text-center sm:pt-8">
                 <h2 class="text-2xl font-bold sm:text-2xl md:text-4xl dark:text-white">Key Features</h2>
@@ -168,7 +168,7 @@
 
         <!-- Use Cases -->
         <section id="cases" class="">
-            <div class="dark:bg-gray-800 bg-gray-50 py-20 sm:py-28 ">
+            <div class="dark:bg-gray-800 bg-gray-50 py-20 sm:py-24 ">
                 <div class="max-w-screen-xl mx-auto px-8 sm:px-16">
 
                     <div class="text-center ">
@@ -230,6 +230,8 @@
                                 documentation</a></span>
                     </p>
                 </div>
+                <div class="flex flex-row gap-8 pt-8">
+                    <div>
                 <p class="font-bold pt-8 text-lg sm:pt-4 md:pt-8 dark:text-white">Powerful API for Developers</p>
                 <p class="pt-2 dark:text-white">Our REST API allows you to send and receive messages and
                     programmatically, <br>manage
@@ -240,6 +242,12 @@
                     <li>Webhooks for real-time notifications</li>
                     <li>SDKs for popular programming languages</li>
                 </ul>
+                <div class="pt-12">
+                    <a href="https://app.mobimessenger.com/app/register"
+                        class="bg-red-600  rounded-md  text-white md:py-4 py-2 px-6 md:px-6 font-bold hover:bg-red-700 ">
+                        Get Started</a>
+                </div>
+                </div>
                 <div class="sm:w-1/2 pt-6"> <!--grid grid-cols-2-->
                     <div class="dark:bg-gray-800 bg-black border-l-4 border-red-500 rounded-md">
                         <div class="pl-6">
@@ -259,12 +267,8 @@ Authorization: Bearer YOUR_API_KEY
                     </div>
 
                 </div>
-
-                <div class="pt-8">
-                    <a href="https://app.mobimessenger.com/app/register"
-                        class="bg-red-600  rounded-md  text-white md:py-4 py-2 px-6 md:px-6 font-bold hover:bg-red-700 ">
-                        Get Started</a>
                 </div>
+                
             </div>
         </section>
 
@@ -277,131 +281,76 @@ Authorization: Bearer YOUR_API_KEY
                         <p class="text-gray-500 pt-4 md:pt-6 dark:text-white">Choose the plan that fits your business
                             needs</p>
                     </div>
-                    <div class="grid grid-cols-1 md:gap-8 gap-10 md:pt-12 pt-10 lg:grid md:grid-cols-3">
-                        <div
+                    <div class="grid grid-cols-1 md:gap-8 gap-10 md:pt-12 pt-10 lg:grid md:grid-cols-5">
+                        <a href="https://app.mobimessenger.com/app/register"
                             class="dark:bg-gray-800 bg-white py-10 md:pt-12 text-center border border-gray-100 rounded-xl shadow-md
                     transition duration-300 hover:-translate-y-2 hover:shadow-xl">
                             <p class="text-2xl font-bold dark:text-white">Starter</p>
 
-                            <div class="text-red-500 text-5xl md:text-5xl font-bold pt-4 md:pt-8">1000 SMS</div>
+                            <div class="text-red-500 text-5xl md:text-4xl font-bold pt-4 sm:pt-4">1,000 <br> SMS</div>
 
-                            <p class="pt-10 md:pt-12 pb-2 dark:text-white text-3xl">GHS 30.00</p>
-                            {{-- <!-- Border Line-->
-                            <div class="px-8">
-                                <p class="border-b border-gray-200"></p>
-                            </div>
+                            <p class="pt-6 md:pt-8 pb-2 dark:text-white text-2xl">GHS 30.00</p>
 
-                            <p class="py-3 dark:text-white">Basic features</p>
-                            <!-- Border Line-->
-                            <div class="px-8">
-                                <p class="border-b border-gray-200 "></p>
-                            </div>
+                    </a>
 
-                            <p class="py-3 dark:text-white">Community Support</p>
-                            <!-- Border Line-->
-                            <div class="px-8">
-                                <p class="border-b border-gray-200 "></p>
-                            </div>
+                        <!-- Business  -->
+                        <a href="https://app.mobimessenger.com/app/register"
+                            class="dark:bg-gray-800 bg-white py-10 md:pt-12 text-center border border-gray-200 rounded-xl shadow-md
+                    transition duration-300 hover:-translate-y-2 hover:shadow-xl">
+                            <p class="text-2xl font-bold dark:text-white">Business</p>
 
-                            <p class="py-3 dark:text-white">Email Support</p>
-                            <!-- Border Line-->
-                            <div class="px-8">
-                                <p class="border-b border-gray-200 "></p>
-                            </div> --}}
+                            <div class="text-red-500 text-4xl font-bold pt-4 sm:pt-4">5,000 <br> SMS</div>
 
-                            {{-- <div class="py-10 sm:pt-16">
-                                <a href="https://app.mobimessenger.com/app/register"
-                                    class="border-2 border-red-500
-                             text-red-500 py-3 px-6 font-semibold rounded-md hover:bg-red-600 hover:text-white dark:text-white">
-                                    Get Started</a>
-                            </div> --}}
-                        </div>
+                            <p class="text-2xl pt-6 md:pt-8 pb-2 dark:text-white">GHS 145.00</p>
+                    </a>
 
                         <!-- Most Popular -->
-                        <div
+                        <a href="https://app.mobimessenger.com/app/register"
                             class="dark:bg-gray-800 bg-white text-center border-2 border-red-500 rounded-xl shadow-md
                     transition duration-300 hover:-translate-y-2 hover:shadow-xl">
-                            <div class="px-36 relative">
+                            <div class="px-36 relative sm:right-11">
                                 <p
                                     class="text-white bg-red-500 py-1 rounded-2xl text-center absolute -top-4 
-                            inset-x-20 sm:inset-x-28">
+                            inset-x-20 sm:inset-x-20 ">
                                     Most popular</p>
                             </div>
                             <p class="text-2xl font-bold pt-8 md:pt-12 dark:text-white">Business</p>
 
-                            <div class="text-red-500 text-5xl font-bold pt-8">10,000 SMS</div>
+                            <div class="text-red-500 text-4xl font-bold pt-4">10,000 <br> SMS</div>
 
-                            <p class="text-3xl pt-10 px-8 pb-4 dark:text-white">GHS 290.00</p>
-                            {{-- <!-- Border Line-->
-                            <div class="px-8">
-                                <p class="border-b border-gray-200"></p>
-                            </div>
+                            <p class="text-2xl pt-6 md:pt-8 pb-2 dark:text-white">GHS 290.00</p>
 
-                            <p class="py-3 dark:text-white">Premium support</p>
-                            <!-- Border Line -->
-                            <div class="px-8">
-                                <p class="border-b border-gray-200 "></p>
-                            </div>
-
-                            <p class="py-3 dark:text-white">Advanced features</p>
-                            <!-- Border Line -->
-                            <div class="px-8">
-                                <p class="border-b border-gray-200 "></p>
-                            </div>
-
-                            <p class="py-3 dark:text-white">API access</p>
-                            <!-- Border Line -->
-                            <div class="px-8">
-                                <p class="border-b border-gray-200 "></p>
-                            </div>
-
-                            <div class="py-10 md:pt-12">
-                                <button @click="Form = true"
-                                    class="bg-red-500 text-white py-4 px-6 font-semibold rounded-md
-                            hover:bg-red-700">
-                                    Contact Sales</button>
-                            </div> --}}
-                        </div>
+                        </a>
 
                         <!-- Enterprise  -->
-                        <div
+                        <a href="https://app.mobimessenger.com/app/register"
                             class="dark:bg-gray-800 bg-white py-10 md:pt-12 text-center border border-gray-200 rounded-xl shadow-md
                     transition duration-300 hover:-translate-y-2 hover:shadow-xl">
                             <p class="text-2xl font-bold dark:text-white">Enterprise</p>
 
-                            <div class="text-red-500 text-5xl font-bold pt-8">100,000 SMS</div>
+                            <div class="text-red-500 text-4xl font-bold pt-4">50,000 <br>SMS</div>
 
-                            <p class="text-3xl pt-10 px-8 pb-4 dark:text-white">GHS 2,700.00</p>
-                            {{-- <!-- Border Line -->
-                            <div class="px-8">
-                                <p class="border-b border-gray-200"></p>
-                            </div>
+                            <p class="text-2xl pt-6 md:pt-8 pb-2 dark:text-white">GHS 1,450.00</p>
+                    </a>
 
-                            <p class="py-3 dark:text-white">Dedicated account managers</p>
-                            <!-- Border Line -->
-                            <div class="px-8">
-                                <p class="border-b border-gray-200 "></p>
-                            </div>
+                        <!-- Enterprise  -->
+                        
+                        <a href="https://app.mobimessenger.com/app/register"
+                            class="dark:bg-gray-800 bg-white py-10 md:pt-12 text-center border border-gray-200 rounded-xl shadow-md
+                    transition duration-300 hover:-translate-y-2 hover:shadow-xl">
+                            <p class="text-2xl font-bold dark:text-white">Enterprise</p>
 
-                            <p class="py-3 dark:text-white">Custom routing</p>
-                            <!-- Border Line -->
-                            <div class="px-8">
-                                <p class="border-b border-gray-200 "></p>
-                            </div>
+                            <div class="text-red-500 text-4xl font-bold pt-4">100,000 <br>SMS</div>
 
-                            <p class="py-3 dark:text-white">24/7 priority support</p>
-                            <!-- Border Line -->
-                            <div class="px-8">
-                                <p class="border-b border-gray-200 "></p>
-                            </div>
+                            <p class="text-2xl pt-6 md:pt-8 pb-2 dark:text-white">GHS 2,700.00</p>
+                    </a>
 
-                            <div class="py-10 sm:pt-12">
-                                <button @click="Form = true"
-                                    class="border-2 border-red-500 text-red-500 py-3 px-6 font-semibold rounded-md
-                                hover:bg-red-600 hover:text-white">
-                                    Contact Sales</button>
-                            </div> --}}
-                        </div>
+                    </div>
+                    {{-- Sign Up --}}
+                    <div class="py-12 text-center">
+                        <p class="text-gray-500 text-2xl"><span class="underline text-red-600 text-2xl"><a
+                                    href="https://app.mobimessenger.com/app/register">Sign Up</a></span> to experience
+                            more of our packages</p>
                     </div>
                 </div>
             </div>
