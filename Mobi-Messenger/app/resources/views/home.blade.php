@@ -287,7 +287,7 @@
                         messaging
                         platforms</p>
                 </div>
-                <div class="grid grid-cols-1 gap-6 pt-6 sm:grid-cols-2 sm:pt-8">
+                <div class="grid grid-cols-1 gap-6 pt-6 sm:grid-cols-3 sm:pt-8">
                     <div>
                         <div class="flex gap-4">
                             <i class="fa fa-check-circle text-red-600 text-2xl pt-1" aria-hidden="true"></i>
@@ -355,40 +355,20 @@
         </section>
 
 
-        <!-- Modal -->
-        {{-- <div class="hidden">
-        <div class="fixed inset-0 size-auto max-h-none max-w-none overflow-auto bg-transparent backdrop:bg-transparent z-50">
-            <div class="fixed inset-0 bg-gray-500/75 transition-opacity"></div>
-
-            <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
-                <div class="relatieve transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg max-h-full">
-                    <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4" style="height: 1400px">
-                        content here is wide
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
-        <!-- /Modal -->
-
         <!-- Footer -->
         <footer class="bg-black">
             <section class="max-w-screen-xl mx-auto px-8 pt-10 sm:pt-16 sm:px-12">
                 <div class="grid md:grid-cols-4 grid-cols-1 sm:gap-8 gap-8 sm:pb-12"> <!--grid grid-cols-5-->
                     <div>
                         <p class="text-white font-bold text-lg">Mobi Messenger</p>
-                        <p class="text-white pt-2 sm:pt-6">Powerful messaging platform for businesses to connect with
-                            their
-                            customers
-                            via SMS</p>
+                        <p class="text-white pt-2 sm:pt-6">Powerful messaging platform for businesses to connect with their customers via SMS</p>
                     </div>
 
                     <div>
                         <p class="text-white font-bold text-lg">Company</p>
-                        <ul class="pt-6">
-                            <li> <a class="text-gray-400 hover:text-white" href="#">About Mobiverse</a> </li>
+                        <ul class="py-6">
                             <li> <button @click="Form = true"
-                                    class="text-gray-400 pt-3 hover:text-white">Contact</button></li>
+                                    class="text-gray-400  hover:text-white">Contact</button></li>
                         </ul>
                     </div>
 
