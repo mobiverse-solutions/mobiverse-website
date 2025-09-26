@@ -61,9 +61,9 @@
                     <div class="pt-24 text-center sm:pt-40">
                         <h1 class="font-bold text-2xl sm:text-2xl sm:text-5xl dark:text-white">
                             Bulk & Transactional SMS Made Effortless</h1>
-                        <p class="text-gray-500  py-6 text-md leading-[27px] sm:text-xl  mx-auto dark:text-white">
+                        <p class="text-gray-500  py-6 text-md leading-[27px] sm:text-xl dark:text-white">
                             Reach your customers instantly with reliable, high-delivery messaging
-                            through our powerful platform and developer-friendly API
+                            through <br>our powerful platform and developer-friendly API
                         </p>
                     </div>
                     <div class="flex sm:flex-none gap-5 justify-center text-sm sm:text-base font-semibold sm:py-6">
