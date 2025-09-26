@@ -109,7 +109,7 @@
             <div class="grid grid-cols-1 md:gap-8 pt-10 gap-6 sm:grid-cols-2 md:grid-cols-2   md:py-12">
 
                 <div
-                    class="dark:bg-[#18181B] bg-white border border-gray-200 dark:border-none shadow-md rounded-xl h-full 
+                    class="dark:bg-[#18181B] bg-white border border-gray-200 dark:border-none shadow-md rounded-xl h-full
             transition duration-300 hover:-translate-y-2 hover:shadow-xl">
                     <div class="py-8 px-8 md:pt-10">
                         <!-- <div class="flex gap-4 lg:flex-none"> -->
@@ -149,7 +149,7 @@
                 </div>
 
                 <div
-                    class="dark:bg-[#18181B] bg-white border border-gray-200 dark:border-none shadow-md rounded-2xl h-full 
+                    class="dark:bg-[#18181B] bg-white border border-gray-200 dark:border-none shadow-md rounded-2xl h-full
             rounded-xl h-full transition duration-300 hover:-translate-y-2 hover:shadow-xl">
                     <div class="py-8 px-8 md:pt-10">
                         <!-- <div class="flex gap-4"> -->
@@ -268,7 +268,7 @@ Authorization: Bearer YOUR_API_KEY
 
                 </div>
                 </div>
-                
+
             </div>
         </section>
 
@@ -310,7 +310,7 @@ Authorization: Bearer YOUR_API_KEY
                     transition duration-300 hover:-translate-y-2 hover:shadow-xl">
                             <div class="px-36 relative sm:right-11">
                                 <p
-                                    class="text-white bg-red-500 py-1 rounded-2xl text-center absolute -top-4 
+                                    class="text-white bg-red-500 py-1 rounded-2xl text-center absolute -top-4
                             inset-x-20 sm:inset-x-20 ">
                                     Most popular</p>
                             </div>
@@ -334,7 +334,7 @@ Authorization: Bearer YOUR_API_KEY
                     </a>
 
                         <!-- Enterprise  -->
-                        
+
                         <a href="https://app.mobimessenger.com/app/register"
                             class="dark:bg-gray-800 bg-white py-10 md:pt-12 text-center border border-gray-200 rounded-xl shadow-md
                     transition duration-300 hover:-translate-y-2 hover:shadow-xl">
@@ -411,13 +411,13 @@ Authorization: Bearer YOUR_API_KEY
 
                 <div class="flex gap-6 justify-center pt-8  ">
                     <a href="https://app.mobimessenger.com/app/register"
-                        class="dark:bg-red-600 bg-white dark:text-white text-red-600 font-semibold md:py-3 py-2 px-2 md:px-6 rounded-md  
+                        class="dark:bg-red-600 bg-white dark:text-white text-red-600 font-semibold md:py-3 py-2 px-2 md:px-6 rounded-md
                 md:text-md dark:border-none border-2 border-transparent hover:text-white hover:bg-red-600 hover:border-white">
                         Get Started</a>
 
                     <button @click="Form = true"
                         class="border-2 dark:hover:text-white dark:hover:border-red-600
-                border-white font-semibold text-white md:pt-3 py-2 px-2 md:px-6 rounded-md md:text-md 
+                border-white font-semibold text-white md:pt-3 py-2 px-2 md:px-6 rounded-md md:text-md
                 hover:bg-white hover:text-red-600 dark:hover:bg-red-600 ">
                         Contact Sales</button>
                 </div>
@@ -453,7 +453,7 @@ Authorization: Bearer YOUR_API_KEY
                         <p class="text-white pt-2 md:pt-6">Powerful messaging platform for businesses to connect with
                             their
                             customers
-                            across multiple channels</p>
+                            via SMS</p>
                     </div>
 
                     <div>
@@ -487,7 +487,7 @@ Authorization: Bearer YOUR_API_KEY
 
                 <p class="border-y border-slate-50/15"></p>
                 <!-- border-b border-gray-200 -->
-                <p class="text-gray-400 text-center py-4 md:py-6 text-sm">&copy; 2023 Mobi Messenger. All rights
+                <p class="text-gray-400 text-center py-4 md:py-6 text-sm">&copy; {{ now()->year }} Mobi Messenger. All rights
                     reserved.
                 </p>
             </section>
