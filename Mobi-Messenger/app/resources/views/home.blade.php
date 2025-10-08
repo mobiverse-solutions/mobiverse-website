@@ -58,7 +58,7 @@
         <section>
             <div class="dark:bg-gray-800 bg-rose-50 h-full w-full">
                 <div class="max-w-screen-xl mx-auto px-8 sm:px-16">
-                    <div class="pt-24 text-center sm:pt-40">
+                    <div class="pt-28 text-center sm:pt-40">
                         <h1 class="font-bold text-2xl sm:text-2xl sm:text-5xl dark:text-white">
                             Bulk & Transactional SMS Made Effortless</h1>
                         <p class="text-gray-500  py-6 text-md leading-[27px] sm:text-xl  mx-auto dark:text-white">
@@ -86,13 +86,13 @@
 
 
         <!--Key Features-->
-        <section id="features" class="max-w-screen-xl mx-auto px-8 sm:px-16 py-16">
+        <section id="features" class="max-w-screen-xl mx-auto px-8 sm:px-16 py-8">
             <div class=" text-center sm:pt-0">
                 <h2 class="text-2xl font-bold sm:text-2xl sm:text-4xl dark:text-white">Key Features</h2>
                 <p class="text-gray-500 pt-6 sm:pt-4 sm:pt-6 dark:text-white">Powerful messaging
                     capabilities designedfor businesses of all sizes</p>
             </div>
-            <div class="grid grid-cols-1 sm:gap-8 pt-10 gap-6 sm:grid-cols-2 sm:grid-cols-2 sm:py-0">
+            <div class="grid grid-cols-1 sm:gap-8 pt-8 gap-6 sm:grid-cols-2 sm:grid-cols-2 sm:py-0">
                 <div
                     class="dark:bg-[#18181B] bg-white border border-gray-200 dark:border-none shadow-md rounded-xl h-full
             transition duration-300 hover:-translate-y-2 hover:shadow-xl">
@@ -146,7 +146,7 @@
 
         <!-- Use Cases -->
         <section id="cases" class="">
-            <div class="dark:bg-gray-800 bg-gray-50 py-16 sm:py-16">
+            <div class="dark:bg-gray-800 bg-gray-50 py-8 sm:py-16">
                 <div class="max-w-screen-xl mx-auto px-8 sm:px-16">
                     <div class="text-center ">
                         <h3 class="font-bold text-2xl sm:text-2xl sm:text-4xl dark:text-white">Use Cases</h3>
@@ -194,7 +194,7 @@
 
         <!-- Pricing -->
         <section id="pricing">
-            <div class="dark:bg-gray-800 py-16">
+            <div class="dark:bg-gray-800 py-8 sm:py-16">
                 <div class="max-w-screen-xl mx-auto px-8 sm:pt-0 sm:px-16 ">
                     <div class="text-center">
                         <h5 class="font-bold text-2xl sm:text-4xl dark:text-white">Simple, Transparent Pricing</h5>
@@ -279,7 +279,7 @@
 
         <!-- Why Choose -->
         <section class="bg-gray-50">
-            <section class="max-w-screen-xl mx-auto px-8 sm:py-16 py-20">
+            <section class="max-w-screen-xl mx-auto px-8 sm:py-16 py-8">
                 <div class="text-center sm:pt-0">
                     <h5 class="text-2xl font-bold sm:text-2xl sm:text-4xl dark:text-white">Why Choose Mobi Messenger?
                     </h5>
@@ -329,7 +329,7 @@
 
         <!-- Customers -->
         <section id="contact" class="dark:bg-gray-800 bg-red-600">
-            <div class="max-w-screen-xl mx-auto px-8 sm:py-16 py-20 sm:px-16 ">
+            <div class="max-w-screen-xl mx-auto px-8 sm:py-16 py-8 sm:px-16 ">
                 <div class="text-center text-white">
                     <h5 class="text-2xl font-bold sm:text-2xl sm:text-4xl">Ready to reach your Customers faster?</h5>
                     <p class="pt-4 text-sm md:text-xl sm:pt-2 sm:pt-4 ">Start sending messages in minutes with Mobi
