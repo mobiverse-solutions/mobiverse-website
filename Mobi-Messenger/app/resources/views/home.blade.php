@@ -86,13 +86,13 @@
 
 
         <!--Key Features-->
-        <section id="features" class="max-w-screen-xl mx-auto px-8 sm:px-16 py-8">
+        <section id="features" class="max-w-screen-xl mx-auto px-8 sm:px-16 py-8 sm:py-16">
             <div class=" text-center sm:pt-0">
                 <h2 class="text-2xl font-bold sm:text-2xl sm:text-4xl dark:text-white">Key Features</h2>
-                <p class="text-gray-500 pt-6 sm:pt-4 sm:pt-6 dark:text-white">Powerful messaging
-                    capabilities designedfor businesses of all sizes</p>
+                <p class="text-gray-500 pt-6 sm:pt-6 dark:text-white">Powerful messaging
+                    capabilities designed for businesses of all sizes</p>
             </div>
-            <div class="grid grid-cols-1 sm:gap-8 pt-8 gap-6 sm:grid-cols-2 sm:grid-cols-2 sm:py-0">
+            <div class="grid grid-cols-1 sm:gap-8 pt-8 gap-6 sm:grid-cols-2 sm:grid-cols-2 sm:pt-8">
                 <div
                     class="dark:bg-[#18181B] bg-white border border-gray-200 dark:border-none shadow-md rounded-xl h-full
             transition duration-300 hover:-translate-y-2 hover:shadow-xl">
