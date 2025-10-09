@@ -11,14 +11,14 @@
                     <img class="h-[40px] hidden dark:block" src="./images/logo-dark.png" alt="mobi_messenger_logo">
                 </a>
 
-                <div class="hidden lg:flex gap-10 dark:text-white">
+                <div class="hidden lg:hidden xl:flex gap-10 dark:text-white">
                     <a href="#features" class="hover:text-red-500">Features</a>
                     <a href="#cases" class="hover:text-red-500">Use Cases</a>
                     <a href="#api" class="hover:text-red-500">API Docs</a>
                     <a href="#pricing" class="hover:text-red-500">Pricing</a>
                     <a href="#contact" class="hover:text-red-500">Contact</a>
                 </div>
-                <div class="hidden lg:flex gap-6">
+                <div class="hidden lg:hidden xl:flex gap-6">
                     <a href="https://app.mobimessenger.com/app/login"
                         class="dark:bg-gray-700 bg-white hover:bg-red-600 hover:text-white dark:border-none border-2 border-red-600  px-14 py-2 rounded-md dark:text-white text-red-600 font-semibold">
                         Login</a>
@@ -27,13 +27,13 @@
                         Up</a>
                 </div>
 
-                <div class="hover:text-red-500 lg:hidden ">
+                <div class="hover:text-red-500  xl:hidden">
                     <button @click="HamburgerButton = !HamburgerButton">
                         <i class="fa fa-bars pr-2" aria-hidden="true"></i>
                         Menu</button>
                 </div>
                 <div x-show="HamburgerButton" x-transition
-                    class=" lg:hidden fixed z-50 absolute top-full left-0 w-full bg-red-600 text-white ">
+                    class=" xl:hidden fixed z-50 absolute top-full left-0 w-full bg-red-600 text-white ">
                     <div class="flex flex-col gap-4 ">
                         <a href="#features" @click="HamburgerButton = false"
                             class="py-2 px-4 hover:text-white hover:bg-red-700 font-semibold">Features</a>
@@ -201,13 +201,13 @@
                         <p class="text-gray-500 pt-4 sm:pt-6 dark:text-white">Choose the plan that fits your business
                             needs</p>
                     </div>
-                    <div class="grid grid-cols-1 sm:gap-8 gap-10 sm:pt-12 pt-10 sm:grid-cols-5">
+                    <div class="grid grid-cols-1 sm:gap-8 gap-10 sm:pt-12 pt-10 lg:grid-cols-5">
                         <a href="https://app.mobimessenger.com/app/register"
                             class="dark:bg-gray-800 bg-white py-10 sm:pt-12 text-center border border-gray-100 rounded-xl shadow-md
                     transition duration-300 hover:-translate-y-2 hover:shadow-xl">
                             <p class="text-2xl font-bold dark:text-white">Starter</p>
 
-                            <div class="text-red-500 text-4xl font-bold pt-4 sm:pt-4">1,000 <br> SMS</div>
+                            <div class="text-red-500 text-4xl  font-bold pt-4 sm:pt-4">1,000 <br> SMS</div>
 
                             <p class="pt-6 sm:pt-8 pb-2 dark:text-white text-2xl">GHS 30.00</p>
 
@@ -221,18 +221,18 @@
 
                             <div class="text-red-500 text-4xl font-bold pt-4 sm:pt-4">5,000 <br> SMS</div>
 
-                            <p class="text-2xl pt-6 sm:pt-8 pb-2 dark:text-white">GHS 145.00</p>
+                            <p class="text-2xl pt-6 sm:pt-8 pb-2 dark:text-white ">GHS 145.00</p>
                         </a>
 
                         <!-- Most Popular -->
                         <a href="https://app.mobimessenger.com/app/register"
                             class="dark:bg-gray-800 bg-white text-center border-2 border-red-500 rounded-xl shadow-md
                     transition duration-300 hover:-translate-y-2 hover:shadow-xl">
-                            <div class="px-36 relative sm:right-11">
-                                <p
-                                    class="text-white bg-red-500 py-1 rounded-2xl text-center absolute -top-4
-                            inset-x-20 sm:inset-x-20 ">
-                                    Most popular</p>
+                            <div class="relative w-full">
+                                <div
+                                    class="absolute -top-5 
+                             md:text-xs w-full">
+                                    <p class="w-fit mx-auto text-white text-base bg-red-500 py-2 px-4 rounded-2xl text-center ">Most Popular</p></div>
                             </div>
                             <p class="text-2xl font-bold pt-8 sm:pt-12 dark:text-white">Business</p>
 

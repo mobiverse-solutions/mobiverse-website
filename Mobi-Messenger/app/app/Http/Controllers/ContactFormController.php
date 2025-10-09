@@ -7,16 +7,24 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Mail\ContactMail;
 use Illuminate\Support\Facades\Mail;
-
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Input;
 
 class ContactFormController extends Controller
 {
+
     /**
      * Handle the incoming request.
      */
     public function __invoke(Request $request)
     {
-//        $requestData = $request->all();
+        $input = $request->all();
+ 
+         $validate = Validator::make($input, [
+            'g-recaptcha-response' => 'required|recaptchav3:register,0.5'
+        ]);
+        
+        //        $requestData = $request->all();
 
         $name = $request->input('fullname');
         $email = $request->input('email');
@@ -28,5 +36,7 @@ class ContactFormController extends Controller
             ->send($contactMailer);
 
         return redirect('/');
+
+       
     }
 }

@@ -59,6 +59,7 @@
                                              w-full pb-16 resize-none py-2 px-2 rounded-lg "
                                                     type="text" id="message" name="message" required></textarea>
                                             </div>
+                                            {!! RecaptchaV3::field('register') !!}
                                             <div class="py-4">
                                                 <button class="bg-red-500 px-10 py-2 rounded-lg text-white" type="submit"
                                                     class=" font-semibold text-lg">Submit</button>
