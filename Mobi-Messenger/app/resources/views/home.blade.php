@@ -5,7 +5,7 @@
 
         <header class="dark:bg-[#18181B] bg-white fixed z-50 right-0 left-0 top-0 shadow-md">
             <nav x-data="{ HamburgerButton: false }"
-                class="flex items-center max-w-screen-xl mx-auto justify-between px-4 sm:px-16 py-4 sm:py-6">
+                class="flex items-center max-w-screen-xl mx-auto justify-between px-4 sm:px-16 py-4 sm:py-4">
                 <a href="#">
                     <img class="h-[40px] dark:hidden" src="./images/mobi_messenger_logo.svg" alt="mobi_messenger_logo">
                     <img class="h-[40px] hidden dark:block" src="./images/logo-dark.png" alt="mobi_messenger_logo">
@@ -14,7 +14,7 @@
                 <div class="hidden lg:hidden xl:flex gap-10 dark:text-white">
                     <a href="#features" class="hover:text-red-500">Features</a>
                     <a href="#cases" class="hover:text-red-500">Use Cases</a>
-                    <a href="#api" class="hover:text-red-500">API Docs</a>
+                    {{-- <a href="#api" class="hover:text-red-500">API Docs</a> --}}
                     <a href="#pricing" class="hover:text-red-500">Pricing</a>
                     <a href="#contact" class="hover:text-red-500">Contact</a>
                 </div>
@@ -41,8 +41,8 @@
                             class="py-2 px-4 hover:text-white hover:bg-red-700 font-semibold">Use Cases</a>
                         <a href="#pricing" @click="HamburgerButton = false"
                             class="py-2 px-4 hover:text-white hover:bg-red-700 font-semibold">Pricing</a>
-                        <a href="#api" @click="HamburgerButton = false"
-                            class="py-2 px-4 hover:text-white hover:bg-red-700 font-semibold">API Docs</a>
+                        {{-- <a href="#api" @click="HamburgerButton = false"
+                            class="py-2 px-4 hover:text-white hover:bg-red-700 font-semibold">API Docs</a> --}}
                         <a href="#contact" @click="HamburgerButton = false"
                             class="py-2 px-4 hover:text-white hover:bg-red-700 font-semibold">Contact</a>
                         <a href="https://app.mobimessenger.com/app/login" @click="HamburgerButton = false"
@@ -58,25 +58,25 @@
         <section>
             <div class="dark:bg-gray-800 bg-rose-50 h-full w-full">
                 <div class="max-w-screen-xl mx-auto px-8 sm:px-16">
-                    <div class="pt-24 text-center sm:pt-40">
+                    <div class="pt-28 text-center sm:pt-40">
                         <h1 class="font-bold text-2xl sm:text-2xl sm:text-5xl dark:text-white">
                             Bulk & Transactional SMS Made Effortless</h1>
-                        <p class="text-gray-500  py-6 text-md leading-[27px] sm:text-xl dark:text-white">
-                            Reach your customers instantly with reliable, high-delivery messaging
-                            through <br>our powerful platform and developer-friendly API
+                        <p class="text-gray-500  py-6 text-md leading-[27px] sm:text-xl  mx-auto dark:text-white">
+                            Reach your customers instantly with reliable, high-delivery messaging<br />
+                            through our powerful platform and developer-friendly API
                         </p>
                     </div>
                     <div class="flex sm:flex-none gap-5 justify-center text-sm sm:text-base font-semibold sm:py-6">
                         <a href="https://app.mobimessenger.com/app/register"
                             class="bg-red-600  text-white  px-6 py-3 rounded-md hover:bg-red-700 ">Get Started</a>
-                        <a href="https://via.placeholder.com/500x400"
-                            class="bg-black text-white px-6 py-3 rounded-md hover:bg-stone-800">View API Docs</a>
+                        {{-- <a href="https://via.placeholder.com/500x400"
+                            class="bg-black text-white px-6 py-3 rounded-md hover:bg-stone-800">View API Docs</a> --}}
                     </div>
-                    <div class=" pt-8 py-10 sm:pb-28 border border-gray-100 dark:border-none dark:hidden">
+                    <div class=" pt-8 py-10 sm:pb-16 border border-gray-100 dark:border-none dark:hidden">
                         <img class="rounded-lg shadow-xl" src="./images/mobimessenger_dashboard_image.png"
                             alt="mobimessenger_dashboard_image">
                     </div>
-                    <div class=" pt-8 py-10 sm:pb-28 dark:block hidden border border-gray-100 dark:border-none">
+                    <div class=" pt-8 py-10 sm:pb-16 dark:block hidden border border-gray-100 dark:border-none">
                         <img class="rounded-lg shadow-xl" src="./images/dark-dashboard.png"
                             alt="mobimessenger_dashboard_image">
                     </div>
@@ -86,13 +86,13 @@
 
 
         <!--Key Features-->
-        <section id="features" class="max-w-screen-xl mx-auto px-8 sm:px-16 py-16">
-            <div class=" text-center sm:pt-8">
+        <section id="features" class="max-w-screen-xl mx-auto px-8 sm:px-16 py-8 sm:py-16">
+            <div class=" text-center sm:pt-0">
                 <h2 class="text-2xl font-bold sm:text-2xl sm:text-4xl dark:text-white">Key Features</h2>
-                <p class="text-gray-500 pt-6 sm:pt-4 sm:pt-6 dark:text-white">Powerful messaging
-                    capabilities designedfor businesses of all sizes</p>
+                <p class="text-gray-500 pt-6 sm:pt-6 dark:text-white">Powerful messaging
+                    capabilities designed for businesses of all sizes</p>
             </div>
-            <div class="grid grid-cols-1 sm:gap-8 pt-10 gap-6 sm:grid-cols-2 sm:grid-cols-2 sm:py-12">
+            <div class="grid grid-cols-1 sm:gap-8 pt-8 gap-6 sm:grid-cols-2 sm:grid-cols-2 sm:pt-8">
                 <div
                     class="dark:bg-[#18181B] bg-white border border-gray-200 dark:border-none shadow-md rounded-xl h-full
             transition duration-300 hover:-translate-y-2 hover:shadow-xl">
@@ -146,7 +146,7 @@
 
         <!-- Use Cases -->
         <section id="cases" class="">
-            <div class="dark:bg-gray-800 bg-gray-50 py-16 sm:py-24 ">
+            <div class="dark:bg-gray-800 bg-gray-50 py-8 sm:py-16">
                 <div class="max-w-screen-xl mx-auto px-8 sm:px-16">
                     <div class="text-center ">
                         <h3 class="font-bold text-2xl sm:text-2xl sm:text-4xl dark:text-white">Use Cases</h3>
@@ -194,10 +194,10 @@
 
         <!-- Pricing -->
         <section id="pricing">
-            <div class="dark:bg-gray-800 py-16">
-                <div class="max-w-screen-xl mx-auto px-8 sm:pt-8 sm:px-16 ">
+            <div class="dark:bg-gray-800 py-8 sm:py-16">
+                <div class="max-w-screen-xl mx-auto px-8 sm:pt-0 sm:px-16 ">
                     <div class="text-center">
-                        <h5 class="font-bold text-2xl sm:text-4xl dark:text-white">Simple, Transparent Pricing </h5>
+                        <h5 class="font-bold text-2xl sm:text-4xl dark:text-white">Simple, Transparent Pricing</h5>
                         <p class="text-gray-500 pt-4 sm:pt-6 dark:text-white">Choose the plan that fits your business
                             needs</p>
                     </div>
@@ -217,7 +217,7 @@
                         <a href="https://app.mobimessenger.com/app/register"
                             class="dark:bg-gray-800 bg-white py-10 sm:pt-12 text-center border border-gray-200 rounded-xl shadow-md
                     transition duration-300 hover:-translate-y-2 hover:shadow-xl">
-                            <p class="text-2xl font-bold dark:text-white">Business</p>
+                            <p class="text-2xl font-bold dark:text-white">Starter Plus</p>
 
                             <div class="text-red-500 text-4xl font-bold pt-4 sm:pt-4">5,000 <br> SMS</div>
 
@@ -246,7 +246,7 @@
                         <a href="https://app.mobimessenger.com/app/register"
                             class="dark:bg-gray-800 bg-white py-10 sm:pt-12 text-center border border-gray-200 rounded-xl shadow-md
                     transition duration-300 hover:-translate-y-2 hover:shadow-xl">
-                            <p class="text-2xl font-bold dark:text-white">Enterprise</p>
+                            <p class="text-2xl font-bold dark:text-white">Business Plus</p>
 
                             <div class="text-red-500 text-4xl font-bold pt-4">50,000 <br>SMS</div>
 
@@ -279,8 +279,8 @@
 
         <!-- Why Choose -->
         <section class="bg-gray-50">
-            <section class="max-w-screen-xl mx-auto px-8 sm:py-16 py-20">
-                <div class="text-center sm:pt-12">
+            <section class="max-w-screen-xl mx-auto px-8 sm:py-16 py-8">
+                <div class="text-center sm:pt-0">
                     <h5 class="text-2xl font-bold sm:text-2xl sm:text-4xl dark:text-white">Why Choose Mobi Messenger?
                     </h5>
                     <p class="pt-2 text-gray-500 sm:pt-6 dark:text-white">Here's what sets us apart from other
@@ -329,7 +329,7 @@
 
         <!-- Customers -->
         <section id="contact" class="dark:bg-gray-800 bg-red-600">
-            <div class="max-w-screen-xl mx-auto px-8 sm:pt-20 py-20 sm:px-16 ">
+            <div class="max-w-screen-xl mx-auto px-8 sm:py-16 py-8 sm:px-16 ">
                 <div class="text-center text-white">
                     <h5 class="text-2xl font-bold sm:text-2xl sm:text-4xl">Ready to reach your Customers faster?</h5>
                     <p class="pt-4 text-sm md:text-xl sm:pt-2 sm:pt-4 ">Start sending messages in minutes with Mobi
@@ -367,8 +367,10 @@
                     <div>
                         <p class="text-white font-bold text-lg">Company</p>
                         <ul class="py-6">
-                            <li> <button @click="Form = true"
-                                    class="text-gray-400  hover:text-white">Contact</button></li>
+                            {{-- <li> <button @click="Form = true"
+                                    class="text-gray-400  hover:text-white">Contact</button></li> --}}
+                                    <li class="text-gray-400 hover:text-white">
+                                        <a href="https://mobivs.com">Mobiverse Solutions Ltd.</a></li>
                         </ul>
                     </div>
 
@@ -382,13 +384,13 @@
                         </ul>
                     </div>
 
-                    <div>
+                    {{-- <div>
                         <p class="text-white font-bold text-lg">Resources</p>
                         <ul class="py-2">
                             <li class="text-gray-400 pt-3 hover:text-white"><a
                                     href="https://via.placeholder.com/500x400">API Docs</a></li>
                         </ul>
-                    </div>
+                    </div> --}}
 
                 </div>
 
@@ -396,7 +398,7 @@
                 <!-- border-b border-gray-200 -->
                 <p class="text-gray-400 text-center py-4 sm:py-6 text-sm">&copy; {{ now()->year }} Mobi Messenger.
                     All rights
-                    reserved.
+                    reserved. This is a product of Mobiverse Ltd.
                 </p>
             </section>
         </footer>
