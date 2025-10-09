@@ -1,5 +1,4 @@
-<x-formlayout>
-
+<x-headlayout>
     <body x-data="{ Form: false }" class="dark:bg-black">
         <!--Header-->
 
@@ -230,7 +229,7 @@
                     transition duration-300 hover:-translate-y-2 hover:shadow-xl">
                             <div class="relative w-full">
                                 <div
-                                    class="absolute -top-5 
+                                    class="absolute -top-5
                              md:text-xs w-full">
                                     <p class="w-fit mx-auto text-white text-base bg-red-500 py-2 px-4 rounded-2xl text-center ">Most Popular</p></div>
                             </div>
@@ -402,7 +401,8 @@
                 </p>
             </section>
         </footer>
+        <!-- Contact Form Component -->
+        <x-contact-form />
     </body>
 
-
-</x-formlayout>
+</x-headlayout>
