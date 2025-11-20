@@ -6,7 +6,7 @@
   <title>Uzo - USSD Application Platform</title>
   <!-- Favicon Links -->
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="./output.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -60,51 +60,114 @@
     .logo-text {
       color: #000000 !important; /* Black for "Uzo" logo */
     }
+  .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 200px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius: 8px;
+      margin-top: 8px;
+    }
+    .dropdown-content a {
+      color: #4b5563;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      transition: background-color 0.3s ease;
+    }
+    .dropdown-toggle {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .dropdown-arrow {
+      transition: transform 0.3s ease;
+      display: inline-block;
+    }
+    
   </style>
 </head>
+<body>
 <body class="bg-white">
   <div class="flex flex-col min-h-screen justify-between">
     <div class="grow flex flex-col">
-      <!-- NAVBAR -->
-        <nav id="main-nav" class="flex items-center justify-between p-6 lg:px-8 transition-all duration-300" aria-label="Global">
-        <div class="flex lg:flex-1">
-        <a href="/" class="-m-1.5 p-1.5"><span class="text-2xl font-bold logo-text">Uzo</span></a>
-        </div>
+  <!--  NAVBAR  -->
+  <nav id="main-nav" class="flex items-center justify-between p-6 lg:px-8 transition-all duration-300" aria-label="Global">
+    <div class="flex lg:flex-1">
+      <a href="/" class="-m-1.5 p-1.5"><span class="text-2xl font-bold logo-text">Uzo</span></a>
+    </div>
 
-        <!-- Mobile menu button -->
-        <div class="flex lg:hidden">
-        <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+    <!-- Mobile menu button -->
+    <div class="flex lg:hidden">
+      <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
         <span class="sr-only">Open main menu</span>
-        <img class="h-6 w-6" src="images/menu.svg" alt="menu">
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Desktop links -->
+    <div class="hidden lg:flex lg:gap-x-8 lg:justify-end items-center pr-6 border-r border-gray-300">
+      <a class="nav-link text-sm leading-6 text-gray-600 font-bold" href="index.html" id="home-link">Home</a>
+      <a class="nav-link text-sm leading-6 text-gray-600 font-bold" href="pricing.html" id="pricing-link">Pricing</a>
+      <a class="nav-link text-sm leading-6 text-gray-600 font-bold" href="faq.html" id="faq-link">FAQ</a>
+      
+      <!-- Developers Dropdown -->
+      <div class="dropdown">
+        <button id="desktop-developers-btn" class="text-sm leading-6 text-gray-700 font-bold py-2 hover:text-orange-400 transition flex items-center justify-between w-full">
+          Developers
+          <svg id="desktop-dropdown-arrow" class="w-4 h-4 transition-transform" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+          </svg>
         </button>
+        <div id="desktop-developers-menu" class="hidden absolute bg-white shadow-md rounded-md mt-2 w-48 z-50">
+          <a class="block px-4 py-2 hover:bg-gray-100" href="https://mobiverse-solutions.github.io/uzo-documentation/" target="_blank">Documentation</a>
+          <a class="block px-4 py-2 hover:bg-gray-100" href="https://emulator.uzo.mobivs.com/" target="_blank">Uzo Emulator</a>
         </div>
+      </div>
+      
+      <a class="nav-link text-sm leading-6 text-gray-600 font-bold" href="contact.html" id="contact-link">Contact Us</a>
+    </div>
 
+    <div class="hidden lg:flex lg:gap-x-8 lg:justify-end items-center ml-6">
+      <a class="text-md text-orange-400 font-bold" href="https://app.uzoussd.com/app/login">Log in</a>
+      <a class="rounded-full bg-orange-400 text-white px-6 py-2 border drop-shadow font-bold" href="https://app.uzoussd.com/app/register">Get Started</a>
+    </div>
+  </nav>
 
-        <!-- Desktop links -->
-        <div class="hidden lg:flex lg:gap-x-8 lg:justify-end items-center pr-6 border-r border-gray-300">
-        <a class="nav-link text-sm leading-6 text-gray-600 font-bold" href="index.html" id="home-link">Home</a>
-        <a class="nav-link text-sm leading-6 text-gray-600 font-bold" href="pricing.html" id="pricing-link">Pricing</a>
-        <a class="nav-link text-sm leading-6 text-gray-600 font-bold" href="faq.html" id="faq-link">FAQ</a>
-        <a class="nav-link text-sm leading-6 text-gray-600 font-bold" href="contact.html" id="contact-link">Contact Us</a>
-        </div>
+  <!-- Mobile Menu (Hidden by default) -->
+  <div id="mobile-menu" class="hidden lg:hidden absolute top-20 left-0 right-0 px-4 py-4 bg-white w-full flex flex-col shadow-lg z-50">
+    <a class="text-sm leading-6 text-gray-700 font-bold py-4 hover:text-orange-400 transition" href="index.html">Home</a>
+    <a class="text-sm leading-6 text-gray-700 font-bold py-4 hover:text-orange-400 transition" href="pricing.html">Pricing</a>
+    <a class="text-sm leading-6 text-gray-700 font-bold py-4 hover:text-orange-400 transition" href="faq.html">FAQ</a>
+    
+    <!-- Mobile Developers Section -->
+    <div class="py-2">
+      <button class="text-sm leading-6 text-gray-700 font-bold py-2 hover:text-orange-400 transition w-full text-left flex items-center justify-between" onclick="toggleMobileDevelopers()">
+        Developers
+        <svg id="mobile-dropdown-arrow" class="w-4 h-4 transition-transform" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+        </svg>
+      </button>
+      <div id="mobile-developers-menu" class="hidden pl-4 mt-2">
+        <a class="text-sm leading-6 text-gray-600 font-normal py-3 block hover:text-orange-400 transition" href="https://mobiverse-solutions.github.io/uzo-documentation/" target="_blank">Documentation</a>
+        <a class="text-sm leading-6 text-gray-600 font-normal py-3 block hover:text-orange-400 transition" href="https://emulator.uzo.mobivs.com/" target="_blank">Uzo Emulator</a>
+      </div>
+    </div>
+    
+    <a class="text-sm leading-6 text-gray-700 font-bold py-4 hover:text-orange-400 transition" href="contact.html">Contact Us</a>
+    <a class="text-sm leading-6 text-gray-700 font-bold py-4 text-orange-400 transition" href="https://app.uzoussd.com/app/login">Log in</a>
+    <a class="text-sm leading-6 text-gray-700 font-bold py-4 text-orange-400 transition" href="https://app.uzoussd.com/app/register">Get Started</a>
+  </div>
 
-        <div class="hidden lg:flex lg:gap-x-8 lg:justify-end items-center ml-6">
-        <a class="text-md text-orange-400 font-bold" href="https://app.uzoussd.com/app/login">Log in</a>
-        <a class="rounded-full bg-orange-400 text-white px-6 py-2 border drop-shadow font-bold" href="https://app.uzoussd.com/app/register">Get Started</a>
-        </div>
-        </nav>
-
-        <!-- Mobile Menu (Hidden by default) -->
-        <div id="mobile-menu" class="hidden lg:hidden absolute top-20 left-0 right-0 px-4 py-4 bg-white w-full flex flex-col shadow-lg z-50">
-        <a class="text-sm leading-6 text-gray-700 font-bold py-4 hover:text-orange-400 transition" href="index.html">Home</a>
-        <a class="text-sm leading-6 text-gray-700 font-bold py-4 hover:text-orange-400 transition" href="">Pricing</a>
-        <a class="text-sm leading-6 text-gray-700 font-bold py-4 hover:text-orange-400 transition" href="faq.html">FAQ</a>
-        <a class="text-sm leading-6 text-gray-700 font-bold py-4 hover:text-orange-400 transition" href="contact.html">Contact Us</a>
-        <a class="text-sm leading-6 text-gray-700 font-bold py-4 text-orange-400 transition" href="https://app.uzoussd.com/app/login">Log in</a>
-        <a class="text-sm leading-6 text-gray-700 font-bold py-4 text-orange-400 transition" href="https://app.uzoussd.com/app/register">
-          Get Started
-        </a>
-        </div>
 
         <script>
         // Mobile menu toggle
@@ -116,6 +179,26 @@
         mobileMenu.classList.toggle('hidden');
         });
         }
+
+          // Mobile developers dropdown toggle
+          function toggleMobileDevelopers() {
+            const menu = document.getElementById('mobile-developers-menu');
+            const arrow = document.getElementById('mobile-dropdown-arrow');
+            menu.classList.toggle('hidden');
+            arrow.style.transform = menu.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+          }
+
+        // Desktop Developers Dropdown Toggle
+        const desktopBtn = document.getElementById('desktop-developers-btn');
+        const desktopMenu = document.getElementById('desktop-developers-menu');
+        const desktopArrow = document.getElementById('desktop-dropdown-arrow');
+
+        desktopBtn.addEventListener('click', () => {
+          desktopMenu.classList.toggle('hidden'); 
+          desktopArrow.style.transform = desktopMenu.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+       });
+
+
         </script>
 
         <!-- JavaScript for scroll detection and active link -->
@@ -170,8 +253,8 @@
           });
         </script>
 
-     
-     
+
+
         <iframe class="h-screen" title="Privacy Policy" src="https://docs.google.com/document/d/1klYlXUUS1MBkJa1SqMU-smyLu7rsVyg-djlOfcm3BgU/pub?embedded=true"></iframe>
       </div>
 
