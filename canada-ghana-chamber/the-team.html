@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CANADA GHANA CHAMBER OF COMMERCE - CALGARY CHAPTER::Our Partners</title>
+
+    <!-- Google Fonts: Merriweather and Open Sans -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;700&family=Space+Grotesk:wght@300;700&display=swap"
+        rel="stylesheet">
+    <!-- Google Material Symbols Outlined -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@200;300;400" rel="stylesheet" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Alpine.js CDN -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- AOS.js (Animate On Scroll) CSS CDN -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Splide.js (Carousel) CSS and JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Space Grotesk', 'ui-sans-serif', 'system-ui'],
+                        serif: ['IBM Plex Serif', 'ui-serif', 'Georgia'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-100 text-gray-800 font-sans">
+
+    <!-- Header & Navigation -->
+    <header class="bg-[#0B1633] shadow-md sticky top-0 z-50 w-full">
+        <nav x-data="{ mobileMenuOpen: false }"
+            class="max-w-screen-xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between text-white">
+            <!-- <a href="#" class="flex items-center space-x-2">
+                <img src="./assets/images/logo.png" alt="Logo"
+                    class="h-10 w-10 rounded-full border-2 border-white bg-white object-cover">
+                <span class="text-lg md:text-2xl font-bold">C.G.C.C.C</span>
+            </a> -->
+            <div class="flex items-center">
+                <div class=" w-[40px] h-[40px] bg-white rounded-full">
+                    <img class=" border-white overflow-hidden" src="./assets/images/logo.png" alt="C.G.C.C.C. Logo">
+                </div>
+                <div class="flex h-8 w-[1px] bg-white mx-2">
+                </div>
+                <span class="text-xs font-[IBM-Plex-Serif] text-white">CANADA GHANA CHAMBER OF COMMERCE,
+                    <br> CALGARY CHAPTER ( C.G.C.C.C. )</span>
+            </div>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#hero" class="hover:text-indigo-600 font-medium">Home</a>
+                <a href="#who-we-are" class="hover:text-indigo-600 font-medium">About Us</a>
+                <a href="#business-facilitation" class="hover:text-indigo-600 font-medium">The Team</a>
+                <a href="#who-we-are" class="hover:text-indigo-600 font-medium">Partners</a>
+                <a href="#what-we-do" class="hover:text-indigo-600 font-medium">Membership</a>
+                <a href="#key-partners" class="hover:text-indigo-600 font-medium">Gallery</a>
+                <a href="#contact" class="hover:text-indigo-600 font-medium">Contact Us</a>
+            </div>
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden focus:outline-none">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+            <div x-show="mobileMenuOpen" x-transition
+                class="absolute top-full left-0 w-full bg-[#0B1633] text-white flex flex-col md:hidden shadow-lg z-50">
+                <a href="#hero" @click="mobileMenuOpen = false" class="py-3 px-6 hover:bg-indigo-900">Home</a>
+                <a href="#who-we-are" @click="mobileMenuOpen = false" class="py-3 px-6 hover:bg-indigo-900">About Us</a>
+                <a href="#what-we-do" @click="mobileMenuOpen = false"
+                    class="py-3 px-6 hover:bg-indigo-900">Membership</a>
+                <a href="#business-facilitation" @click="mobileMenuOpen = false"
+                    class="py-3 px-6 hover:bg-indigo-900">The Team</a>
+                <a href="#key-partners" @click="mobileMenuOpen = false"
+                    class="py-3 px-6 hover:bg-indigo-900">Gallery</a>
+                <a href="#contact" @click="mobileMenuOpen = false" class="py-3 px-6 hover:bg-indigo-900">Contact Us</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO + CAROUSEL -->
+        <section id="hero" class="relative w-full overflow-hidden h-56">
+            <img src="./assets/images/banner.png" alt="Hero Background" class="w-full h-full object-cover">
+        </section>
+
+        <!-- Who We Are Section -->
+        <section id="our-partners" class="py-12 bg-white">
+            <div class="max-w-screen-xl mx-auto px-4 md:px-8">
+                <div class="">
+                    <div data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-left">
+                            <h2 class="text-2xl md:text-4xl font-bold text-gray-900 font-serif">The Team</h2>
+                            <p class="text-gray-600 text-base md:text-lg mt-4">
+                                We act as a strategic connector of entrepreneurs, executives, institutions,
+                                and policymakers, creating cross-border trade opportunities,
+                                expanding professional networks, and facilitating impactful investment
+                                partnerships. CGCC-Calgary brings over 30 years of collective expertise in
+                                fostering public-private partnerships, regional integration, and
+                                diaspora-led development initiatives.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Founder Section -->
+        <section class="bg-white py-12 md:py-24" x-data="{ 'showModal': false }" @keydown.escape="showModal = false">
+            <div class="max-w-screen-xl mx-auto px-4 md:px-8" data-aos="zoom-in">
+                <div class="flex gap-8 md:gap-16 items-center">
+                    <div class="">
+                        <!-- Placeholder for image, can be replaced with actual image -->
+                        <img src="./assets/images/team/president.png" alt="Innovation for Impact 2025"
+                            class="h-64 md:h-[478px] w-64 md:w-[478px] object-cover mx-auto" data-aos="fade-up">
+
+                    </div>
+                    <div class="flex-1">
+                        <h2 class="text-2xl md:text-4xl font-bold text-gray-900 font-serif mb-4">
+                            Founder | Chairman | President
+                        </h2>
+                        <h3 class="text-xl md:text-2xl font-bold text-gray-900 font-serif mb-4">
+                            Mr. David Kwame Asamoah Appiah
+                        </h3>
+                        <p class="text-base md:text-lg text-gray-700 mb-6">
+                            David Kwame Asamoah Appiah is a seasoned entrepreneur and international consultant with over
+                            a decade of leadership in logistics,
+                            energy, insurance, and infrastructure development. As Founder and President of
+                            Intercontinental Consultants Inc.,
+                            he has successfully spearheaded international partnerships across Canada, the U.S., Latin
+                            America, Europe, Asia, and Africa.
+                        </p>
+                        <div class="flex flex-col md:flex-row gap-2">
+                            <button @click="showModal = true"
+                                class="mt-4 md:mt-6 bg-[#F5C567] text-[#0B1633] py-2 px-6 rounded-full hover:bg-gray-200 transition duration-300 text-base">
+                                <a href="#learn-more">Learn more</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal -->
+            <div class="fixed inset-0 z-30 flex items-center justify-center overflow-auto bg-black bg-opacity-50"
+                x-show="showModal" x-transition:enter="motion-safe:ease-out duration-1000"
+                x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100">
+                <!-- Modal inner -->
+                <div class="max-w-3xl px-6 py-4 mx-auto text-left bg-white rounded-xl shadow-lg"
+                    @click.away="showModal = false">
+                    <!-- Title / Close-->
+                    <div class="flex items-center justify-between">
+                        <h5 class="mr-3 text-black max-w-none text-lg font-bold">David Kwame Asamoah Appiah</h5>
+
+                        <button type="button" class="z-50 cursor-pointer" @click="showModal = false">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- content -->
+                    <div>
+                        <p class="text-base md:text-lg text-gray-700 mb-6 mt-4">
+                            David Kwame Asamoah Appiah is a seasoned entrepreneur and international consultant with over
+                            a decade of leadership in logistics,
+                            energy, insurance, and infrastructure development. As Founder and President of
+                            Intercontinental Consultants Inc.,
+                            he has successfully spearheaded international partnerships across Canada, the U.S., Latin
+                            America, Europe, Asia, and Africa.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vice President Section -->
+        <section class="bg-white py-12 md:py-24" x-data="{ 'showModal': false }" @keydown.escape="showModal = false">
+            <div class="max-w-screen-xl mx-auto px-4 md:px-8" data-aos="zoom-in">
+                <div class="flex gap-8 md:gap-16 items-center">
+                    <div class="flex-1">
+                        <h2 class="text-2xl md:text-4xl font-bold text-gray-900 font-serif mb-4">
+                            Vice President
+                        </h2>
+                        <h3 class="text-xl md:text-2xl font-bold text-gray-900 font-serif mb-4">
+                            Mr. James Kwame Opare Asiedu
+                        </h3>
+                        <p class="text-base md:text-lg text-gray-700 mb-6">
+                            James Opare Asiedu is a highly experienced insurance broker, international business
+                            strategist,
+                            and telecom/broadcast engineer. As Vice President of the Canada Ghana Chamber of Commerce -
+                            Calgary Chapter,
+                            he is committed to fostering bilateral trade, diaspora engagement, and business growth
+                            between Canada and Ghana.
+                        </p>
+                        <div class="flex flex-col md:flex-row gap-2">
+                            <button @click="showModal = true"
+                                class="mt-4 md:mt-6 bg-[#F5C567] text-[#0B1633] py-2 px-6 rounded-full hover:bg-gray-200 transition duration-300 text-base">
+                                <a href="#learn-more">Learn more</a>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="">
+                        <!-- Placeholder for image, can be replaced with actual image -->
+                        <img src="./assets/images/team/vice-president.png" alt="Innovation for Impact 2025"
+                            class="h-64 md:h-[478px] w-64 md:w-[478px] object-cover mx-auto" data-aos="fade-up">
+
+                    </div>
+                </div>
+            </div>
+            <!-- Modal -->
+            <div class="fixed inset-0 z-30 flex items-center justify-center overflow-auto bg-black bg-opacity-50"
+                x-show="showModal" x-transition:enter="motion-safe:ease-out duration-1000"
+                x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100">
+                <!-- Modal inner -->
+                <div class="max-w-3xl px-6 py-4 mx-auto text-left bg-white rounded-xl shadow-lg"
+                    @click.away="showModal = false">
+                    <!-- Title / Close-->
+                    <div class="flex items-center justify-between">
+                        <h5 class="mr-3 text-black max-w-none text-lg font-bold">David Kwame Asamoah Appiah</h5>
+
+                        <button type="button" class="z-50 cursor-pointer" @click="showModal = false">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- content -->
+                    <div>
+                        <p class="text-base md:text-lg text-gray-700 mb-6 mt-4">
+                            David Kwame Asamoah Appiah is a seasoned entrepreneur and international consultant with over
+                            a decade of leadership in logistics,
+                            energy, insurance, and infrastructure development. As Founder and President of
+                            Intercontinental Consultants Inc.,
+                            he has successfully spearheaded international partnerships across Canada, the U.S., Latin
+                            America, Europe, Asia, and Africa.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Executive Secretary Section -->
+        <section class="bg-white py-12 md:py-24" x-data="{ 'showModal': false }" @keydown.escape="showModal = false">
+            <div class="max-w-screen-xl mx-auto px-4 md:px-8" data-aos="zoom-in">
+                <div class="flex gap-8 md:gap-16 items-center">
+                    <div class="">
+                        <!-- Placeholder for image, can be replaced with actual image -->
+                        <img src="./assets/images/team/executive-secretary.png" alt="Innovation for Impact 2025"
+                            class="h-64 md:h-[478px] w-64 md:w-[478px] object-cover mx-auto" data-aos="fade-up">
+
+                    </div>
+                    <div class="flex-1">
+                        <h2 class="text-2xl md:text-4xl font-bold text-gray-900 font-serif mb-4">
+                            Executive Secretary | Director of Operations
+                        </h2>
+                        <h3 class="text-xl md:text-2xl font-bold text-gray-900 font-serif mb-4">
+                            Mr. Emmanuel Adu Yeboah
+                        </h3>
+                        <p class="text-base md:text-lg text-gray-700 mb-6">
+                            Emmanuel Adu Yeboah currently serves as Administrative Secretary of the Canada Ghana Chamber
+                            of Commerce - Calgary Chapter.
+                            He is a student at Queen’s University in Ontario, Canada, pursuing academic training in
+                            business and policy.
+                            Emmanuel brings a youthful, forward-thinking perspective to the Chamber, supporting its
+                            operations, communications,
+                            and strategic event planning.
+                        </p>
+                        <div class="flex flex-col md:flex-row gap-2">
+                            <button @click="showModal = true"
+                                class="mt-4 md:mt-6 bg-[#F5C567] text-[#0B1633] py-2 px-6 rounded-full hover:bg-gray-200 transition duration-300 text-base">
+                                <a href="#learn-more">Learn more</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal -->
+            <div class="fixed inset-0 z-30 flex items-center justify-center overflow-auto bg-black bg-opacity-50"
+                x-show="showModal" x-transition:enter="motion-safe:ease-out duration-1000"
+                x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100">
+                <!-- Modal inner -->
+                <div class="max-w-3xl px-6 py-4 mx-auto text-left bg-white rounded-xl shadow-lg"
+                    @click.away="showModal = false">
+                    <!-- Title / Close-->
+                    <div class="flex items-center justify-between">
+                        <h5 class="mr-3 text-black max-w-none text-lg font-bold">David Kwame Asamoah Appiah</h5>
+
+                        <button type="button" class="z-50 cursor-pointer" @click="showModal = false">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- content -->
+                    <div>
+                        <p class="text-base md:text-lg text-gray-700 mb-6 mt-4">
+                            David Kwame Asamoah Appiah is a seasoned entrepreneur and international consultant with over
+                            a decade of leadership in logistics,
+                            energy, insurance, and infrastructure development. As Founder and President of
+                            Intercontinental Consultants Inc.,
+                            he has successfully spearheaded international partnerships across Canada, the U.S., Latin
+                            America, Europe, Asia, and Africa.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What We Do Section -->
+        <section id="what-we-do" class="bg-white py-12">
+            <div class="max-w-screen-xl mx-auto px-4 md:px-8 text-center" data-aos="zoom-in">
+                <h2 class="text-2xl md:text-4xl font-bold text-gray-900 font-serif mb-16 md:mb-24">Our Team</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-16 md:gap-32">
+                    <div class="flex flex-col justify-center text-center">
+                        <img src="./assets/images/team/treasurer.png" alt="InvestAlberta" class="mx-auto">
+                        <h1 class="text-lg md:text-xl font-bold text-gray-900 font-serif mb-4">Treasurer & Director of
+                            Finance</h1>
+                        <h3 class="text-base md:text-lg font-bold text-gray-900 mb-4">Mrs. Nana Oforiwah Twum-Ampofo
+                        </h3>
+                        <p class="text-base md:text-lg text-gray-700 mb-6">Mrs. Nana Oforiwah Twum-Ampofo is a licensed
+                            educator, early childhood specialist,
+                            and community leader with a strong background in financial management and social impact.</p>
+                    </div>
+                    <div class="flex flex-col justify-center text-center">
+                        <img src="./assets/images/team/director-biz-dev.png" alt="InvestAlberta" class="mx-auto">
+                        <h1 class="text-lg md:text-xl font-bold text-gray-900 font-serif mb-4">Director of Business
+                            Development & Diaspora Engagement</h1>
+                        <h3 class="text-base md:text-lg font-bold text-gray-900 mb-4">Mr. Luqman Idris</h3>
+                        <p class="text-base md:text-lg text-gray-700 mb-6">Mr. Luqman Idris is a versatile professional
+                            with expertise in health informatics,
+                            business analytics, insurance, and public service.</p>
+                    </div>
+                    <div class="flex flex-col justify-center text-center">
+                        <img src="./assets/images/team/director-comms.png" alt="InvestAlberta" class="mx-auto">
+                        <h1 class="text-lg md:text-xl font-bold text-gray-900 font-serif mb-4">Director of
+                            Communications, Public Affairs & Media</h1>
+                        <h3 class="text-base md:text-lg font-bold text-gray-900 mb-4">Mr. Ernest Quaye Arday</h3>
+                        <p class="text-base md:text-lg text-gray-700 mb-6">Mr. Ernest Quaye Arday is a seasoned media
+                            executive and communications
+                            strategist with over 30 years of experience in African broadcasting.</p>
+                    </div>
+                    <div class="flex flex-col justify-center text-center">
+                        <img src="./assets/images/team/organiser.png" alt="InvestAlberta" class="mx-auto">
+                        <h1 class="text-lg md:text-xl font-bold text-gray-900 font-serif mb-4">Organizer</h1>
+                        <h3 class="text-base md:text-lg font-bold text-gray-900 mb-4">Mrs. Rose Loan Grant-Appiah</h3>
+                        <p class="text-base md:text-lg text-gray-700 mb-6">Mrs. Rose Loan Grant-Appiah is a dynamic
+                            event coordinator,
+                            healthcare professional, and community advocate committed to fostering impactful connections
+                            between
+                            Canadian and Ghanaian stakeholders.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What We Do Section -->
+        <section id="what-we-do" class="bg-white py-12 md:py-24">
+            <div class="max-w-screen-xl mx-auto px-4 md:px-8 text-center" data-aos="zoom-in">
+                <h2 class="text-2xl md:text-4xl font-bold text-gray-900 font-serif mb-16 md:mb-24">
+                    Chamber Advisory Committee and Patrons
+                </h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-16 md:gap-32 items-start">
+                    <div class="flex flex-col justify-center text-center">
+                        <img src="./assets/images/team/patron1.png" alt="InvestAlberta" class="mx-auto">
+                        <h1 class="text-lg md:text-xl font-bold text-gray-900 font-serif mb-4">Patron #1</h1>
+                        <h3 class="text-base md:text-lg font-bold text-gray-900 mb-4">Dr. Rowland Caesar Apentiik</h3>
+                        <p class="text-base md:text-lg text-gray-700 mb-6">Dr. Rowland Caesar Apentiik is a professor in
+                            the Arts at the University of Calgary, with expertise spanning African and Diaspora Studies,
+                            Development Studies, Environmental Studies, Indigenous Studies, and Anthropology. </p>
+                    </div>
+                    <div class="flex flex-col justify-center text-center">
+                        <img src="./assets/images/team/patron2.png" alt="InvestAlberta" class="mx-auto">
+                        <h1 class="text-lg md:text-xl font-bold text-gray-900 font-serif mb-4">Patron #2</h1>
+                        <h3 class="text-base md:text-lg font-bold text-gray-900 mb-4">Ms. Winona Lafreniere</h3>
+                        <p class="text-base md:text-lg text-gray-700 mb-6">Winona Lafreniere is a dedicated leader in
+                            green energy and innovative solutions, bringing over 20 years of expertise in project
+                            management and economic development.</p>
+                    </div>
+                    <div class="flex flex-col justify-center text-center">
+                        <img src="./assets/images/team/patron3.png" alt="InvestAlberta" class="mx-auto">
+                        <h1 class="text-lg md:text-xl font-bold text-gray-900 font-serif mb-4">Patron 3</h1>
+                        <h3 class="text-base md:text-lg font-bold text-gray-900 mb-4">Mr. George Sutherland</h3>
+                        <p class="text-base md:text-lg text-gray-700 mb-6">George Sutherland brings over forty years of
+                            extensive experience in all facets of petroleum technology, project management, needs
+                            assessments, and training.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+        <!-- Contact Us Section -->
+        <section class="bg-[#F5C567] py-12 md:py-24">
+            <div class="mx-auto" data-aos="zoom-in">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-0 items-center">
+                    <div>
+                        <img src="./assets/images/contact-us.png" alt="Innovation for Impact 2025"
+                            class="h-64 md:h-[575px] w-full object-cover" data-aos="fade-up">
+                    </div>
+                    <div
+                        class="h-auto md:h-[621px] flex flex-col bg-[#0B1633] pl-4 md:pl-16 pr-4 md:pr-[128px] py-8 md:py-40 md:rounded-l-2xl">
+                        <h2 class="text-3xl md:text-5xl font-bold text-white font-serif mb-4">
+                            Contact Us
+                        </h2>
+                        <p class="text-base md:text-lg text-white mb-6">
+                            Together, let’s build a resilient and inclusive trade corridor between Canada and Ghana.
+                        </p>
+                        <div class="flex gap-4 items-center">
+                            <span
+                                class="hidden md:block text-2xl md:text-4xl material-symbols-outlined bg-[#F5C567] rounded-full p-2"
+                                style="font-variation-settings: 'wght' 200">call
+                            </span>
+                            <a href="tel:+1 587-585-7324" class="underline text-white text-sm md:text-base">+1
+                                587-585-7324</a>
+                        </div>
+                        <div class="flex gap-4 items-center mt-4">
+                            <span
+                                class="hidden md:block text-2xl md:text-4xl material-symbols-outlined bg-[#F5C567] rounded-full p-2"
+                                style="font-variation-settings: 'wght' 200">mail
+                            </span>
+                            <a href="mailto:membership@canadaghanachambercalgary.org"
+                                class="underline text-white text-sm md:text-base">membership@canadaghanachambercalgary.org</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+        <section class="bg-[#F5C567] pb-12 md:pb-24 h-auto md:h-[336px]">
+            <div class="max-w-screen-xl mx-auto px-4 md:px-8 text-center">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-0 items-start text-[#6D6150]">
+                    <div class="flex flex-col items-start">
+                        <div class="flex items-center">
+                            <img src="./assets/images/logo.png" alt="Logo"
+                                class="h-10 md:h-12 w-auto mr-4 rounded-full border-2 border-white bg-white object-cover">
+                            <span class="text-xs md:text-sm text-left font-serif w-48 md:w-80">CANADA GHANA CHAMBER OF
+                                COMMERCE, CALGARY CHAPTER</span>
+                        </div>
+                        <p class="text-left text-xs md:text-sm mt-2">Connecting Businesses to Nations</p>
+                    </div>
+                    <div class="items-start mt-8 md:mt-0">
+                        <p class="text-left text-base mb-2 font-semibold">Quick Links</p>
+                        <ul>
+                            <li class="text-left text-xs md:text-sm mb-2"><a href="#hero"
+                                    class="hover:text-indigo-600">Home</a></li>
+                            <li class="text-left text-xs md:text-sm mb-2"><a href="#who-we-are"
+                                    class="hover:text-indigo-600">Who We Are</a></li>
+                            <li class="text-left text-xs md:text-sm mb-2"><a href="#what-we-do"
+                                    class="hover:text-indigo-600">What We Do</a></li>
+                            <li class="text-left text-xs md:text-sm mb-2"><a href="#business-facilitation"
+                                    class="hover:text-indigo-600">Business Facilitation</a></li>
+                            <li class="text-left text-xs md:text-sm mb-2"><a href="#key-partners"
+                                    class="hover:text-indigo-600">Key Partners</a></li>
+                            <li class="text-left text-xs md:text-sm mb-2"><a href="#contact"
+                                    class="hover:text-indigo-600">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#0B1633] text-white py-6 md:py-8">
+        <div class="max-w-screen-xl mx-auto px-4 md:px-6 text-center">
+            <p class="text-xs md:text-base">&copy; 2025 Canada Ghana Chamber of Commerce, Calgary Chapter, CGCCCC. All
+                Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- AOS.js (Animate On Scroll) JS CDN -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+    </script>
+    <script>
+        new Splide('.splide', {
+            type: 'slide',
+            perPage: window.innerWidth < 640 ? 2 : window.innerWidth < 1024 ? 3 : 6,
+            gap: '1rem',
+            breakpoints: {
+                640: { perPage: 2 },
+                1024: { perPage: 3 },
+                1280: { perPage: 6 }
+            }
+        }).mount();
+    </script>
+</body>
+
+</html>

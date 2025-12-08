@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CANADA GHANA CHAMBER OF COMMERCE - CALGARY CHAPTER::Our Partners</title>
+
+    <!-- Google Fonts: Merriweather and Open Sans -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;700&family=Space+Grotesk:wght@300;700&display=swap"
+        rel="stylesheet">
+    <!-- Google Material Symbols Outlined -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@200;300;400" rel="stylesheet" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Alpine.js CDN -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- AOS.js (Animate On Scroll) CSS CDN -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Splide.js (Carousel) CSS and JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Space Grotesk', 'ui-sans-serif', 'system-ui'],
+                        serif: ['IBM Plex Serif', 'ui-serif', 'Georgia'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-100 text-gray-800 font-sans">
+
+    <!-- Header & Navigation -->
+    <header class="bg-[#0B1633] shadow-md sticky top-0 z-50 w-full">
+        <nav x-data="{ mobileMenuOpen: false }"
+            class="max-w-screen-xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between text-white">
+            <a href="#" class="flex items-center space-x-2">
+                <img src="./assets/images/logo.png" alt="Logo"
+                    class="h-10 w-10 rounded-full border-2 border-white bg-white object-cover">
+                <span class="text-lg md:text-2xl font-bold">C.G.C.C.C</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#hero" class="hover:text-indigo-600 font-medium">Home</a>
+                <a href="#who-we-are" class="hover:text-indigo-600 font-medium">About Us</a>
+                <a href="#business-facilitation" class="hover:text-indigo-600 font-medium">The Team</a>
+                <a href="#who-we-are" class="hover:text-indigo-600 font-medium">Partners</a>
+                <a href="#what-we-do" class="hover:text-indigo-600 font-medium">Membership</a>
+                <a href="#key-partners" class="hover:text-indigo-600 font-medium">Gallery</a>
+                <a href="#contact" class="hover:text-indigo-600 font-medium">Contact Us</a>
+            </div>
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden focus:outline-none">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+            <div x-show="mobileMenuOpen" x-transition
+                class="absolute top-full left-0 w-full bg-[#0B1633] text-white flex flex-col md:hidden shadow-lg z-50">
+                <a href="#hero" @click="mobileMenuOpen = false" class="py-3 px-6 hover:bg-indigo-900">Home</a>
+                <a href="#who-we-are" @click="mobileMenuOpen = false" class="py-3 px-6 hover:bg-indigo-900">About Us</a>
+                <a href="#what-we-do" @click="mobileMenuOpen = false"
+                    class="py-3 px-6 hover:bg-indigo-900">Membership</a>
+                <a href="#business-facilitation" @click="mobileMenuOpen = false"
+                    class="py-3 px-6 hover:bg-indigo-900">The Team</a>
+                <a href="#key-partners" @click="mobileMenuOpen = false"
+                    class="py-3 px-6 hover:bg-indigo-900">Gallery</a>
+                <a href="#contact" @click="mobileMenuOpen = false" class="py-3 px-6 hover:bg-indigo-900">Contact Us</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO + CAROUSEL -->
+        <section id="hero"
+            class="relative w-full overflow-hidden h-56 bg-[url('./assets/images/banner.png')] bg-cover bg-no-repeat">
+            <!-- <img src="./assets/images/our-partners-hero.png" alt="Hero Background"
+                class="w-full h-full object-cover"> -->
+        </section>
+
+        <!-- Who We Are Section -->
+        <section id="our-partners" class="py-12 bg-white">
+            <div class="max-w-screen-xl mx-auto px-4 md:px-8">
+                <div class="">
+                    <div data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-left">
+                            <h2 class="text-2xl md:text-4xl font-bold text-gray-900 font-serif">Our Partners</h2>
+                            <p class="text-gray-600 text-base md:text-lg mt-4">
+                                We act as a strategic connector of entrepreneurs, executives, institutions,
+                                and policymakers, creating cross-border trade opportunities,
+                                expanding professional networks, and facilitating impactful investment
+                                partnerships. CGCC-Calgary brings over 30 years of collective expertise in
+                                fostering public-private partnerships, regional integration, and
+                                diaspora-led development initiatives.
+                            </p>
+                            <p class="text-gray-600 text-base md:text-lg mt-4">
+                                Our operations are powered by strategic relationships with institutions across Canada,
+                                Ghana, and beyond
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What We Do Section -->
+        <section id="what-we-do" class="bg-white py-12">
+            <div class="max-w-screen-xl mx-auto px-4 md:px-8 text-center" data-aos="zoom-in">
+                <h2 class="text-2xl md:text-4xl font-bold text-gray-900 font-serif mb-16 md:mb-24">Strategic
+                    Canada-Based Partners</h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-16 md:gap-32">
+                    <div class="">
+                        <img src="./assets/images/logos/invest-alberta.png" alt="InvestAlberta" class="h-16 mx-auto">
+                    </div>
+                    <div class="">
+                        <img src="./assets/images/logos/canada-trade-service.png" alt="InvestAlberta"
+                            class="h-16 mx-auto">
+                    </div>
+                    <div class="">
+                        <img src="./assets/images/logos/calgary-economic.png" alt="InvestAlberta" class="h-16 mx-auto">
+                    </div>
+                    <div class="">
+                        <img src="./assets/images/logos/ghana-canada-high-commission.png" alt="InvestAlberta"
+                            class="h-16 mx-auto">
+                    </div>
+                    <div class="">
+                        <img src="./assets/images/logos/alberta-chambers.png" alt="InvestAlberta" class="h-16 mx-auto">
+                    </div>
+                    <div class="">
+                        <img src="./assets/images/logos/suncor.png" alt="InvestAlberta" class="h-16 mx-auto">
+                    </div>
+                    <div class="">
+                        <img src="./assets/images/logos/atco.png" alt="InvestAlberta" class="h-16 mx-auto">
+                    </div>
+                    <div class="">
+                        <img src="./assets/images/logos/tc-energy.png" alt="InvestAlberta" class="h-16 mx-auto">
+                    </div>
+                    <div class="">
+                        <img src="./assets/images/logos/enbridge.png" alt="InvestAlberta" class="h-16 mx-auto">
+                    </div>
+                    <div class="">
+                        <img src="./assets/images/logos/calgary.png" alt="InvestAlberta" class="h-16 mx-auto">
+                    </div>
+                    <div class="">
+                        <img src="./assets/images/logos/gibson-energy.png" alt="InvestAlberta" class="h-16 mx-auto">
+                    </div>
+                    <div class="">
+                        <img src="./assets/images/logos/cenovus.png" alt="InvestAlberta" class="h-16 mx-auto">
+                    </div>
+                    <div class="">
+                        <img src="./assets/images/logos/westjet.png" alt="InvestAlberta" class="h-16 mx-auto">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What We Do Section -->
+        <section id="what-we-do" class="bg-white py-12 md:py-24">
+            <div class="max-w-screen-xl mx-auto px-4 md:px-8 text-center" data-aos="zoom-in">
+                <h2 class="text-2xl md:text-4xl font-bold text-gray-900 font-serif mb-16 md:mb-24">Strategic Ghana-Based
+                    Partners</h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-16 md:gap-32">
+                    <div class="">
+                        <img src="./assets/images/logos/gipc.jpg" alt="InvestAlberta" class="h-16 mx-auto">
+                    </div>
+                    <div class="">
+                        <img src="./assets/images/logos/moe.jpg" alt="InvestAlberta"
+                            class="h-16 mx-auto">
+                    </div>
+                    <div class="">
+                        <img src="./assets/images/logos/ghana-gas.jpg" alt="InvestAlberta" class="h-16 mx-auto">
+                    </div>
+                    <div class="">
+                        <img src="./assets/images/logos/bost.jpg" alt="InvestAlberta"
+                            class="h-16 mx-auto">
+                    </div>
+                    <div class="">
+                        <img src="./assets/images/logos/tor.png" alt="InvestAlberta" class="h-16 mx-auto">
+                    </div>
+                    <div class="">
+                        <img src="./assets/images/logos/petroleum-hub.png" alt="InvestAlberta" class="h-16 mx-auto">
+                    </div>
+                    <div class="">
+                        <img src="./assets/images/logos/free-zones.png" alt="InvestAlberta" class="max-h-16 mx-auto">
+                    </div>
+                    <div class="">
+                        <img src="./assets/images/logos/npa.png" alt="InvestAlberta" class="h-16 mx-auto">
+                    </div>
+                    <div class="">
+                        <img src="./assets/images/logos/gsa.png" alt="InvestAlberta" class="h-16 mx-auto">
+                    </div>
+                    <div class="">
+                        <img src="./assets/images/logos/springfield.png" alt="InvestAlberta" class="h-16 mx-auto">
+                    </div>
+                    <div class="">
+                        <img src="./assets/images/logos/quantum.png" alt="InvestAlberta" class="h-16 mx-auto">
+                    </div>
+                    <div class="">
+                        <img src="./assets/images/logos/gnpc.png" alt="InvestAlberta" class="h-16 mx-auto">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Numbers Section -->
+        <section id="numbers" class="bg-[#F5C567] py-8 md:py-16">
+            <h2 class="text-2xl md:text-4xl font-bold text-gray-900 text-center font-serif mb-8 md:mb-16">Corporate & Industry Collaborators</h2>
+            <div class="max-w-screen-xl mx-auto px-4 md:px-8 text-center" data-aos="zoom-in">
+                <div class="grid grid-cols-1 px-8 md:px-0 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-4 text-left">
+                    <p>&bull; Suncor Energy</p>
+                    <p>&bull; ATCO Group</p>
+                    <p>&bull; TC Energy</p>
+                    <p>&bull; Enbridge Inc.</p>
+                    <p>&bull; Gibson Energy</p>
+                    <p>&bull; Pembina Pipeline Corporation</p>
+                    <p>&bull; Explore</p>
+                    <p>&bull; Cenovus Energy</p>
+                    <p>&bull; WestJet</p>
+                    <p>&bull; Calgary Chamber of Commerce</p>
+                    <p>&bull; Ghana Chamber of Bulk Oil Distributors (CBOD)</p>
+                    <p>&bull; Ghana National Petroleum Corporation (GNPC)</p>
+                    <p>&bull; Explore</p>
+                    <p>&bull; Volta River Authority (VRA)</p>
+                    <p>&bull; Springfield Energy Group, Ghana</p>
+                    <p>&bull; Quantum Terminals Group</p>
+                    <p>&bull; McDaniel & Associates (Energy Consulting)</p>
+                    <p>&bull; Indigenous Resource Network - Canada</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="bg-[#0B1633] py-12 md:py-12 md:py-24 text-white" id="key-partners">
+            <div class="max-w-screen-xl mx-auto px-4 md:px-8" data-aos="zoom-in">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
+                    <div>
+                        <h2 class="text-2xl md:text-4xl font-bold font-serif mb-4">
+                            Key Institutional Partners
+                        </h2>
+                        <p class="text-base md:text-lg mb-6">
+                            Our impact is powered by partnerships with government agencies, investment promotion bodies, 
+                            energy leaders, and innovation champions across both Canada and Ghana, including;
+                        </p>
+                        <div
+                            class="flex flex-col gap-2">
+                            <p>&bull; Canadian Trade Commissioner Service – Accra, Ghana (Global Affairs Canada)</p>
+                            <p>&bull; Invest Alberta Corporation</p>
+                            <p>&bull; Canada Ghana Chamber of Commerce (CANCHAM HQ)</p>
+                            <p>&bull; Ghana Investment Promotion Centre (GIPC)</p>
+                            <p>&bull; Ministry of Energy – Republic of Ghana</p>
+                            <p>&bull; Ghana Gas Company Limited (GNGC)</p>
+                            <p>&bull; Bulk Oil Storage and Transportation Company Limited (BOST)</p>
+                            <p>&bull; Tema Oil Refinery (TOR)</p>
+                            <p>&bull; Petroleum Hub Development Corporation, Ghana</p>
+                            <p>&bull; Accelerated Export Development Secretariat – Ghana</p>
+                            <p>&bull; National Petroleum Authority (NPA), Ghana</p>
+                            <p>&bull; Ghana Free Zones Authority</p>
+                            <p>&bull; Ghana Standards Authority</p>
+                            <p>&bull; Calgary Economic Development</p>
+                            <p>&bull; City of Calgary International Relations Office</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl md:text-4xl font-bold font-serif mb-4">
+                            Key International Affiliates
+                        </h2>
+                        <p class="text-base md:text-lg mb-6">
+                            Our influence extends beyond Canada and Ghana. As a globally connected Chamber, 
+                            we collaborate with international stakeholders in the United States, Asia, the Middle East, 
+                            Europe, and across Africa to broaden opportunities for our members and partners.
+                        </p>
+                        <div
+                            class="flex flex-col gap-2">
+                            <p>&bull; U.S. Commercial Service & Ghana–U.S. Business Forum</p>
+                            <p>&bull; Middle East–Africa Investment Platform (ME-AIP)</p>
+                            <p>&bull; Asia-Africa Chamber of Commerce (Hong Kong, Singapore, UAE)</p>
+                            <p>&bull; Africa Global Chamber of Commerce – Chicago</p>
+                            <p>&bull; UN Global Compact & SDG Investment Platforms</p>
+                            <p>&bull; African Diaspora Network & Remittance Taskforce (Silicon Valley)</p>
+                            <p>&bull; Bilateral Consulates and Diplomatic Missions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Contact Us Section -->
+        <section class="bg-[#F5C567] py-12 md:py-24">
+            <div class="mx-auto" data-aos="zoom-in">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-0 items-center">
+                    <div>
+                        <img src="./assets/images/contact-us.png" alt="Innovation for Impact 2025"
+                            class="h-64 md:h-[575px] w-full object-cover" data-aos="fade-up">
+                    </div>
+                    <div
+                        class="h-auto md:h-[621px] flex flex-col bg-[#0B1633] pl-4 md:pl-16 pr-4 md:pr-[128px] py-8 md:py-40 md:rounded-l-2xl">
+                        <h2 class="text-3xl md:text-5xl font-bold text-white font-serif mb-4">
+                            Contact Us
+                        </h2>
+                        <p class="text-base md:text-lg text-white mb-6">
+                            Together, let’s build a resilient and inclusive trade corridor between Canada and Ghana.
+                        </p>
+                        <div class="flex gap-4 items-center">
+                            <span
+                                class="hidden md:block text-2xl md:text-4xl material-symbols-outlined bg-[#F5C567] rounded-full p-2"
+                                style="font-variation-settings: 'wght' 200">call
+                            </span>
+                            <a href="tel:+1 587-585-7324" class="underline text-white text-sm md:text-base">+1
+                                587-585-7324</a>
+                        </div>
+                        <div class="flex gap-4 items-center mt-4">
+                            <span
+                                class="hidden md:block text-2xl md:text-4xl material-symbols-outlined bg-[#F5C567] rounded-full p-2"
+                                style="font-variation-settings: 'wght' 200">mail
+                            </span>
+                            <a href="mailto:membership@canadaghanachambercalgary.org"
+                                class="underline text-white text-sm md:text-base">membership@canadaghanachambercalgary.org</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+        <section class="bg-[#F5C567] pb-12 md:pb-24 h-auto md:h-[336px]">
+            <div class="max-w-screen-xl mx-auto px-4 md:px-8 text-center">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-0 items-start text-[#6D6150]">
+                    <div class="flex flex-col items-start">
+                        <div class="flex items-center">
+                            <img src="./assets/images/logo.png" alt="Logo"
+                                class="h-10 md:h-12 w-auto mr-4 rounded-full border-2 border-white bg-white object-cover">
+                            <span class="text-xs md:text-sm text-left font-serif w-48 md:w-80">CANADA GHANA CHAMBER OF
+                                COMMERCE, CALGARY CHAPTER</span>
+                        </div>
+                        <p class="text-left text-xs md:text-sm mt-2">Connecting Businesses to Nations</p>
+                    </div>
+                    <div class="items-start mt-8 md:mt-0">
+                        <p class="text-left text-base mb-2 font-semibold">Quick Links</p>
+                        <ul>
+                            <li class="text-left text-xs md:text-sm mb-2"><a href="#hero"
+                                    class="hover:text-indigo-600">Home</a></li>
+                            <li class="text-left text-xs md:text-sm mb-2"><a href="#who-we-are"
+                                    class="hover:text-indigo-600">Who We Are</a></li>
+                            <li class="text-left text-xs md:text-sm mb-2"><a href="#what-we-do"
+                                    class="hover:text-indigo-600">What We Do</a></li>
+                            <li class="text-left text-xs md:text-sm mb-2"><a href="#business-facilitation"
+                                    class="hover:text-indigo-600">Business Facilitation</a></li>
+                            <li class="text-left text-xs md:text-sm mb-2"><a href="#key-partners"
+                                    class="hover:text-indigo-600">Key Partners</a></li>
+                            <li class="text-left text-xs md:text-sm mb-2"><a href="#contact"
+                                    class="hover:text-indigo-600">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#0B1633] text-white py-6 md:py-8">
+        <div class="max-w-screen-xl mx-auto px-4 md:px-6 text-center">
+            <p class="text-xs md:text-base">&copy; 2025 Canada Ghana Chamber of Commerce, Calgary Chapter, CGCCCC. All
+                Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- AOS.js (Animate On Scroll) JS CDN -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+    </script>
+    <script>
+        new Splide('.splide', {
+            type: 'slide',
+            perPage: window.innerWidth < 640 ? 2 : window.innerWidth < 1024 ? 3 : 6,
+            gap: '1rem',
+            breakpoints: {
+                640: { perPage: 2 },
+                1024: { perPage: 3 },
+                1280: { perPage: 6 }
+            }
+        }).mount();
+    </script>
+</body>
+
+</html>

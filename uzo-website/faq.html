@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en"  class="bg-gray-50 antialiased">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uzo - USSD Application Platform</title>
+  <!-- Favicon Links -->
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <link href="./output.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Navbar link styling */
+    .nav-link {
+      position: relative;
+      padding-bottom: 4px;
+      transition: color 0.3s ease;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      width: 0%;
+      background-color: #f3802e; /* Orange underline for active/hover */
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%; /* Underline on hover and active link */
+    }
+
+    /* Sticky navbar styling */
+    .navbar-sticky {
+      position: sticky;
+      top: 0;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Plain shadow effect */
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    /* Ensure logo and button text contrast */
+    .logo-text {
+      color: #000000 !important; /* Black for "Uzo" logo */
+    }
+
+    /* Override Tailwind's orange for specific elements */
+    .bg-orange-400 {
+      background-color: #f3802e !important;
+    }
+
+      .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 200px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius: 8px;
+      margin-top: 8px;
+    }
+    .dropdown-content a {
+      color: #4b5563;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      transition: background-color 0.3s ease;
+    }
+    .dropdown-toggle {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .dropdown-arrow {
+      transition: transform 0.3s ease;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+<div id="root">
+  <div class="flex flex-col min-h-screen justify-between bg-white">
+    <div class="grow flex flex-col">
+      <!--  NAVBAR  -->
+      <nav id="main-nav" class="flex items-center justify-between p-6 lg:px-8 transition-all duration-300" aria-label="Global">
+        <div class="flex lg:flex-1">
+          <a href="/" class="-m-1.5 p-1.5"><span class="text-2xl font-bold logo-text">Uzo</span></a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <div class="flex lg:hidden">
+          <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+            <span class="sr-only">Open main menu</span>
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Desktop links -->
+        <div class="hidden lg:flex lg:gap-x-8 lg:justify-end items-center pr-6 border-r border-gray-300">
+          <a class="nav-link text-sm leading-6 text-gray-600 font-bold" href="index.html" id="home-link">Home</a>
+          <a class="nav-link text-sm leading-6 text-gray-600 font-bold" href="pricing.html" id="pricing-link">Pricing</a>
+          <a class="nav-link text-sm leading-6 text-gray-600 font-bold" href="faq.html" id="faq-link">FAQ</a>
+          
+          <!-- Developers Dropdown -->
+        <div class="dropdown nav-link text-sm leading-6 text-gray-600 font-bold ">
+          <button id="desktop-developers-btn" class="text-sm leading-6 font-bold hover:text-orange-400 transition flex items-center justify-between w-full gap-3">
+            Developers
+            <svg id="desktop-dropdown-arrow" class="w-4 h-4 transition-transform" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+            </svg>
+          </button>
+          <div id="desktop-developers-menu" class="hidden absolute bg-white shadow-md rounded-md mt-2 w-48 z-50">
+            <a class="block px-4 py-2 hover:bg-gray-100" href="https://mobiverse-solutions.github.io/uzo-documentation/" target="_blank">Documentation</a>
+            <a class="block px-4 py-2 hover:bg-gray-100" href="https://emulator.uzo.mobivs.com/" target="_blank">Uzo Emulator</a>
+          </div>
+        </div>
+          
+          <a class="nav-link text-sm leading-6 text-gray-600 font-bold" href="contact.html" id="contact-link">Contact Us</a>
+        </div>
+
+        <div class="hidden lg:flex lg:gap-x-8 lg:justify-end items-center ml-6">
+          <a class="text-md text-orange-400 font-bold" href="https://app.uzoussd.com/app/login">Log in</a>
+          <a class="rounded-full bg-orange-400 text-white px-6 py-2 border drop-shadow font-bold" href="https://app.uzoussd.com/app/register">Get Started</a>
+        </div>
+      </nav>
+
+      <!-- Mobile Menu (Hidden by default) -->
+      <div id="mobile-menu" class="hidden lg:hidden absolute top-20 left-0 right-0 px-4 py-4 bg-white w-full flex flex-col shadow-lg z-50">
+        <a class="text-sm leading-6 text-gray-700 font-bold py-4 hover:text-orange-400 transition" href="index.html">Home</a>
+        <a class="text-sm leading-6 text-gray-700 font-bold py-4 hover:text-orange-400 transition" href="pricing.html">Pricing</a>
+        <a class="text-sm leading-6 text-gray-700 font-bold py-4 hover:text-orange-400 transition" href="faq.html">FAQ</a>
+        
+        <!-- Mobile Developers Section -->
+        <div class="py-2">
+          <button class="text-sm leading-6 text-gray-700 font-bold py-2 hover:text-orange-400 transition w-full text-left flex items-center justify-between" onclick="toggleMobileDevelopers()">
+            Developers
+            <svg id="mobile-dropdown-arrow" class="w-4 h-4 transition-transform" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+            </svg>
+          </button>
+          <div id="mobile-developers-menu" class="hidden pl-4 mt-2">
+            <a class="text-sm leading-6 text-gray-600 font-normal py-3 block hover:text-orange-400 transition" href="https://mobiverse-solutions.github.io/uzo-documentation/" target="_blank">Documentation</a>
+            <a class="text-sm leading-6 text-gray-600 font-normal py-3 block hover:text-orange-400 transition" href="https://emulator.uzo.mobivs.com/" target="_blank">Uzo Emulator</a>
+          </div>
+        </div>
+        
+        <a class="text-sm leading-6 text-gray-700 font-bold py-4 hover:text-orange-400 transition" href="contact.html">Contact Us</a>
+        <a class="text-sm leading-6 text-gray-700 font-bold py-4 text-orange-400 transition" href="https://app.uzoussd.com/app/login">Log in</a>
+        <a class="text-sm leading-6 text-gray-700 font-bold py-4 text-orange-400 transition" href="https://app.uzoussd.com/app/register">Get Started</a>
+      </div>
+
+        <script>
+          // Mobile menu toggle
+          const menuButton = document.querySelector('button[type="button"]');
+          const mobileMenu = document.getElementById('mobile-menu');
+
+          if (menuButton && mobileMenu) {
+            menuButton.addEventListener('click', () => {
+              mobileMenu.classList.toggle('hidden');
+            });
+          }
+          // Mobile developers dropdown toggle
+          function toggleMobileDevelopers() {
+            const menu = document.getElementById('mobile-developers-menu');
+            const arrow = document.getElementById('mobile-dropdown-arrow');
+            menu.classList.toggle('hidden');
+            arrow.style.transform = menu.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+          }
+
+          // Desktop Developers Dropdown Toggle
+            const desktopBtn = document.getElementById('desktop-developers-btn');
+            const desktopMenu = document.getElementById('desktop-developers-menu');
+            const desktopArrow = document.getElementById('desktop-dropdown-arrow');
+
+            desktopBtn.addEventListener('click', () => {
+              desktopMenu.classList.toggle('hidden'); 
+              desktopArrow.style.transform = desktopMenu.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+            });
+
+
+        </script>
+
+        <!-- JavaScript for scroll detection and active link -->
+        <script>
+          // Scroll detection
+          window.addEventListener('scroll', () => {
+            const nav = document.getElementById('main-nav');
+            if (window.scrollY > 50) {
+              nav.classList.add('navbar-sticky');
+            } else {
+              nav.classList.remove('navbar-sticky');
+            }
+          });
+
+          // Set active link based on current page
+          document.addEventListener('DOMContentLoaded', () => {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            console.log('Current page detected:', currentPage);
+            const links = {
+              'index.html': document.getElementById('home-link'),
+              'pricing.html': document.getElementById('pricing-link'),
+              'faq.html': document.getElementById('faq-link'),
+              'contact.html': document.getElementById('contact-link')
+            };
+
+            for (const [page, link] of Object.entries(links)) {
+              if (page === currentPage) {
+                if (link) {
+                  link.classList.add('active');
+                  console.log('Active link set to:', link.textContent);
+                } else {
+                  console.error('Link not found for page:', page);
+                }
+                break;
+              }
+            }
+          });
+        </script>
+
+        <script>
+          window.addEventListener('scroll', function() {
+            const menu = document.getElementById('mobile-menu');
+            const scrollY = window.scrollY;
+
+            if (scrollY > 50) { // when user scrolls down 50px
+              menu.classList.add('fixed', 'top-0', 'shadow-md');
+              menu.classList.remove('absolute', 'top-20');
+            } else {
+              menu.classList.add('absolute', 'top-20');
+              menu.classList.remove('fixed', 'top-0', 'shadow-md');
+            }
+          });
+        </script>
+
+
+        <div class="bg-[#343434] pt-4 pb-8">
+
+          <div class="flex justify-center px-4 max-w-6xl mx-auto">
+            <div class="grow flex flex-col-reverse lg:flex-row items-center justify-around">
+              <div class="font-bold text-white text-[40px] grow text-center lg:text-left">
+                Frequently Asked Questions
+              </div>
+              <div class="grow">
+                <img src="images/questionmark.png" alt="Questions" class="max-h-64">
+              </div>
+            </div>
+          </div>
+       </div>
+
+        <style>
+          .faq-item { border: 1px solid #e5e7eb; transition: border-color 0.3s ease; }
+          .faq-item-open { border-color: #f97316; }
+          .faq-question { color: #6b7280; transition: color 0.3s ease; }
+           .faq-question-open { color: #f97316; }
+          .faq-answer { color: #9ca3af80; }
+          .faq-button { color: #374151; }
+          .faq-rounded-top { border-top-left-radius: 0.75rem; border-top-right-radius: 0.75rem; }
+          .faq-chevron { color: #f97316; transition: transform 0.3s ease; }
+        </style>
+
+        <!-- FAQ Question -->
+
+          <div class="bg-[#343434]">
+            <div class="bg-white py-16 rounded-none lg:rounded-t-[96px] !important">
+              <div class="max-w-6xl mx-auto">
+                <div class="flex flex-col justify-center mx-4">
+                  <div class="relative mb-3 rounded-xl border border-gray-200 border-solid faq-item">
+                    <h6>
+                      <button class="relative flex items-center w-full p-4 font-semibold text-left transition-all ease-in border-b border-solid cursor-pointer border-gray-100 rounded-t-xl group faq-button" data-collapse-target="animated-collapse-1">
+                        <span class="faq-question text-black">What is USSD?</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="faq-chevron size-6 absolute right-2 group-open:rotate-180" style="color: #f97316;">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+                        </svg>
+                      </button>
+                    </h6>
+                    <div data-collapse="animated-collapse-1" class="h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                      <div class="p-4 text-sm leading-normal text-gray-700 faq-answer" style="color: #374151 !important;">
+                        Unstructured Supplementary Service Data (USSD) is a way of communicating with your mobile network or a web-based service using short-codes that start with * and end with #. It can be used to provide various online services without using the internet or installing any apps on your phone.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="relative mb-3 rounded-xl border border-gray-200 border-solid faq-item">
+                    <h6>
+                      <button class="relative flex items-center w-full p-4 font-semibold text-left transition-all ease-in border-b border-solid cursor-pointer border-gray-100 rounded-t-xl group faq-button" data-collapse-target="animated-collapse-2">
+                        <span class="faq-question text-black">What is a USSD short code?</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="faq-chevron size-6 absolute right-2 group-open:rotate-180" style="color: #f97316;">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+                        </svg>
+                      </button>
+                    </h6>
+                    <div data-collapse="animated-collapse-2" class="h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                      <div class="p-4 text-sm leading-normal text-gray-700 faq-answer" style="color: #374151 !important;">
+                        A short code is a special phone number that is shorter than a regular phone number and is used to facilitate communication between mobile devices and the telecom operator. Short codes are designed to be easier to remember and use than regular phone numbers.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="relative mb-3 rounded-xl border border-gray-200 border-solid faq-item">
+                    <h6>
+                      <button class="relative flex items-center w-full p-4 font-semibold text-left transition-all ease-in border-b border-solid cursor-pointer border-gray-100 rounded-t-xl group faq-button" data-collapse-target="animated-collapse-6">
+                        <span class="faq-question text-black">What is a dedicated USSD code?</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="faq-chevron size-6 absolute right-2 group-open:rotate-180" style="color: #f97316;">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+                        </svg>
+                      </button>
+                    </h6>
+                    <div data-collapse="animated-collapse-6" class="h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                      <div class="p-4 text-sm leading-normal text-gray-700 faq-answer" style="color: #374151 !important;">
+                        A dedicated USSD code is a short number that is assigned and used by only one enterprise or service. It has only one segment, such as *123#. A dedicated USSD code allows enterprises to have full control and flexibility over their USSD services. It also gives enterprises access to a wide range of extensions such as *123*34#.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="relative mb-3 rounded-xl border border-gray-200 border-solid faq-item">
+                    <h6>
+                      <button class="relative flex items-center w-full p-4 font-semibold text-left transition-all ease-in border-b border-solid cursor-pointer border-gray-100 rounded-t-xl group faq-button" data-collapse-target="animated-collapse-9">
+                        <span class="faq-question text-black">What is a USSD extension?</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="faq-chevron size-6 absolute right-2 group-open:rotate-180" style="color: #f97316;">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+                        </svg>
+                      </button>
+                    </h6>
+                    <div data-collapse="animated-collapse-9" class="h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                      <div class="p-4 text-sm leading-normal text-gray-700 faq-answer" style="color: #374151 !important;">
+                        A USSD extension is a variation of the dedicated USSD code that gives users the ability to have multiple applications riding on the same dedicated USSD code. For example, a dedicated code *1234# can have extensions such as *1234*1#, *1234*5#, *1234*12*54# etc. linked to completely different applications running concurrently with your main application.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="relative mb-3 rounded-xl border border-gray-200 border-solid faq-item">
+                    <h6>
+                      <button class="relative flex items-center w-full p-4 font-semibold text-left transition-all ease-in border-b border-solid cursor-pointer border-gray-100 rounded-t-xl group faq-button" data-collapse-target="animated-collapse-4">
+                        <span class="faq-question text-black">What are USSD sessions?</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="faq-chevron size-6 absolute right-2 group-open:rotate-180" style="color: #f97316;">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+                        </svg>
+                      </button>
+                    </h6>
+                    <div data-collapse="animated-collapse-4" class="h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                      <div class="p-4 text-sm leading-normal text-gray-700 faq-answer" style="color: #374151 !important;">
+                        Whenever a USSD code is dialed, a session is created that lasts for the duration of the interaction.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="relative mb-3 rounded-xl border border-gray-200 border-solid faq-item">
+                    <h6>
+                      <button class="relative flex items-center w-full p-4 font-semibold text-left transition-all ease-in border-b border-solid cursor-pointer border-gray-100 rounded-t-xl group faq-button" data-collapse-target="animated-collapse-5">
+                        <span class="faq-question text-black">Is Uzo cloud based?</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="faq-chevron size-6 absolute right-2 group-open:rotate-180" style="color: #f97316;">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+                        </svg>
+                      </button>
+                    </h6>
+                    <div data-collapse="animated-collapse-5" class="h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                      <div class="p-4 text-sm leading-normal text-gray-700 faq-answer" style="color: #374151 !important;">
+                        Yes, Uzo is cloud based. However, enterprises who wish to host their USSD connections on their private servers can request for a self-hosted version of Uzo. The self-hosted version of Uzo gives users full control while maintaining all the value Uzo provides as a USSD gateway and a USSD code management platform.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="relative mb-3 rounded-xl border border-gray-200 border-solid faq-item">
+                    <h6>
+                      <button class="relative flex items-center w-full p-4 font-semibold text-left transition-all ease-in border-b border-solid cursor-pointer border-gray-100 rounded-t-xl group faq-button" data-collapse-target="animated-collapse-3">
+                        <span class="faq-question text-black">What are workload units?</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="faq-chevron size-6 absolute right-2 group-open:rotate-180" style="color: #f97316;">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+                        </svg>
+                      </button>
+                    </h6>
+                    <div data-collapse="animated-collapse-3" class="h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                      <div class="p-4 text-sm leading-normal text-gray-700 faq-answer" style="color: #374151 !important;">
+                        Workload units represent the basic unit of processing for an Uzo App. For each execution of your application, a specific number of workload units are required for processing. Workload units are required by applications in deployed state to ensure accessibility.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="relative mb-3 rounded-xl border border-gray-200 border-solid faq-item">
+                    <h6>
+                      <button class="relative flex items-center w-full p-4 font-semibold text-left transition-all ease-in border-b border-solid cursor-pointer border-gray-100 rounded-t-xl group faq-button" data-collapse-target="animated-collapse-7">
+                        <span class="faq-question text-black">How do I register for a dedicated USSD code using Uzo?</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="faq-chevron size-6 absolute right-2 group-open:rotate-180" style="color: #f97316;">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+                        </svg>
+                      </button>
+                    </h6>
+                    <div data-collapse="animated-collapse-7" class="h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                      <div class="p-4 text-sm leading-normal text-gray-700 faq-answer" style="color: #374151 !important;">
+                        To register a dedicated USSD short-code, register and login to your Uzo portal. Click on "Dedicated Codes" and then "Purchase Dedicated Code". Follow the steps to complete the process.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="relative mb-3 rounded-xl border border-gray-200 border-solid faq-item">
+                    <h6>
+                      <button class="relative flex items-center w-full p-4 font-semibold text-left transition-all ease-in border-b border-solid cursor-pointer border-gray-100 rounded-t-xl group faq-button" data-collapse-target="animated-collapse-8">
+                        <span class="faq-question text-black">How long does it take to get my dedicated USSD code activated?</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="faq-chevron size-6 absolute right-2 group-open:rotate-180" style="color: #f97316;">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+                        </svg>
+                      </button>
+                    </h6>
+                    <div data-collapse="animated-collapse-8" class="h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                      <div class="p-4 text-sm leading-normal text-gray-700 faq-answer" style="color: #374151 !important;">
+                        USSD code activation on all networks takes between 2 to 5 weeks.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="relative mb-3 rounded-xl border border-gray-200 border-solid faq-item">
+                    <h6>
+                      <button class="relative flex items-center w-full p-4 font-semibold text-left transition-all ease-in border-b border-solid cursor-pointer border-gray-100 rounded-t-xl group faq-button" data-collapse-target="animated-collapse-10">
+                        <span class="faq-question text-black">How can I create an extension?</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="faq-chevron size-6 absolute right-2 group-open:rotate-180" style="color: #f97316;">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+                        </svg>
+                      </button>
+                    </h6>
+                    <div data-collapse="animated-collapse-10" class="h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                      <div class="p-4 text-sm leading-normal text-gray-700 faq-answer" style="color: #374151 !important;">
+                        Login to the Uzo management portal, click on "USSD Extension" on the left panel and proceed to create a new extension for any of your dedicated codes.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="relative mb-3 rounded-xl border border-gray-200 border-solid faq-item">
+                    <h6>
+                      <button class="relative flex items-center w-full p-4 font-semibold text-left transition-all ease-in border-b border-solid cursor-pointer border-gray-100 rounded-t-xl group faq-button" data-collapse-target="animated-collapse-11">
+                        <span class="faq-question text-black">How many USSD extensions can I have?</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="faq-chevron size-6 absolute right-2 group-open:rotate-180" style="color: #f97316;">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+                        </svg>
+                      </button>
+                    </h6>
+                    <div data-collapse="animated-collapse-11" class="h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                      <div class="p-4 text-sm leading-normal text-gray-700 faq-answer" style="color: #374151 !important;">
+                        You can create as many USSD extensions as you want on your dedicated USSD code at no additional charge.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="relative mb-3 rounded-xl border border-gray-200 border-solid faq-item">
+                    <h6>
+                      <button class="relative flex items-center w-full p-4 font-semibold text-left transition-all ease-in border-b border-solid cursor-pointer border-gray-100 rounded-t-xl group faq-button" data-collapse-target="animated-collapse-12">
+                        <span class="faq-question text-black">What countries does Uzo operate in?</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="faq-chevron size-6 absolute right-2 group-open:rotate-180" style="color: #f97316;">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+                        </svg>
+                      </button>
+                    </h6>
+                    <div data-collapse="animated-collapse-12" class="h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                      <div class="p-4 text-sm leading-normal text-gray-700 faq-answer" style="color: #374151 !important;">
+                        Uzo currently operates in Ghana only. However, expansion is ongoing to ensure that our Uzoers get access to USSD codes in other countries. Uzoers will be notified whenever operation in a new country begins.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        <script>
+          document.querySelectorAll('button[data-collapse-target]').forEach(button => {
+            const targetId = button.getAttribute('data-collapse-target');
+            const content = document.querySelector(`[data-collapse="${targetId}"]`);
+            const item = button.closest('.faq-item');
+            const question = button.querySelector('.faq-question');
+            button.addEventListener('click', () => {
+              const isOpen = content.classList.contains('h-auto');
+              document.querySelectorAll('.faq-item').forEach(otherItem => {
+                if (otherItem !== item) {
+                  otherItem.classList.remove('faq-item-open');
+                  otherItem.querySelector('.faq-question').classList.remove('faq-question-open');
+                  const otherContent = otherItem.querySelector('[data-collapse]');
+                  if (otherContent.classList.contains('h-auto')) {
+                    otherContent.style.height = '0';
+                    otherContent.classList.remove('h-auto');
+                  }
+                }
+              });
+              if (isOpen) {
+                item.classList.remove('faq-item-open');
+                question.classList.remove('faq-question-open');
+                content.style.height = '0';
+                content.classList.remove('h-auto');
+              } else {
+                item.classList.add('faq-item-open');
+                question.classList.add('faq-question-open');
+                content.style.height = content.scrollHeight + 'px';
+                content.classList.add('h-auto');
+              }
+            });
+          });
+        </script>
+      </div>
+
+      <footer class="py-16 bg-[#242424]">
+        <div class="flex flex-col md:flex-row items-center md:items-start ml-4 md:ml-12">
+          <!-- Logo -->
+          <a href="/" class="text-lg text-orange-400 font-bold mb-4 md:mb-0">UZO</a>
+
+          <!-- Links -->
+          <div class="flex space-x-8 pl-0 md:pl-8">
+            <a href="terms.html" class="text-xs leading-6 text-white font-normal">Terms and Conditions</a>
+            <a href="privacy.html" class="text-xs leading-6 text-white font-normal">Privacy Policy</a>
+            <a href="contact.html" class="text-xs leading-6 text-white font-normal">Contact Us</a>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="border-t-2 border-gray-600 mt-6 pt-6 md:ml-24 px-4 md:px-6 text-gray-400 text-xs text-center md:text-left">
+         Copyright © <span id="currentYear"></span> Uzo. All rights reserved.
+          <script>
+            // Add this script right before the closing </body> tag
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+          </script>
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en"  class="bg-gray-50 antialiased">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uzo - USSD Application Platform</title>
+  <!-- Favicon Links -->
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <link href="./output.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Navbar link styling */
+    .nav-link {
+      position: relative;
+      padding-bottom: 4px;
+      transition: color 0.3s ease;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      width: 0%;
+      background-color: #f3802e; /* Your preferred orange for underline */
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    .nav-link.active::after,
+    .nav-link.active:hover::after {
+      width: 100% !important; /* Force underline for active link */
+    }
+
+    /* Sticky navbar styling */
+    .navbar-sticky {
+      position: sticky;
+      top: 0;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    /* Override Tailwind's orange for specific elements */
+    .nav-link .text-orange-400 {
+      color: #f3802e !important; /* Only apply orange to nav links if needed */
+    }
+    .bg-orange-400 {
+      background-color: #f3802e !important;
+    }
+    /* Ensure logo and button text contrast */
+    .logo-text {
+      color: #000000 !important; /* Black for "Uzo" logo */
+    }
+   .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 200px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius: 8px;
+      margin-top: 8px;
+    }
+    .dropdown-content a {
+      color: #4b5563;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      transition: background-color 0.3s ease;
+    }
+    .dropdown-toggle {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .dropdown-arrow {
+      transition: transform 0.3s ease;
+      display: inline-block;
+    }
+    
+  </style>
+</head>
+<body>
+<body class="bg-white">
+  <div class="flex flex-col min-h-screen justify-between">
+    <div class="grow flex flex-col">
+  <!--  NAVBAR  -->
+  <nav id="main-nav" class="flex items-center justify-between p-6 lg:px-8 transition-all duration-300" aria-label="Global">
+    <div class="flex lg:flex-1">
+      <a href="/" class="-m-1.5 p-1.5"><span class="text-2xl font-bold logo-text">Uzo</span></a>
+    </div>
+
+    <!-- Mobile menu button -->
+    <div class="flex lg:hidden">
+      <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+        <span class="sr-only">Open main menu</span>
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Desktop links -->
+    <div class="hidden lg:flex lg:gap-x-8 lg:justify-end items-center pr-6 border-r border-gray-300">
+      <a class="nav-link text-sm leading-6 text-gray-600 font-bold" href="index.html" id="home-link">Home</a>
+      <a class="nav-link text-sm leading-6 text-gray-600 font-bold" href="pricing.html" id="pricing-link">Pricing</a>
+      <a class="nav-link text-sm leading-6 text-gray-600 font-bold" href="faq.html" id="faq-link">FAQ</a>
+      
+      <!-- Developers Dropdown -->
+      <div class="dropdown">
+        <button id="desktop-developers-btn" class="text-sm leading-6 text-gray-700 font-bold py-2 hover:text-orange-400 transition flex items-center justify-between w-full">
+          Developers
+          <svg id="desktop-dropdown-arrow" class="w-4 h-4 transition-transform" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+          </svg>
+        </button>
+        <div id="desktop-developers-menu" class="hidden absolute bg-white shadow-md rounded-md mt-2 w-48 z-50">
+          <a class="block px-4 py-2 hover:bg-gray-100" href="https://mobiverse-solutions.github.io/uzo-documentation/" target="_blank">Documentation</a>
+          <a class="block px-4 py-2 hover:bg-gray-100" href="https://emulator.uzo.mobivs.com/" target="_blank">Uzo Emulator</a>
+        </div>
+      </div>
+      
+      <a class="nav-link text-sm leading-6 text-gray-600 font-bold" href="contact.html" id="contact-link">Contact Us</a>
+    </div>
+
+    <div class="hidden lg:flex lg:gap-x-8 lg:justify-end items-center ml-6">
+      <a class="text-md text-orange-400 font-bold" href="https://app.uzoussd.com/app/login">Log in</a>
+      <a class="rounded-full bg-orange-400 text-white px-6 py-2 border drop-shadow font-bold" href="https://app.uzoussd.com/app/register">Get Started</a>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu (Hidden by default) -->
+  <div id="mobile-menu" class="hidden lg:hidden absolute top-20 left-0 right-0 px-4 py-4 bg-white w-full flex flex-col shadow-lg z-50">
+    <a class="text-sm leading-6 text-gray-700 font-bold py-4 hover:text-orange-400 transition" href="index.html">Home</a>
+    <a class="text-sm leading-6 text-gray-700 font-bold py-4 hover:text-orange-400 transition" href="pricing.html">Pricing</a>
+    <a class="text-sm leading-6 text-gray-700 font-bold py-4 hover:text-orange-400 transition" href="faq.html">FAQ</a>
+    
+    <!-- Mobile Developers Section -->
+    <div class="py-2">
+      <button class="text-sm leading-6 text-gray-700 font-bold py-2 hover:text-orange-400 transition w-full text-left flex items-center justify-between" onclick="toggleMobileDevelopers()">
+        Developers
+        <svg id="mobile-dropdown-arrow" class="w-4 h-4 transition-transform" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+        </svg>
+      </button>
+      <div id="mobile-developers-menu" class="hidden pl-4 mt-2">
+        <a class="text-sm leading-6 text-gray-600 font-normal py-3 block hover:text-orange-400 transition" href="https://mobiverse-solutions.github.io/uzo-documentation/" target="_blank">Documentation</a>
+        <a class="text-sm leading-6 text-gray-600 font-normal py-3 block hover:text-orange-400 transition" href="https://emulator.uzo.mobivs.com/" target="_blank">Uzo Emulator</a>
+      </div>
+    </div>
+    
+    <a class="text-sm leading-6 text-gray-700 font-bold py-4 hover:text-orange-400 transition" href="contact.html">Contact Us</a>
+    <a class="text-sm leading-6 text-gray-700 font-bold py-4 text-orange-400 transition" href="https://app.uzoussd.com/app/login">Log in</a>
+    <a class="text-sm leading-6 text-gray-700 font-bold py-4 text-orange-400 transition" href="https://app.uzoussd.com/app/register">Get Started</a>
+  </div>
+
+        <script>
+        // Mobile menu toggle
+        const menuButton = document.querySelector('button[type="button"]');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (menuButton && mobileMenu) {
+        menuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        });
+        }
+
+          // Mobile developers dropdown toggle
+          function toggleMobileDevelopers() {
+            const menu = document.getElementById('mobile-developers-menu');
+            const arrow = document.getElementById('mobile-dropdown-arrow');
+            menu.classList.toggle('hidden');
+            arrow.style.transform = menu.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+          }
+
+        // Desktop Developers Dropdown Toggle
+          const desktopBtn = document.getElementById('desktop-developers-btn');
+          const desktopMenu = document.getElementById('desktop-developers-menu');
+          const desktopArrow = document.getElementById('desktop-dropdown-arrow');
+
+          desktopBtn.addEventListener('click', () => {
+          desktopMenu.classList.toggle('hidden'); 
+          desktopArrow.style.transform = desktopMenu.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+       });
+
+
+        </script>
+
+        <!-- JavaScript for scroll detection and active link -->
+        <script>
+        // Scroll detection
+        window.addEventListener('scroll', () => {
+        const nav = document.getElementById('main-nav');
+        if (window.scrollY > 50) {
+        nav.classList.add('navbar-sticky');
+        } else {
+        nav.classList.remove('navbar-sticky');
+        }
+        });
+
+        // Set active link based on current page
+        document.addEventListener('DOMContentLoaded', () => {
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        console.log('Current page detected:', currentPage);
+        const links = {
+        'index.html': document.getElementById('home-link'),
+        'pricing.html': document.getElementById('pricing-link'),
+        'faq.html': document.getElementById('faq-link'),
+        'contact.html': document.getElementById('contact-link')
+        };
+
+        for (const [page, link] of Object.entries(links)) {
+        if (page === currentPage) {
+        if (link) {
+        link.classList.add('active');
+        console.log('Active link set to:', link.textContent);
+        } else {
+        console.error('Link not found for page:', page);
+        }
+        break;
+        }
+        }
+        });
+        </script>
+
+        <script>
+          window.addEventListener('scroll', function() {
+            const menu = document.getElementById('mobile-menu');
+            const scrollY = window.scrollY;
+
+            if (scrollY > 50) { // when user scrolls down 50px
+              menu.classList.add('fixed', 'top-0', 'shadow-md');
+              menu.classList.remove('absolute', 'top-20');
+            } else {
+              menu.classList.add('absolute', 'top-20');
+              menu.classList.remove('fixed', 'top-0', 'shadow-md');
+            }
+          });
+        </script>
+
+
+     <iframe class="h-screen" title="Terms and Conditions" src="https://docs.google.com/document/d/1LO06JVQfrCWzyBC0XL_vEe77JDchrt4yibXUDTSi2rw/pub?embedded=true"></iframe>
+
+    <!-- FOOTER -->
+    <footer class="py-16 bg-[#242424]">
+      <div class="flex flex-col md:flex-row items-center md:items-start ml-4 md:ml-12">
+        <a href="/" class="text-lg text-orange-400 font-bold mb-4 md:mb-0">UZO</a>
+        <div class="flex space-x-8 pl-0 md:pl-8">
+          <a href="terms.html" class="text-xs leading-6 text-white font-normal">Terms and Conditions</a>
+          <a href="privacy.html" class="text-xs leading-6 text-white font-normal">Privacy Policy</a>
+          <a href="contact.html" class="text-xs leading-6 text-white font-normal">Contact Us</a>
+        </div>
+      </div>
+      <div class="border-t-2 border-gray-600 mt-6 pt-6 md:ml-24 px-4 md:px-6 text-gray-400 text-xs text-center md:text-left">
+        copyright © 2025 Uzo. All rights reserved.
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
