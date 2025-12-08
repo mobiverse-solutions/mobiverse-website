@@ -1,0 +1,25 @@
+{
+  "name": "marketing-website",
+  "version": "1.0.0",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/mobivsgh/uzo-website.git"
+  },
+  "keywords": [],
+  "author": "Sekyere",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://bitbucket.org/mobivsgh/uzo-website/issues"
+  },
+  "homepage": "https://bitbucket.org/mobivsgh/uzo-website#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.17",
+    "tailwindcss": "^4.1.17"
+  }
+}
