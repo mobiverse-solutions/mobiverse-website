@@ -21,35 +21,106 @@
       min-height: 400px;
       padding-bottom: 64px;
     }
-
-    .carousel-container {
-      width: 800px;       
-      height: 600px;  
-      padding-block: 16px 32px;
-      margin: 16px 32px;
-      overflow-x: auto;
+.carousel-container {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
       display: flex;
-      gap: 12px;
-      align-items: center;
+      gap: 1.5rem;
+      overflow-x: auto;
       scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
     }
 
+    .carousel-container::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .carousel-container::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 4px;
+    }
 
     .carousel-slide {
-      flex: 1 0 30%;
-      height: 500px;  
-      flex-flow: column nowrap;
+      flex: 0 0 340px;
+      width: 340px;
+      height: 520px;
+      background: white;
+      border-radius: 16px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+      overflow: hidden;
+      scroll-snap-align: start;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       display: flex;
-      justify-content: flex-start;  
-      align-items: flex-start;      
-      background-color: rgb(222, 220, 227);
-      scroll-snap-align: center;
-      padding: 20px;  
+      flex-direction: column;
     }
 
-    @media (max-width: 600px) {
+    .carousel-slide:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+    }
+
+    .card-image-wrapper {
+      height: 260px;
+      background: #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .card-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-subtitle {
+      font-family: 'Jost', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.4;
+      color: #111827;
+      margin-bottom: 0.75rem;
+    }
+
+    .card-desc {
+      font-size: 0.95rem;
+      color: #4b5563;
+      line-height: 1.6;
+      margin-bottom: auto;
+    }
+
+    .read-more {
+      margin-top: 1.25rem;
+      color: #6366f1;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: color 0.2s;
+    }
+
+    .read-more:hover {
+      color: #4f46e5;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 640px) {
       .carousel-slide {
-        flex: 1 0 90%;
+        flex: 0 0 88%;
       }
     }
   </style>
@@ -67,25 +138,19 @@
       <img src="images/bg.png"
           class="absolute inset-0 w-full-screen h-full-screen object-cover z-0">
 
-      <!-- Nav bar -->
-       <div class="flex items-center justify-between py-4 px-3 tracking-wider">
-          <!-- Logo -->
-          <img src="images/1697717667618.jpg" class="h-10 w-auto">
-          <nav class="flex gap-16 text-sm font-medium"> 
-            <div class="flex flex-col items-start gap-3 mb-4">
-              <span class="w-32 h-[1px] bg-black mt-2"></span>
-              <a href="#" class="hover:text-gray-500 transition ml-10">What we do</a>
-            </div>
-            <div class="flex flex-col items-start gap-3 mb-4">
-              <span class="w-32 h-[1px] bg-black mt-2"></span>
-              <a href="#" class="hover:text-gray-500 transition ml-6">What we're about</a>
-            </div>
-            <div class="flex flex-col items-start gap-3 mb-4">
-              <span class="w-32 h-[1px] bg-black mt-2"></span>
-              <a href="#" class="hover:text-gray-500 transition ml-10">Work with us</a>
-            </div>
-          </nav>
-        </div>
+     <!-- Nav bar -->
+<div class="flex items-center justify-between py-4 px-3 md:px-8 tracking-wider">
+  <!-- Logo – make it a link back to home -->
+  <a href="index.html">
+    <img src="images/1697717667618.jpg" alt="Mobiverse Logo" class="h-10 w-auto">
+  </a>
+
+  <nav class="flex gap-10 md:gap-16 text-sm md:text-base font-medium">
+    <a href="services.html" class="hover:text-gray-600 transition">What we do</a>
+    <a href="about.html" class="hover:text-gray-600 transition">What we're about</a>
+    <a href="careers.html" class="hover:text-gray-600 transition">Work with us</a>
+  </nav>
+</div>
 
 
       <!-- Body Content -->
@@ -111,7 +176,7 @@
       <!-- Left Text -->
       <div>
         <h2 class="text-2xl font-small" style="font-family:'Courier New', Courier, monospace;">We don't just build systems.</h2>
-        <p class="mt-4 tracking-wide font-bold text-lg uppercase text-gray-600">Services</p>
+        <p class="mt-4 tracking-wide font-bold text-lg uppercase text-gray-600">Values</p>
       </div>
 
       <!-- Right Paragraph -->
@@ -135,84 +200,92 @@
     </div>
   </section>
 
-  <!-- who we work with -->
-    <section class="py-8 bg-white px-8">
-      <div class="max-w-6xl mx-auto " style="font-family: 'Courier New', Courier, monospace;">
-        <h2 class="text-2xl font-bold mb-12">Our solutions in action.</h2>
-      
+   <!-- Solutions Carousel -->
+  <section class="py-16 md:py-24 bg-white px-6 md:px-12">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold mb-12 font-mono text-center md:text-left">
+        Our Solutions In Action.
+      </h2>
 
-        <main>
-          <div class="carousel-container">
-            <div class="carousel-slide client-card flex flex-col h-96 bg-white border border-gray-200"
-                style="font-family:Arial, Helvetica, sans-serif;">
+      <main>
+        <div class="carousel-container">
 
-              <!-- Image -->
-                <div class="relative h-[400px] w-overflow-hidden">
-                  <!-- Background image -->
-                  <img src="images/1745377b73ab976469bf3330c90cdf5c530f178c.png" class="w-full h-full object-cover">
-                  <img src="images/Upenza-Icon.svg" class="mb-12 left-2 w-16 h-8 object-contain">
-                </div>
-
-
-              <!-- Content section -->
-              <div class="h-full p-4 flex flex-col justify-center">
-                
-                <h2 class="text-purple-600 text-sm font-bold">UPENZA</h2>
-                <p class="text-sm text-black mt-3">
-                  Manage membership, dues, events, and finance efficiently and transparently.
-                </p>
-              </div>
+          <!-- Truefactor -->
+          <div class="carousel-slide">
+            <div class="card-image-wrapper">
+              <img src="images/41aac5f88279fb23393b897cadab5dc81b41ca4e.png" loading="lazy">
             </div>
-  
-
-
-            <div class="carousel-slide client-card flex flex-col p-4 h-96 bg-white border border-gray-200" style="font-family:Arial, Helvetica, sans-serif;">
-              <img src="images/f9a84a3564dd5d73acb3707d0700ca65ddc0dca5.png">
-              <div class="mt-auto">
-                <h2 class="text-orange-400 text-2xl font-bold">UZO</h2>
-                <h2 class="text-gray-500 text-small font-bold" style="font-family: 'Times New Roman', Times, serif;">USSD Made Simple!</h2>
-                <p class="text-sm text-black mt-3">
-                Build, lauch and manage USSD faster than ever. 
-                </p>
-              </div>
+            <div class="card-content">
+              <img src="images/truefaktor.jpg" alt="Truefactor logo" class="mb-6 w-24 h-12 object-contain" loading="lazy">
+              <p class="card-subtitle">Authentication Designed for Humans</p>
+              <p class="card-desc">A phone-based verification that respects your users' time and your business needs.</p>
+              <a href="#" class="read-more">DETAILS →</a>
             </div>
-
-            <div class="carousel-slide client-card flex flex-col h-96 bg-white border border-gray-200"
-                style="font-family:Arial, Helvetica, sans-serif;">
-
-              <!-- Image -->
-                <div class="relative h-[400px] w-overflow-hidden">
-                <img src="images/83a8df0bea819e85dd2a50e372eec9fad4dfe624.png" class="w-full h-full object-cover">
-              </div>
-              <div class="h-full p-4 flex flex-col justify-center">
-                
-                <h2 class="text-black text-medium font-bold" style="font-family: 'Courier New', Courier, monospace;">Mobi messenger</h2>
-                <h2 class="text-gray-500 text-sm font-semibold" style="font-family:'Times New Roman', Times, serif;">Reach your audience instantly!</h2>
-                <p class="text-sm text-black mt-3" style="font-family: 'Times New Roman', Times, serif;">
-                  Manage membership, dues, events, and finance efficiently and transparently.
-                </p>
-              </div>
-            </div>
-            
-            <div class="carousel-slide client-card flex flex-col p-4 h-96 bg-white border border-gray-200" style="font-family:Arial, Helvetica, sans-serif;">
-              <div class="mt-auto">
-                </p>
-                <h2 class="text-black text-small font-bold" style="font-family:'Courier New', Courier, monospace;">Mobi<br>messenger</h2>
-                 <h2 class="text-gray-500 text-small font-bold" style="font-family: 'Times New Roman', Times, serif;">Reach your audience instantly!</h2>
-           
-                <p class="text-sm text-black mt-3">
-                Send bulk SMS or automate messages with powerful APIs.
-                </p>
-              </div>
-            </div>  
           </div>
-        </main>
-      </div>
-    </section>
 
+          <!-- Mobi -->
+          <div class="carousel-slide">
+            <div class="card-image-wrapper">
+            <img src="images/83a8df0bea819e85dd2a50e372eec9fad4dfe624.png"  loading="lazy">
+            </div>
+
+            <div class="card-content">
+              <img src="images/29ad1c967eed21473e5bd254697f363933211726.png" class="mb-6 mx-auto block w-24 h-auto object-contain md:w-28" loading="lazy">
+              <p class="card-subtitle font-jost font-semibold text-[18px] leading-[24px] tracking-[0px]">
+              Reach your audience instantly!
+              </p>
+              <p class="card-desc">Send bulk SMS or automate messages with powerful, developer-friendly APIs.</p>
+              <a href="#" class="read-more">DETAILS →</a>
+           </div>
+          </div>
+
+          <!-- UZO -->
+          <div class="carousel-slide">
+            <div class="card-image-wrapper">
+              <img src="images/f9a84a3564dd5d73acb3707d0700ca65ddc0dca5.png" loading="lazy">
+            </div>
+            <div class="card-content">
+              <h3 class="text-3xl font-bold text-[#FF9E27] mb-3">UZO</h3>
+              <p class="card-subtitle">USSD made simple!</p>
+              <p class="card-desc">Build, launch and manage USSD faster than ever.</p>
+              <a href="#" class="read-more">DETAILS →</a>
+            </div>
+          </div>
+
+          <!-- UPENZA -->
+          <div class="carousel-slide">
+            <div class="card-image-wrapper">
+              <img src="images/1745377b73ab976469bf3330c90cdf5c530f178c.png" loading="lazy">
+            </div>
+            <div class="card-content">
+              <h3 class="text-2xl font-bold text-purple-600 mb-3">UPENZA</h3>
+              <p class="card-subtitle">Power your community</p>
+              <p class="card-desc">Manage membership, dues, events, and finance efficiently and transparently.</p>
+              <a href="#" class="read-more">DETAILS →</a>
+            </div>
+          </div>
+
+          <!-- Aural Connect -->
+          <div class="carousel-slide">
+            <div class="card-image-wrapper">
+              <img src="images/df03db2beb577cf2fa0ea1675078340a52d3c94b - Copy.png" alt="Aural Connect customer engagement dashboard" loading="lazy">
+            </div>
+            <div class="card-content">
+              <h3 class="text-2xl font-bold text-[#6EA7B7] mb-3">Aural Connect</h3>
+              <p class="card-subtitle">Smarter Customer Engagement</p>
+              <p class="card-desc">Smart routing, supervisor dashboards, AI-powered summaries, and local hosting.</p>
+              <a href="#" class="read-more">DETAILS →</a>
+            </div>
+          </div>
+
+        </div>
+      </main>
+    </div>
+  </section>
 
         <div class="bg-white py-12">
           <div class="max-w-6xl mx-auto px-8">
+            <h2 class="text-xl font-semibold mb-6">Trusted By Industry Leaders.</h2>
             <div class="grid grid-cols-6 gap-10 items-center mb-12">
                 <div class="flex items-center justify-center py-6 px-3"><img src="images/FIDO-logo.webp"></div>
                 <div class="flex items-center justify-center py-6 px-3"><img src="images/login-img2.png"></div>
@@ -229,11 +302,12 @@
             </div>
             
             <!-- Partners -->
-            <h2 class="text-xl font-semibold mb-6">Partners</h2>
+            <h2 class="text-xl font-semibold mb-6">Our Collaborators</h2>
               <div class="grid grid-cols-6 gap-10 items-center">
                 <div class="flex items-center justify-center py-6 px-3"><img src="images/antcellular.jpg"></div>
                 <div class="flex items-center justify-center py-6 px-3"><img src="images/info.png"></div>
                 <div class="flex items-center justify-center py-6 px-3"><img src="images/Promasidor.jpg"></div>
+                <div class="flex items-center justify-center py-6 px-3"><img src="images/melcom.png"></div>
                 <div class="flex items-center justify-center py-6 px-3"><img src="images/New-mtn-logo.jpg"></div>
                 <div class="flex items-center justify-center py-6 px-3"><img src="images/Telecel-Icon-Red.png"></div>
                 <div class="flex items-center justify-center py-6 px-3"><img src="images/at.png"></div>
@@ -241,6 +315,7 @@
           </div>
         </div>
 
+        
 
 
     <!--Footer-->
@@ -268,8 +343,8 @@
           <div class="md:col-span-2">
             <!-- Top intro text -->
             <p class="text-gray-700 leading-relaxed text-sm mb-8" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-              Want to start an awesome project or have questions about our company and products? Feel free to talk to us, we will be happy to answer you.<br>
-              Here is how to reach us:
+               Tell us the problem you’re solving; we’ll show you the tool to solve it.
+                Here is how to reach us:
             </p>
 
             <!-- Contact and Address in 2 columns -->
