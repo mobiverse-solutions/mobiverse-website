@@ -26,18 +26,12 @@
       background: #ef4444;
     }
 
-    .diamond {
-      width: 26px;
-      height: 26px;
-      background: #dc2626;
-      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-    }
- 
-.carousel-container {
+    /* Carousel fixes: square-ish, no rounded corners, no extra white space */
+    .carousel-container {
       width: 100%;
       max-width: 1400px;
       margin: 0 auto;
-      padding: 2rem 1rem;
+      padding: 2rem 0;               /* removed side padding to reduce horizontal white feel */
       display: flex;
       gap: 1.5rem;
       overflow-x: auto;
@@ -58,259 +52,211 @@
     .carousel-slide {
       flex: 0 0 340px;
       width: 340px;
-      height: 520px;
-      background: white;
-      border-radius: 16px;
-      border: 1px solid #e5e7eb;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+      height: 480px;                 /* adjusted for more square proportion */
+      background: transparent;       /* no white background */
+      border: none;                  /* removed border */
+      box-shadow: none;              /* optional: remove shadow if you want flat look */
       overflow: hidden;
       scroll-snap-align: start;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.3s ease;
       display: flex;
       flex-direction: column;
     }
 
     .carousel-slide:hover {
       transform: translateY(-8px);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.15);
     }
 
-    .card-image-wrapper {
-      height: 260px;
-      background: #f1f5f9;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-
-    .card-image-wrapper img {
+    .slide-image-wrapper {
+      flex: 1;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      background: #f8fafc;           /* light fallback if image fails */
     }
 
-    .card-content {
-      padding: 1.5rem;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .card-subtitle {
-      font-family: 'Jost', sans-serif;
-      font-size: 1.25rem;
-      font-weight: 600;
-      line-height: 1.4;
-      color: #111827;
-      margin-bottom: 0.75rem;
-    }
-
-    .card-desc {
-      font-size: 0.95rem;
-      color: #4b5563;
-      line-height: 1.6;
-      margin-bottom: auto;
-    }
-
-    .read-more {
-      margin-top: 1.25rem;
-      color: #6366f1;
-      font-weight: 600;
-      font-size: 0.95rem;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      transition: color 0.2s;
-    }
-
-    .read-more:hover {
-      color: #4f46e5;
-      text-decoration: underline;
+    .slide-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;             /* fills completely, no white gaps */
+      object-position: center;
+      display: block;
     }
 
     @media (max-width: 640px) {
       .carousel-slide {
-        flex: 0 0 88%;
+        flex: 0 0 92vw;              /* almost full width on mobile */
+        width: 92vw;
+        height: 520px;               /* slightly taller on small screens */
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .carousel-slide {
+        flex: 0 0 380px;
+        width: 380px;
+        height: 520px;               /* keeps near-square feel on desktop */
       }
     }
   </style>
 </head>
 
 <body>
-<div id="root">
-  <div class="flex col col" ></div>
 
-   <!-- Navigation Bar -->
-  <header class="sticky top-0 bg-white z-50">
+  <!-- Navigation Bar -->
+  <header class="sticky top-0 bg-white z-50 shadow-sm">
     <div class="max-w-7xl mx-auto px-6 lg:px-12 py-5 md:py-6">
       <div class="flex items-center justify-between">
-
-        <!-- Logo – make it a link back to home -->
-        <a href="index.html">
+        <a href="home.html">
           <img src="images/1697717667618.jpg" alt="Mobiverse Logo" class="h-10 w-auto">
         </a>
 
-        <!-- Right: Nav links -->
+
         <nav class="flex items-start gap-x-12 md:gap-x-16 lg:gap-x-24 text-sm md:text-base font-medium">
           <div class="flex flex-col items-center">
-            <div class="nav-line active-line w-16 md:w-20"></div>
-            <a href="index.html" class="text-black font-semibold">What we do</a>
+            <div class="nav-line w-16 md:w-20"></div>
+            <a href="index.html" class="text-black font-semibold hover:text-black transition">What we do</a>
           </div>
-
           <div class="flex flex-col items-center">
             <div class="nav-line w-16 md:w-20"></div>
             <a href="about.html" class="text-gray-700 hover:text-black transition">What we're about</a>
           </div>
-
           <div class="flex flex-col items-center">
             <div class="nav-line w-16 md:w-20"></div>
             <a href="careers.html" class="text-gray-700 hover:text-black transition">Work with us</a>
           </div>
         </nav>
-
       </div>
     </div>
   </header>
 
-     <!-- Hero section -->
-    <section class="w-full relative pb-32 px-8 max-w-7xl mx-auto">
+  <!-- Hero section -->
+  <section class="w-full relative pb-32 px-8 max-w-7xl mx-auto">
+    <img src="images/bg.png" class="absolute inset-0 w-full h-full object-cover z-0">
+    <div class="relative z-10 flex flex-col items-start mt-24 max-w-6xl mx-auto">
+      <h1 class="text-3xl md:text-4xl font-bold mb-12 font-mono text-center md:text-left">
+        Mobile and telecom is just the beginning.<br>
+        Innovation is our default. Disruption is where<br>we thrive.
+      </h1>
+      <img src="images/Logo-Text.svg" class="w-40 h-auto mt-10 mx-auto md:mx-0">
+    </div>
+  </section>
 
-      <!-- Background Image -->
-      <img src="images/bg.png"
-          class="absolute inset-0 w-full-screen h-full-screen object-cover z-0">
-
-
-      <!-- Body Content -->
-      <div class="max-w-6xl mx-auto relative z-10 flex flex-col items-start mt-24">
-        <h1 class="text-3xl md:text-4xl font-bold mb-12 font-mono text-center md:text-left">
-          Mobile and telecom is just the beginning.<br>
-          Innovation is our default. Disruption is where<br>we thrive.
-        </h1>
-
-        <!-- Logo -->
-        <img src="images/Logo-Text.svg" class="w-40 h-auto mt-10">
-      </div>
-
-    </section>
-
-
-
-
-  <!-- Section -->
+  <!-- Services Section -->
   <section class="bg-[#D9D9D9] w-full py-24 px-8">
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
-
-      <!-- Left Text -->
       <div>
-        <h2 class="text-2xl font-small text-3xl md:text-3xl mb-12 font-mono text-center md:text-left">We don't just build systems.</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-12 font-mono text-center md:text-left">We don't just build systems.</h2>
         <p class="mt-4 tracking-wide font-bold text-lg uppercase text-gray-600">Services</p>
       </div>
-
-      <!-- Right Paragraph -->
       <div class="text-gray-700 leading-relaxed">
-        <p>
-          We craft products and platforms that put people first; adapting to their needs in an
-          ever-evolving mobile and telecom world.
-        </p>
-
-        <p class="mt-4">
-          We take the time to understand where our clients and their users are today, and where they aspire to go.
-          Our process is deeply collaborative, led by experienced strategists, designers, and developers who
-          stay engaged from vision to real-world impact.
-        </p>
-
-        <p class="mt-4">
-          Every project starts with people.
-        </p>
+        <p>We craft products and platforms that put people first; adapting to their needs in an ever-evolving mobile and telecom world.</p>
+        <p class="mt-4">We take the time to understand where our clients and their users are today, and where they aspire to go. Our process is deeply collaborative, led by experienced strategists, designers, and developers who stay engaged from vision to real-world impact.</p>
+        <p class="mt-4">Every project starts with people.</p>
       </div>
-      
     </div>
   </section>
 
-   <!-- Solutions Carousel -->
+  <!-- Solutions Carousel – square-ish, no rounded edges, no extra white -->
   <section class="py-16 md:py-24 bg-white px-6 md:px-12">
     <div class="max-w-7xl mx-auto">
-      <h2 class="text-3xl md:text-4xl font-bold mb-12 font-mono text-center md:text-left">
-        Our Solutions In Action.
+      <h2 class="text-4xl md:text-5xl font-bold mb-12 font-mono text-center md:text-left tracking-tight">
+        Our Solutions In Action
       </h2>
-
-      <main>
-        <div class="carousel-container">
-
-          <!-- Truefactor -->
-          <div class="carousel-slide">
-            <div class="card-image-wrapper">
-              <img src="images/41aac5f88279fb23393b897cadab5dc81b41ca4e.png" loading="lazy">
-            </div>
-            <div class="card-content">
-              <img src="images/truefaktor.jpg" alt="Truefactor logo" class="mb-6 w-24 h-12 object-contain" loading="lazy">
-              <p class="card-subtitle">Authentication Designed for Humans</p>
-              <p class="card-desc">A phone-based verification that respects your users' time and your business needs.</p>
-              <a href="#" class="read-more">DETAILS →</a>
-            </div>
+      
+      <div class="carousel-container">
+        
+        <div class="carousel-slide">
+          <div class="slide-image-wrapper">
+            <img src="images/Trueee.png" alt="Truefactor" loading="lazy">
           </div>
-
-          <!-- Mobi -->
-          <div class="carousel-slide">
-            <div class="card-image-wrapper">
-            <img src="images/83a8df0bea819e85dd2a50e372eec9fad4dfe624.png"  loading="lazy">
-            </div>
-
-            <div class="card-content">
-              <img src="images/29ad1c967eed21473e5bd254697f363933211726.png" class="mb-6 mx-auto block w-24 h-auto object-contain md:w-28" loading="lazy">
-              <p class="card-subtitle font-jost font-semibold text-[18px] leading-[24px] tracking-[0px]">
-              Reach your audience instantly!
-              </p>
-              <p class="card-desc">Send bulk SMS or automate messages with powerful, developer-friendly APIs.</p>
-              <a href="#" class="read-more">DETAILS →</a>
-           </div>
-          </div>
-
-          <!-- UZO -->
-          <div class="carousel-slide">
-            <div class="card-image-wrapper">
-              <img src="images/f9a84a3564dd5d73acb3707d0700ca65ddc0dca5.png" loading="lazy">
-            </div>
-            <div class="card-content">
-              <h3 class="text-3xl font-bold text-[#FF9E27] mb-3">UZO</h3>
-              <p class="card-subtitle">USSD made simple!</p>
-              <p class="card-desc">Build, launch and manage USSD faster than ever.</p>
-              <a href="#" class="read-more">DETAILS →</a>
-            </div>
-          </div>
-
-          <!-- UPENZA -->
-          <div class="carousel-slide">
-            <div class="card-image-wrapper">
-              <img src="images/1745377b73ab976469bf3330c90cdf5c530f178c.png" loading="lazy">
-            </div>
-            <div class="card-content">
-              <h3 class="text-2xl font-bold text-purple-600 mb-3">UPENZA</h3>
-              <p class="card-subtitle">Power your community</p>
-              <p class="card-desc">Manage membership, dues, events, and finance efficiently and transparently.</p>
-              <a href="#" class="read-more">DETAILS →</a>
-            </div>
-          </div>
-
-          <!-- Aural Connect -->
-          <div class="carousel-slide">
-            <div class="card-image-wrapper">
-              <img src="images/df03db2beb577cf2fa0ea1675078340a52d3c94b - Copy.png" alt="Aural Connect customer engagement dashboard" loading="lazy">
-            </div>
-            <div class="card-content">
-              <h3 class="text-2xl font-bold text-[#6EA7B7] mb-3">Aural Connect</h3>
-              <p class="card-subtitle">Smarter Customer Engagement</p>
-              <p class="card-desc">Smart routing, supervisor dashboards, AI-powered summaries, and local hosting.</p>
-              <a href="#" class="read-more">DETAILS →</a>
-            </div>
-          </div>
-
         </div>
-      </main>
+
+        <div class="carousel-slide">
+          <div class="slide-image-wrapper">
+            <img src="images/Arual.png" alt="AuralConnect" loading="lazy">
+          </div>
+        </div>
+
+        <div class="carousel-slide">
+          <div class="slide-image-wrapper">
+            <img src="images/course.png" alt="Mobi" loading="lazy">
+          </div>
+        </div>
+
+        <div class="carousel-slide">
+          <div class="slide-image-wrapper">
+            <img src="images/uzoussd.png" alt="UZO" loading="lazy">
+          </div>
+        </div>
+
+        <div class="carousel-slide">
+          <div class="slide-image-wrapper">
+            <img src="images/upen (1).png" alt="Upenza" loading="lazy">
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
+
+  <!-- Expertise Driven Results Section -->
+<section class="py-16 md:py-24 bg-gray-50 px-6 md:px-12">
+  <div class="max-w-7xl mx-auto ">
+    <h2 class="text-4xl md:text-3xl font-bold mb-6 font-mono tracking-tight text-gray-900">
+      Expertise Driven Results
+    </h2>
+    <p class="text-md text-gray-700 mb-8  text-left">
+      We provide end-to-end digital transformation services focused on the African telecom ecosystem.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+      
+      <!-- Card 1: Mobile Application Development -->
+      <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center hover:shadow-xl transition-shadow">
+        <div class="w-20 h-20 mb-6 bg-blue-100 rounded-full flex items-center justify-center">
+        </div>
+        <h3 class="text-xl font-semibold mb-4 text-gray-900">Mobile Application Development</h3>
+        <p class="text-gray-600 leading-relaxed">
+          High performance apps tailored for African markets and user needs.
+        </p>
+      </div>
+
+      <!-- Card 2: Telecom Driven Applications & VAS -->
+      <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center hover:shadow-xl transition-shadow">
+        <div class="w-10 h-10 mb-6 bg-green-100 rounded-full flex items-center justify-center">
+          <span class="text-4xl">📡</span>
+        </div>
+        <h3 class="text-2xl font-bold mb-4 text-gray-900">Telecom Driven Applications & VAS Solutions</h3>
+        <p class="text-gray-600 leading-relaxed">
+          Innovative VAS, SMS, USSD, billing & integration solutions for telecom operators.
+        </p>
+      </div>
+
+      <!-- Card 3: Enterprise Software Development -->
+      <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center hover:shadow-xl transition-shadow">
+        <div class="w-20 h-20 mb-6 bg-purple-100 rounded-full flex items-center justify-center">
+          <span class="text-4xl">🏢</span>
+        </div>
+        <h3 class="text-2xl font-bold mb-4 text-gray-900">Enterprise Software Development</h3>
+        <p class="text-gray-600 leading-relaxed">
+          Scalable custom ERP, CRM, back-office & business operations tools.
+        </p>
+      </div>
+
+      <!-- Card 4: IT Consultancy Services -->
+      <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center hover:shadow-xl transition-shadow">
+        <div class="w-20 h-20 mb-6 bg-orange-100 rounded-full flex items-center justify-center">
+          <span class="text-4xl">💼</span>
+        </div>
+        <h3 class="text-2xl font-bold mb-4 text-gray-900">IT Consultancy Services</h3>
+        <p class="text-gray-600 leading-relaxed">
+          Strategic technology advisory to help you navigate & leverage the digital landscape.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
 
         <div class="bg-white py-12">
           <div class="max-w-6xl mx-auto px-8">
