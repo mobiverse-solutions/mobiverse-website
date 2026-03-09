@@ -15,6 +15,56 @@
     .service i { flex-shrink: 0; margin-top: 2px; color: #ef4444; width: 20px; height: 20px; }
     .service h3 { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
     .service p  { font-size: 12px; color: #6b7280; line-height: 1.7; }
+    
+    .process-card {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 1.5rem;
+      position: relative;
+      min-height: 120px;
+    }
+
+    .process-number {
+      color: #ef4444;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .process-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+    }
+
+    .process-desc {
+      font-size: 0.875rem;
+      color: #999;
+      line-height: 1.5;
+    }
+
+    .arrow {
+      color: #ef4444;
+      font-size: 1.5rem;
+    }
+
+    .circular-arrow {
+      stroke: #ef4444;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .process-card:hover {
+      border-color: #ef4444;
+      transition: all 0.3s ease;
+    }
   </style>
 </head>
 <body class="bg-white text-gray-900">
@@ -22,13 +72,13 @@
   <!-- ── NAV ── -->
   <header class="sticky top-0 bg-white z-50 border-b border-gray-100">
     <div class="max-w-7xl mx-auto px-6 lg:px-12 py-5 flex items-center justify-between">
-      <a href="index.html">
+      <a href="home.html">
         <img src="images/1697717667618.jpg" alt="Mobiverse" class="h-10 w-auto">
       </a>
       <nav class="flex gap-x-12 md:gap-x-20 text-sm font-medium">
         <div class="flex flex-col items-center">
           <div class="nav-line active-line w-16"></div>
-          <a href="index.html" class="font-semibold text-black">What we do</a>
+          <a href="do.html" class="font-semibold text-black">What we do</a>
         </div>
         <div class="flex flex-col items-center">
           <div class="nav-line w-16"></div>
@@ -211,52 +261,136 @@
 
 
   <!-- ── OUR PROCESS ── -->
-  <section class="bg-black text-white py-20 px-6 lg:px-12 mt-8">
-    <div class="max-w-7xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-bold font-mono mb-4">Our Process</h2>
-      <p class="text-gray-400 text-sm mb-16 max-w-xl">A clear, structured approach from discovery to delivery — built for speed and certainty.</p>
+  <section class="max-w-7xl mx-auto py-16 bg-black">
+    <!-- Header -->
+    <div class="mb-16">
+      <h2 class="text-4xl font-bold mb-4">Our Process</h2>
+      <p class="text-gray-400 max-w-2xl">
+        From discovery through handoff and beyond, our process is built for continuous improvement.
+      </p>
+    </div>
 
-      <!-- Process steps -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-
-        <div class="flex flex-col gap-3">
-          <div class="w-10 h-10 border border-red-500 rounded-full flex items-center justify-center">
-            <span class="text-red-500 text-sm font-bold">01</span>
-          </div>
-          <div class="w-px h-6 bg-gray-600 ml-5"></div>
-          <h3 class="text-sm font-semibold">Discovery</h3>
-          <p class="text-gray-500 text-xs leading-relaxed">We learn your business, your users, and your goals before writing a single line of code.</p>
+    <!-- Process Flow -->
+    <div class="relative">
+      
+      <!-- Top Row - Linear Flow -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        
+        <!-- 01 - Define Scope -->
+        <div class="process-card">
+          <div class="process-number">01</div>
+          <h3 class="process-title">Define Scope</h3>
+          <p class="process-desc">
+            We start by understanding your goals, challenges, and success metrics.
+          </p>
         </div>
 
-        <div class="flex flex-col gap-3">
-          <div class="w-10 h-10 border border-red-500 rounded-full flex items-center justify-center">
-            <span class="text-red-500 text-sm font-bold">02</span>
-          </div>
-          <div class="w-px h-6 bg-gray-600 ml-5"></div>
-          <h3 class="text-sm font-semibold">Design</h3>
-          <p class="text-gray-500 text-xs leading-relaxed">We map out architecture, user flows, and interfaces — aligned to your brand and your users.</p>
+        <div class="flex items-center justify-center">
+          <span class="arrow">→</span>
         </div>
 
-        <div class="flex flex-col gap-3">
-          <div class="w-10 h-10 border border-red-500 rounded-full flex items-center justify-center">
-            <span class="text-red-500 text-sm font-bold">03</span>
-          </div>
-          <div class="w-px h-6 bg-gray-600 ml-5"></div>
-          <h3 class="text-sm font-semibold">Development</h3>
-          <p class="text-gray-500 text-xs leading-relaxed">Agile sprints, continuous feedback, and rigorous testing to keep delivery on track.</p>
+        <!-- 02 - Build Backlog -->
+        <div class="process-card">
+          <div class="process-number">02</div>
+          <h3 class="process-title">Build Backlog</h3>
+          <p class="process-desc">
+            We break down work into clear, actionable tasks.
+          </p>
         </div>
 
-        <div class="flex flex-col gap-3">
-          <div class="w-10 h-10 border border-red-500 rounded-full flex items-center justify-center">
-            <span class="text-red-500 text-sm font-bold">04</span>
-          </div>
-          <div class="w-px h-6 bg-gray-600 ml-5"></div>
-          <h3 class="text-sm font-semibold">Deployment & Support</h3>
-          <p class="text-gray-500 text-xs leading-relaxed">We launch, monitor, and support your product post-release so you stay ahead.</p>
+        <div class="flex items-center justify-center">
+          <span class="arrow">→</span>
         </div>
 
       </div>
+
+      <!-- Middle Section with SVG Circle -->
+      <div class="relative flex justify-center items-center" style="min-height: 500px;">
+        
+        <!-- SVG Circle Path -->
+        <svg class="absolute" width="600" height="500" style="left: 50%; top: 50%; transform: translate(-50%, -50%);">
+          <!-- Curved arrow path -->
+          <defs>
+            <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+              <polygon points="0 0, 10 3, 0 6" fill="#ef4444" />
+            </marker>
+          </defs>
+          
+          <!-- Top right curve -->
+          <path d="M 300 0 Q 450 50, 500 200" class="circular-arrow" marker-end="url(#arrowhead)" />
+          
+          <!-- Right side down -->
+          <path d="M 500 200 L 500 280" class="circular-arrow" marker-end="url(#arrowhead)" />
+          
+          <!-- Bottom right curve -->
+          <path d="M 500 280 Q 450 380, 300 420" class="circular-arrow" marker-end="url(#arrowhead)" />
+          
+          <!-- Bottom left curve -->
+          <path d="M 300 420 Q 150 380, 100 280" class="circular-arrow" marker-end="url(#arrowhead)" />
+          
+          <!-- Left side up -->
+          <path d="M 100 280 L 100 200" class="circular-arrow" marker-end="url(#arrowhead)" />
+          
+          <!-- Top left curve -->
+          <path d="M 100 200 Q 150 100, 250 50" class="circular-arrow" marker-end="url(#arrowhead)" />
+        </svg>
+
+        <!-- Process Cards in Circle -->
+        
+        <!-- 03 - DESIGN AND SPEC (top right) -->
+        <div class="process-card absolute" style="top: 0; right: 20%; width: 280px;">
+          <div class="process-number">03</div>
+          <h3 class="process-title">Design and Spec</h3>
+          <p class="process-desc">
+            We create detailed designs and technical specifications to guide development.
+          </p>
+        </div>
+
+        <!-- 04 - DEVELOP & TEST (right side) -->
+        <div class="process-card absolute" style="top: 35%; right: 5%; width: 280px;">
+          <div class="process-number">04</div>
+          <h3 class="process-title">Develop & Test</h3>
+          <p class="process-desc">
+            Our team builds, tests, and refines until everything works flawlessly.
+          </p>
+        </div>
+
+        <!-- HANDOVER AND CYCLE (center right) -->
+        <div class="absolute flex items-center justify-center" style="top: 50%; right: 25%; background: #000; padding: 1rem; border: 2px solid #ef4444; border-radius: 50%; width: 150px; height: 150px;">
+          <span class="text-center text-sm font-semibold">HANDOVER<br/>AND CYCLE</span>
+        </div>
+
+        <!-- 05 - DEPLOY (bottom right) -->
+        <div class="process-card absolute" style="bottom: 0; right: 20%; width: 280px;">
+          <div class="process-number">05</div>
+          <h3 class="process-title">Deploy</h3>
+          <p class="process-desc">
+            We launch your solution smoothly and monitor for optimal performance.
+          </p>
+        </div>
+
+        <!-- 06 - MONITOR & UPDATE (bottom left) -->
+        <div class="process-card absolute" style="bottom: 0; left: 20%; width: 280px;">
+          <div class="process-number">06</div>
+          <h3 class="process-title">Monitor & Update</h3>
+          <p class="process-desc">
+            We track performance, gather feedback, and continuously improve.
+          </p>
+        </div>
+
+        <!-- 07 - ITERATE (left side) -->
+        <div class="process-card absolute" style="top: 35%; left: 5%; width: 280px;">
+          <div class="process-number">07</div>
+          <h3 class="process-title">Iterate</h3>
+          <p class="process-desc">
+            Based on insights, we refine and enhance for even better results.
+          </p>
+        </div>
+
+      </div>
+
     </div>
+
   </section>
 
 

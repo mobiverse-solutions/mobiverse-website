@@ -26,12 +26,11 @@
       background: #ef4444;
     }
 
-    /* Carousel fixes: square-ish, no rounded corners, no extra white space */
     .carousel-container {
       width: 100%;
       max-width: 1400px;
       margin: 0 auto;
-      padding: 2rem 0;               /* removed side padding to reduce horizontal white feel */
+      padding: 2rem 0;              
       display: flex;
       gap: 1.5rem;
       overflow-x: auto;
@@ -52,10 +51,10 @@
     .carousel-slide {
       flex: 0 0 340px;
       width: 340px;
-      height: 480px;                 /* adjusted for more square proportion */
-      background: transparent;       /* no white background */
-      border: none;                  /* removed border */
-      box-shadow: none;              /* optional: remove shadow if you want flat look */
+      height: 480px;                 
+      background: transparent;       
+      border: none;                 
+      box-shadow: none;             
       overflow: hidden;
       scroll-snap-align: start;
       transition: transform 0.3s ease;
@@ -71,22 +70,22 @@
       flex: 1;
       width: 100%;
       height: 100%;
-      background: #f8fafc;           /* light fallback if image fails */
+      background: #f8fafc;           
     }
 
     .slide-image-wrapper img {
       width: 100%;
       height: 100%;
-      object-fit: cover;             /* fills completely, no white gaps */
+      object-fit: cover;            
       object-position: center;
       display: block;
     }
 
     @media (max-width: 640px) {
       .carousel-slide {
-        flex: 0 0 92vw;              /* almost full width on mobile */
+        flex: 0 0 92vw;              
         width: 92vw;
-        height: 520px;               /* slightly taller on small screens */
+        height: 520px;               
       }
     }
 
@@ -94,7 +93,7 @@
       .carousel-slide {
         flex: 0 0 380px;
         width: 380px;
-        height: 520px;               /* keeps near-square feel on desktop */
+        height: 520px;               
       }
     }
   </style>
@@ -106,7 +105,7 @@
   <header class="sticky top-0 bg-white z-50 shadow-sm">
     <div class="max-w-7xl mx-auto px-6 lg:px-12 py-5 md:py-6">
       <div class="flex items-center justify-between">
-        <a href="home.html">
+        <a href="index.html">
           <img src="images/1697717667618.jpg" alt="Mobiverse Logo" class="h-10 w-auto">
         </a>
 
@@ -114,7 +113,7 @@
         <nav class="flex items-start gap-x-12 md:gap-x-16 lg:gap-x-24 text-sm md:text-base font-medium">
           <div class="flex flex-col items-center">
             <div class="nav-line w-16 md:w-20"></div>
-            <a href="index.html" class="text-black font-semibold hover:text-black transition">What we do</a>
+            <a href="do.html" class="text-black font-semibold hover:text-black transition">What we do</a>
           </div>
           <div class="flex flex-col items-center">
             <div class="nav-line w-16 md:w-20"></div>
