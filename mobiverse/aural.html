@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>What We're About | Mobiverse Solutions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: white;
+      color: #111827;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-line {
+      height: 1px;
+      background: #9ca3af;
+      margin-bottom: 6px;
+    }
+
+    .active-line {
+      background: #ef4444;
+    }
+
+    .diamond {
+      width: 26px;
+      height: 26px;
+      background: #dc2626;
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    }
+    
+    @media (max-width: 640px) {
+      .carousel-slide {
+        flex: 0 0 88%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <header class="sticky top-0 bg-white z-50">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-5 md:py-6">
+      <div class="flex items-center justify-between">
+
+        <!-- Logo – make it a link back to home -->
+        <a href="index.html">
+          <img src="images/1697717667618.jpg" alt="Mobiverse Logo" class="h-10 w-auto">
+        </a>
+
+        <!-- Right: Nav links -->
+        <nav class="flex items-start gap-x-12 md:gap-x-16 lg:gap-x-24 text-sm md:text-base font-medium">
+          <div class="flex flex-col items-center">
+            <div class="nav-line w-16 md:w-20"></div>
+            <a href="do.html" class="text-gray-700 hover:text-black transition">What we do</a>
+          </div>
+
+          <div class="flex flex-col items-center">
+            <div class="nav-line active-line w-16 md:w-20"></div>
+            <a href="about.html" class="text-black font-semibold">What we're about</a>
+          </div>
+
+          <div class="flex flex-col items-center">
+            <div class="nav-line w-16 md:w-20"></div>
+            <a href="careers.html" class="text-gray-700 hover:text-black transition">Work with us</a>
+          </div>
+        </nav>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero section -->
+  <section class="w-full relative pb-32 px-8 max-w-7xl mx-auto">
+
+    <!-- Background Image -->
+    <img src="images/bg.png"
+      class="absolute inset-0 w-full-screen h-full-screen object-cover z-0">
+      
+    <!-- Body Content -->
+    <div class="max-w-6xl mx-auto relative z-10 flex flex-col items-start mt-24">
+      <h1 class="text-2xl md:text-4xl font-bold mb-12 font-mono text-center md:text-left;">
+      Reach Your Audience Instantly!
+      </h1>
+
+      <!-- Logo -->
+       <img src="images/661b6c6a9f7942e88e9a5da53d1e81a500cd69e1.png" class="w-40 h-auto mt-10">
+    </div>
+
+  </section>
+
+
+
+
+  <!-- Section -->
+  <section class="bg-[#D9D9D9] w-full py-24 px-8">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+
+      <!-- Left Text -->
+      <div>
+        <h2 class="text-2xl md:text-4xl font-bold mb-12 font-mono text-center md:text-left">Scaling Intelligence in Customer Support</h2>
+      </div>
+
+      <!-- Right Paragraph -->
+      <div class="text-gray-700 leading-relaxed">
+        <p>
+        Yelgu integrated AI-driven insights into support ecosystems, driving peak agent performance, while providing top-level management with a clear window into the customer voice.
+        </p>
+      </div>
+      
+    </div>
+  </section>

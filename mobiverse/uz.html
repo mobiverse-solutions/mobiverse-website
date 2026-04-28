@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>What We're About | Mobiverse Solutions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; background: white; color: #111827; margin: 0; padding: 0; }
+    .nav-line { height: 1px; background: #9ca3af; margin-bottom: 6px; }
+    .active-line { background: #ef4444; }
+    .diamond { width: 26px; height: 26px; background: #dc2626; clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); }
+    @media (max-width: 640px) { .carousel-slide { flex: 0 0 88%; } }
+    .phone-wrap { position: relative; width: 340px; height: 480px; flex-shrink: 0; }
+  </style>
+</head>
+<body class="bg-white">
+
+  <!-- NAV -->
+  <header class="sticky top-0 bg-white z-50 border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-5 md:py-6">
+      <div class="flex items-center justify-between">
+        <a href="index.html"><img src="images/1697717667618.jpg" alt="Mobiverse Logo" class="h-10 w-auto"></a>
+        <nav class="flex items-start gap-x-12 md:gap-x-16 lg:gap-x-24 text-sm md:text-base font-medium">
+          <div class="flex flex-col items-center">
+            <div class="nav-line w-16 md:w-20"></div>
+            <a href="do.html" class="text-gray-700 hover:text-black transition">What we do</a>
+          </div>
+          <div class="flex flex-col items-center">
+            <div class="nav-line active-line w-16 md:w-20"></div>
+            <a href="about.html" class="text-black font-semibold">What we're about</a>
+          </div>
+          <div class="flex flex-col items-center">
+            <div class="nav-line w-16 md:w-20"></div>
+            <a href="careers.html" class="text-gray-700 hover:text-black transition">Work with us</a>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="w-full relative pb-32 px-8 max-w-7xl mx-auto">
+    <img src="images/bg.png" class="absolute inset-0 w-full h-full object-cover z-0">
+    <div class="max-w-6xl mx-auto relative z-10 flex flex-col items-start mt-24">
+      <h1 class="text-2xl md:text-4xl font-bold mb-12 font-mono text-center md:text-left">USSD Made Simple!</h1>
+      <span class="text-[#FF9E27] md:text-4xl font-bold">UZO</span>
+    </div>
+  </section>
+
+  <!-- ACCESS TO USSD -->
+  <section class="bg-[#D9D9D9] w-full py-24 px-8">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div>
+        <h2 class="text-2xl md:text-4xl font-bold mb-12 font-mono text-center md:text-left">Access to USSD has never been easier.</h2>
+      </div>
+      <div class="text-gray-700 leading-relaxed">
+        <p>With Uzo, you can get your unique short-code and build your USSD app on a single platform.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE CHALLENGE -->
+  <section class="max-w-6xl mx-auto px-6 lg:px-12 py-20">
+    <h2 class="text-3xl md:text-4xl font-bold mb-3">The Challenge</h2>
+    <p class="text-gray-400 text-sm max-w-md mb-16 leading-relaxed">Social groups often struggle with fragmented communication and messy tracking of their financial contributions</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div class="border border-gray-200 rounded-lg p-8 flex flex-col items-center text-center">
+        <div class="mb-5 text-gray-400"><i data-lucide="eye-off" class="w-6 h-6"></i></div>
+        <h3 class="font-semibold text-sm mb-4">The Transparency Crisis</h3>
+        <p class="text-gray-400 text-xs leading-relaxed">Members often felt uncertain about their standing. "Did I pay for March?" became a recurring point of friction.</p>
+      </div>
+      <div class="border border-gray-200 rounded-lg p-8 flex flex-col items-center text-center">
+        <div class="mb-5 text-gray-400"><i data-lucide="bell" class="w-6 h-6"></i></div>
+        <h3 class="font-semibold text-sm mb-4">The "Nag" Fatigue</h3>
+        <p class="text-gray-400 text-xs leading-relaxed">Executives had to manually send hundreds of individual WhatsApp messages and make phone calls to remind members to pay.</p>
+      </div>
+      <div class="border border-gray-200 rounded-lg p-8 flex flex-col items-center text-center">
+        <div class="mb-5 text-gray-400"><i data-lucide="layout" class="w-6 h-6"></i></div>
+        <h3 class="font-semibold text-sm mb-4">The Disengagement Fade</h3>
+        <p class="text-gray-400 text-xs leading-relaxed">The group starts to feel like a financial chore rather than a thriving community.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE SOLUTION -->
+  <section class="w-full bg-gray-50 py-20">
+    <div class="max-w-6xl mx-auto px-6 lg:px-16">
+    <div class="flex flex-col lg:flex-row gap-16 items-center">
+
+      <!-- LEFT: Phone screenshots -->
+      <div class="w-full lg:w-1/2 flex justify-center">
+        <div class="phone-wrap">
+          <img
+            src="images/264a87ae543179088c7fed9e298e487882449c53.jpg"
+            alt="Mobiverse app - member dashboard"
+            class="absolute left-0 top-0 rounded-3xl shadow-2xl border-4 border-gray-800 z-10"
+            style="width:220px;height:460px;object-fit:cover;object-position:top;"
+          />
+          <img
+            src="images/a08c4dd321eaa44702e152eb67af400822d8cc7e.png"
+            alt="Mobiverse app - dues overview"
+            class="absolute rounded-3xl shadow-2xl border-2 border-gray-100 z-20"
+            style="width:175px;height:330px;object-fit:cover;object-position:top;left:120px;top:140px;"
+          />
+        </div>
+      </div>
+
+      <!-- RIGHT: Title + features -->
+      <div class="w-full lg:w-1/2">
+        <h2 class="text-3xl font-bold mb-3">The Solution</h2>
+        <p class="text-gray-400 text-sm mb-10 leading-relaxed max-w-sm">A central hub to manage members, dues, finances, and fundraising with ease.</p>
+
+        <!-- 1. Real-time Clarity — red visibility/eye icon -->
+        <div class="flex gap-4 mb-7">
+          <div class="w-10 h-10 bg-red-100 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-semibold text-sm mb-1 text-gray-900">Real-time Clarity</h4>
+            <p class="text-gray-500 text-sm leading-relaxed">Upenza provides a transparent, self-service dashboard where members can view their payment history bridging the "Trust Gap."</p>
+          </div>
+        </div>
+
+        <!-- 2. Unified Accuracy — red data check / clipboard check icon -->
+        <div class="flex gap-4 mb-7">
+          <div class="w-10 h-10 bg-red-100 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/>
+              <rect x="9" y="3" width="6" height="4" rx="1"/>
+              <path d="m9 12 2 2 4-4"/>
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-semibold text-sm mb-1 text-gray-900">Unified Accuracy (Manual + Digital)</h4>
+            <p class="text-gray-500 text-sm leading-relaxed">Whether payments are made through the automated wallet or entered manually by the treasurer, Upenza instantly reconciles the data into a single source of truth for your group.</p>
+          </div>
+        </div>
+
+        <!-- 3. Effortless Collections — red bolt/lightning icon -->
+        <div class="flex gap-4 mb-7">
+          <div class="w-10 h-10 bg-red-100 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-semibold text-sm mb-1 text-gray-900">Effortless Collections</h4>
+            <p class="text-gray-500 text-sm leading-relaxed">One-tap payment reminders via Email and WhatsApp handle the "nagging" for you, resulting in 90% faster collections.</p>
+          </div>
+        </div>
+
+        <!-- 4. Strengthened Connection — red diversity / people circle icon -->
+        <div class="flex gap-4 mb-7">
+          <div class="w-10 h-10 bg-red-100 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="7" r="3"/>
+              <path d="M5.5 21a7.5 7.5 0 0 1 13 0"/>
+              <circle cx="5" cy="13" r="2.5"/>
+              <path d="M2 21a5 5 0 0 1 7-4.6"/>
+              <circle cx="19" cy="13" r="2.5"/>
+              <path d="M15 16.4A5 5 0 0 1 22 21"/>
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-semibold text-sm mb-1 text-gray-900">Strengthened Connection</h4>
+            <p class="text-gray-500 text-sm leading-relaxed">By removing the friction of financial administration, leadership can focus on the group's mission, turning a "financial chore" back into a thriving community.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </div><!-- end max-w wrapper -->
+  </section>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      lucide.createIcons();
+    });
+  </script>
+
+<!-- KEY RESULTS -->
+<section class="bg-[#6B0EFF] text-white py-16">
+  <div class="max-w-6xl mx-auto px-6 lg:px-12">
+    <h2 class="text-2xl font-bold mb-10 text-center">Key Results</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+      <!-- Stat 1 -->
+      <div>
+        <div class="text-5xl font-bold mb-2">95%</div>
+        <p class="text-white/80">User satisfaction rate</p>
+      </div>
+      <!-- Stat 2 -->
+      <div>
+        <div class="text-5xl font-bold mb-2">15 Days</div>
+        <p class="text-white/80">Average time to get first payment</p>
+      </div>
+      <!-- Stat 3 -->
+      <div>
+        <div class="text-5xl font-bold mb-2">4.9/5.0</div>
+        <p class="text-white/80">Average app rating</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE COMMUNITY OF TRUST -->
+<section class="max-w-6xl mx-auto px-6 lg:px-12 py-20">
+  <div class="text-center mb-12">
+    <h2 class="text-3xl font-bold mb-3">The Community of Trust</h2>
+    <p class="text-gray-600 max-w-2xl mx-auto">
+      Real people, real results. Here's what our users are saying about Upenza.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    
+    <!-- Testimonial 1 -->
+    <div class="bg-white border border-gray-100 rounded-2xl p-8">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-2xl">👤</div>
+        <div>
+          <p class="font-semibold">Sarah Mensah</p>
+          <p class="text-sm text-gray-500">Church Treasurer • Accra</p>
+        </div>
+      </div>
+      <p class="text-gray-700 italic leading-relaxed">
+        "Upenza has brought so much transparency to our church contributions. Members now pay willingly because they can see exactly where their money is going."
+      </p>
+      <div class="mt-6 text-yellow-500">★★★★★</div>
+    </div>
+
+    <!-- Testimonial 2 -->
+    <div class="bg-white border border-gray-100 rounded-2xl p-8">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center text-2xl">👤</div>
+        <div>
+          <p class="font-semibold">Kwame Ofori</p>
+          <p class="text-sm text-gray-500">Group Administrator • Kumasi</p>
+        </div>
+      </div>
+      <p class="text-gray-700 italic leading-relaxed">
+        "No more chasing people for contributions. The automated reminders and clear dashboard have made my job so much easier."
+      </p>
+      <div class="mt-6 text-yellow-500">★★★★☆</div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPLORE MORE SOLUTIONS -->
+<section class="bg-black text-white py-20">
+  <div class="max-w-6xl mx-auto px-6 lg:px-12">
+    <h2 class="text-3xl font-bold text-center mb-12">Explore More Solutions</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <!-- Card 1 -->
+      <div class="bg-zinc-900 rounded-2xl overflow-hidden group">
+        <img src="images/course.png" alt="Reach Your Savings Goal" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="font-semibold text-lg mb-2">Reach Your Savings Goal</h3>
+          <p class="text-gray-400 text-sm">Automated savings and contribution plans for individuals and groups.</p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-zinc-900 rounded-2xl overflow-hidden group">
+        <img src="images/uzoussd.png" alt="USSD Made Simpler" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="font-semibold text-lg mb-2">USSD Made Simpler</h3>
+          <p class="text-gray-400 text-sm">Powerful USSD solutions for communities and organizations.</p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-zinc-900 rounded-2xl overflow-hidden group">
+        <img src="images/Aural.png" alt="Authenticate & Secure" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="font-semibold text-lg mb-2">Authenticate & Secure</h3>
+          <p class="text-gray-400 text-sm">Secure authentication and member management tools.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

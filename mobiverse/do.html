@@ -15,55 +15,112 @@
     .service i { flex-shrink: 0; margin-top: 2px; color: #ef4444; width: 20px; height: 20px; }
     .service h3 { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
     .service p  { font-size: 12px; color: #6b7280; line-height: 1.7; }
-    
-    .process-card {
-      background: #1a1a1a;
-      border: 1px solid #333;
-      border-radius: 8px;
-      padding: 1.5rem;
+
+    /* ── OUR PROCESS DIAGRAM ── */
+    .process-section {
+      background: #0c0c0c;
+      background-image:
+        radial-gradient(ellipse at 65% 45%, rgba(50,35,15,0.5) 0%, transparent 60%),
+        radial-gradient(ellipse at 15% 75%, rgba(15,15,25,0.5) 0%, transparent 55%);
+      padding: 64px 72px 80px;
+      overflow: hidden;
+    }
+
+    .process-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+      font-family: 'Inter', monospace;
+    }
+
+    .process-section .subtitle {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+      font-weight: 300;
+      margin-bottom: 0;
+    }
+
+    /* Diagram wrapper — fixed height for absolute positioning */
+    .process-diagram {
       position: relative;
-      min-height: 120px;
+      width: 100%;
+      height: 460px;
+      margin-top: 36px;
     }
 
-    .process-number {
-      color: #ef4444;
-      font-size: 0.875rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
+    /* Individual step card */
+    .pcard {
+      position: absolute;
+      background: #191919;
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 14px 14px 16px;
+      width: 128px;
     }
 
-    .process-title {
-      font-size: 1rem;
+    .pcard .pnum {
+      display: block;
+      font-size: 0.95rem;
       font-weight: 600;
-      margin-bottom: 0.5rem;
+      color: #fff;
+      margin-bottom: 5px;
+    }
+
+    .pcard .ptitle {
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
       text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 7px;
+      line-height: 1.4;
     }
 
-    .process-desc {
-      font-size: 0.875rem;
-      color: #999;
-      line-height: 1.5;
+    .pcard .pdesc {
+      font-size: 0.62rem;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.65;
+      font-weight: 300;
     }
 
-    .arrow {
-      color: #ef4444;
-      font-size: 1.5rem;
+    /* Card positions — matching the reference image layout */
+    #pc1  { left: 0px;   top: 185px; }
+    #pc2  { left: 185px; top: 185px; }
+    #pc3a { left: 365px; top: 185px; }
+    #pc3b { left: 510px; top: 45px;  }
+    #pc3c { left: 695px; top: 130px; }
+    #pc3d { left: 695px; top: 295px; }
+    #pc3e { left: 510px; top: 360px; }
+
+    /* "3 / FEATURE DEV CYCLE" centre label */
+    .cycle-label {
+      position: absolute;
+      left: 598px;
+      top: 228px;
+      text-align: center;
+      transform: translateX(-50%);
+    }
+    .cycle-label .cn {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 3px;
+    }
+    .cycle-label .ct {
+      font-size: 0.5rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.22);
     }
 
-    .circular-arrow {
-      stroke: #ef4444;
-      fill: none;
-      stroke-width: 2;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-    }
-
-    .process-card:hover {
-      border-color: #ef4444;
-      transition: all 0.3s ease;
+    /* SVG arrows sit behind everything */
+    .process-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
     }
   </style>
 </head>
@@ -72,7 +129,7 @@
   <!-- ── NAV ── -->
   <header class="sticky top-0 bg-white z-50 border-b border-gray-100">
     <div class="max-w-7xl mx-auto px-6 lg:px-12 py-5 flex items-center justify-between">
-      <a href="home.html">
+      <a href="index.html">
         <img src="images/1697717667618.jpg" alt="Mobiverse" class="h-10 w-auto">
       </a>
       <nav class="flex gap-x-12 md:gap-x-20 text-sm font-medium">
@@ -94,310 +151,295 @@
 
 
   <!-- ── HERO ── -->
-  
   <section class="w-full relative pb-32 px-8 max-w-7xl mx-auto">
-    <!-- Background Image -->
-    <img src="images/bg.png"
-      class="absolute inset-0 w-full-screen h-full-screen object-cover z-0">
-      
-    <!-- Body Content -->
+    <img src="images/bg.png" class="absolute inset-0 w-full-screen h-full-screen object-cover z-0">
     <div class="max-w-6xl mx-auto relative z-10 flex flex-col items-start mt-24">
       <h1 class="text-2xl md:text-4xl font-bold mb-12 font-mono text-center md:text-left;">
-        Engineered for the Edge 
+        Engineered for the Edge
       </h1>
-
-      <!-- Logo -->
       <img src="images/Logo-Text.svg" class="w-40 h-auto mt-10">
     </div>
-
   </section>
 
 
   <!-- ── THE STRATEGY ── -->
-  <!-- Section -->
   <section class="bg-[#D9D9D9] w-full py-24 px-8">
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
-
-      <!-- Left Text -->
       <div>
         <h2 class="text-2xl md:text-4xl font-bold mb-12 font-mono text-center md:text-left">The Strategy</h2>
       </div>
-
-      <!-- Right Paragraph -->
       <div class="text-gray-700 leading-relaxed">
         <p>
           Most tech is built for the best-case scenario. We build for the reality of the African landscape. Whether it's a feature phone in a remote village or a high-velocity call centre in the city, our tools ensure no one is left out of the digital economy.
         </p>
       </div>
+    </div>
+  </section>
+
+
+<!-- MOBILE APPLICATION DEVELOPMENT + TELECOM + ENTERPRISES SECTION -->
+<section class="max-w-7xl mx-auto px-6 lg:px-12 py-20 space-y-24">
+
+  <!-- 1. Mobile Application Development -->
+  <div>
+    <h2 class="text-3xl font-bold font-mono mb-12">Mobile Application Development</h2>
+    
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <!-- Left Content -->
+      <div class="lg:col-span-5 space-y-10">
+        <div class="flex gap-5">
+          <i data-lucide="smartphone" class="w-6 h-6 text-red-500 mt-1 flex-shrink-0"></i>
+          <div>
+            <h3 class="font-semibold text-lg mb-2">Full Cycle Development Services</h3>
+            <p class="text-gray-600">Our specialists are on a high level to deliver end-to-end custom mobile app development, from consulting and project specs to integration, deployment, and market release.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-5">
+          <i data-lucide="monitor-smartphone" class="w-6 h-6 text-red-500 mt-1 flex-shrink-0"></i>
+          <div>
+            <h3 class="font-semibold text-lg mb-2">Native & Cross Platform Apps</h3>
+            <p class="text-gray-600">We support native development for iOS, Android, and Windows, plus cross-platform tech to build once and run everywhere with great performance.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-5">
+          <i data-lucide="code-2" class="w-6 h-6 text-red-500 mt-1 flex-shrink-0"></i>
+          <div>
+            <h3 class="font-semibold text-lg mb-2">Dedicated Mobile App Developers</h3>
+            <p class="text-gray-600">Rapid, transparent, time- and cost-efficient development aren't features we use to impress — they're the baseline attitude we bring to every project.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Phones -->
+      <div class="lg:col-span-7 flex justify-center lg:justify-end">
+        <div class="flex gap-6">
+          <img src="images/cc866e6bb36a766f6e46daee5939cc12cf31f3fb.png" alt="Mobile App" 
+               class="w-28 h-56 object-cover rounded-3xl shadow-2xl">
+          <img src="images/5b6a8265b9242dfca6961d3146d2bab5dda1faa1.png" alt="Mobile App" 
+               class="w-28 h-56 object-cover rounded-3xl shadow-2xl -mt-8">
+          <img src="images/b86ba06771b5a52ad432449e7516fb5d5381bd56.png" alt="Mobile App" 
+               class="w-28 h-56 object-cover rounded-3xl shadow-2xl -mt-4">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Telecom Driven Apps -->
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <!-- Left Images -->
+    <div class="lg:col-span-5">
+      <div class="grid grid-cols-2 gap-4">
+        <img src="images/course.png" alt="Telecom App" class="rounded-2xl shadow-md w-full">
+        <img src="images/uzoussd.png" alt="Telecom App" class="rounded-2xl shadow-md w-full">
+        <img src="images/Aural.png" alt="Telecom App" class="rounded-2xl shadow-md w-full">
+        <img src="images/Trueee.png" alt="Telecom App" class="rounded-2xl shadow-md w-full">
+      </div>
+    </div>
+
+    <!-- Right Content -->
+    <div class="lg:col-span-7">
+      <h2 class="text-3xl font-bold font-mono mb-12">Telecom Driven Apps</h2>
       
-    </div>
-  </section>
-
-
-  <!-- ── MOBILE APPLICATION DEVELOPMENT ── -->
-  <section class="max-w-7xl mx-auto px-6 lg:px-12 py-16 flex flex-col lg:flex-row gap-16 items-center border-t border-gray-100">
-
-    <div class="w-full lg:w-1/2">
-      <h2 class="text-xl md:text-2xl font-bold font-mono mb-8">Mobile Application Development</h2>
-
-      <div class="service text-gray-700 leading-relaxed">
-        <i data-lucide="smartphone" class="w-5 h-5 "></i>
-        <div>
-          <h3>Full Cycle Development Services</h3>
-          <p>Our specialists deliver end-to-end custom mobile app development, from consulting and project specs to integration, deployment, and market release.</p>
+      <div class="space-y-10">
+        <div class="flex gap-5">
+          <i data-lucide="wifi" class="w-6 h-6 text-red-500 mt-1 flex-shrink-0"></i>
+          <div>
+            <h3 class="font-semibold text-lg mb-2">Customised VAS Solutions</h3>
+            <p class="text-gray-600">We deliver applications that elevate communication and keep telecom networks active and reliable.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="service">
-        <i data-lucide="monitor-smartphone" class="w-5 h-5"></i>
-        <div>
-          <h3>Native & Cross Platform Apps</h3>
-          <p>We support native development for iOS, Android and Windows, plus cross-platform tech to build once and run everywhere with great performance.</p>
+        <div class="flex gap-5">
+          <i data-lucide="users" class="w-6 h-6 text-red-500 mt-1 flex-shrink-0"></i>
+          <div>
+            <h3 class="font-semibold text-lg mb-2">Network & Subscriber Engagement</h3>
+            <p class="text-gray-600">We deliver solutions over traditional channels — SMS, USSD, and voice — empowering telecom companies and MNO operators to provide a unique, ultimate experience for their subscribers.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="service">
-        <i data-lucide="code-2" class="w-5 h-5"></i>
-        <div>
-          <h3>Dedicated Mobile App Developers</h3>
-          <p>Rapid, transparent, agile and cost-efficient development aren't features we aim to impress — they're the baseline attitude we bring to every project.</p>
+        <div class="flex gap-5">
+          <i data-lucide="bar-chart-2" class="w-6 h-6 text-red-500 mt-1 flex-shrink-0"></i>
+          <div>
+            <h3 class="font-semibold text-lg mb-2">Big Data Analysis</h3>
+            <p class="text-gray-600">We build systems that deliver deep insights into meaningful business components through high-volume data processing.</p>
+          </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- 3 overlapping phones -->
-    <div class="w-full lg:w-1/2 flex justify-center">
-      <div class="relative h-80 w-72">
-        <img src="images/cc866e6bb36a766f6e46daee5939cc12cf31f3fb.png" alt="App 1" class="absolute top-0 left-0 w-28 h-52 object-cover rounded-2xl shadow-md">
-        <img src="images/5b6a8265b9242dfca6961d3146d2bab5dda1faa1.png" alt="App 2" class="absolute top-6 left-20 w-32 h-60 object-cover rounded-2xl shadow-lg z-10">
-        <img src="images/b86ba06771b5a52ad432449e7516fb5d5381bd56.png" alt="App 3" class="absolute top-2 right-0 w-32 h-64 object-cover rounded-2xl shadow-xl z-20">
-      </div>
-    </div>
-
-  </section>
-
-
-  <!-- ── TELECOM DRIVEN APPS ── -->
-  <section class="max-w-7xl mx-auto px-6 lg:px-12 py-16 flex flex-col-reverse lg:flex-row gap-16 items-center border-t border-gray-100">
-
-    <!-- 2x2 grid -->
-    <div class="w-full lg:w-1/2 flex justify-center lg:justify-start">
-      <div class="grid grid-cols-2 gap-2 w-72">
-        <img src="images/course.png" alt="Telecom 1" class="w-full h-36 object-cover rounded-lg shadow-md">
-        <img src="images/uzoussd.png" alt="Telecom 2" class="w-full h-36 object-cover rounded-lg shadow-md">
-        <img src="images/Aural.png" alt="Telecom 3" class="w-full h-36 object-cover rounded-lg shadow-md">
-        <img src="images/Trueee.png" alt="Telecom 4" class="w-full h-36 object-cover rounded-lg shadow-md">
-      </div>
-    </div>
-
-    <div class="w-full lg:w-1/2">
-      <h2 class="text-xl md:text-2xl font-bold font-mono mb-8">Telecom Driven Apps</h2>
-
-      <div class="service">
-        <i data-lucide="wifi" class="w-5 h-5"></i>
-        <div>
-          <h3>Customised VAS Solutions</h3>
-          <p>We deliver applications that elevate communication and keep telecom networks active and relevant.</p>
+  <!-- 3. Solutions For Enterprises And Communities -->
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <!-- Left Content -->
+    <div class="lg:col-span-7">
+      <h2 class="text-3xl font-bold font-mono mb-12">Solutions For Enterprises And Communities</h2>
+      
+      <div class="space-y-10">
+        <div class="flex gap-5">
+          <i data-lucide="layers" class="w-6 h-6 text-red-500 mt-1 flex-shrink-0"></i>
+          <div>
+            <h3 class="font-semibold text-lg mb-2">Development From Scratch</h3>
+            <p class="text-gray-600">We provide end to end development — from in-depth business analysis to user training and support. Whether you need a traditional linear approach or Agile, we flex to fit your priorities.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="service">
-        <i data-lucide="users" class="w-5 h-5"></i>
-        <div>
-          <h3>Network & Subscriber Engagement</h3>
-          <p>We deliver solutions over traditional channels — SMS, USSD, and voice — empowering telecom companies and MNO operators to provide a unique, ultimate experience for their subscribers.</p>
+        <div class="flex gap-5">
+          <i data-lucide="zap" class="w-6 h-6 text-red-500 mt-1 flex-shrink-0"></i>
+          <div>
+            <h3 class="font-semibold text-lg mb-2">Real-Time Responsive Apps</h3>
+            <p class="text-gray-600">Solutions built to boost productivity, cut costs, and maximise revenue for enterprises and social groups alike.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="service">
-        <i data-lucide="bar-chart-2" class="w-5 h-5"></i>
-        <div>
-          <h3>Big Data Analysis</h3>
-          <p>We build systems that deliver deep insights into meaningful business components through high-volume data processing.</p>
+        <div class="flex gap-5">
+          <i data-lucide="wrench" class="w-6 h-6 text-red-500 mt-1 flex-shrink-0"></i>
+          <div>
+            <h3 class="font-semibold text-lg mb-2">Legacy Software Modernisation</h3>
+            <p class="text-gray-600">We upgrade your existing software, enhance its architecture, smoothly integrate new and old solutions and provide safe data migration.</p>
+          </div>
         </div>
       </div>
     </div>
 
-  </section>
-
-
-  <!-- ── SOLUTIONS FOR ENTERPRISES ── -->
-  <section class="max-w-7xl mx-auto px-6 lg:px-12 py-16 flex flex-col lg:flex-row gap-16 items-center border-t border-gray-100">
-
-    <div class="w-full lg:w-1/2">
-      <h2 class="text-xl md:text-2xl font-bold font-mono mb-8">Solutions For Enterprises And Communities</h2>
-
-      <div class="service">
-        <i data-lucide="layers" class="w-5 h-5"></i>
-        <div>
-          <h3>Development From Scratch</h3>
-          <p>We provide end to end development — from in-depth business analysis to user training and support. Traditional linear or Agile, we flex to fit your priorities.</p>
-        </div>
-      </div>
-
-      <div class="service">
-        <i data-lucide="zap" class="w-5 h-5"></i>
-        <div>
-          <h3>Real-Time Responsive Apps</h3>
-          <p>Solutions built to boost productivity, cut costs, and maximise revenues for enterprises and social groups alike.</p>
-        </div>
-      </div>
-
-      <div class="service">
-        <i data-lucide="wrench" class="w-5 h-5"></i>
-        <div>
-          <h3>Legacy Software Modernisation</h3>
-          <p>We upgrade your existing software, enhance its architecture, smoothly integrate new and old solutions and provide safe data migration.</p>
-        </div>
-      </div>
+    <!-- Right Image -->
+    <div class="lg:col-span-5 flex justify-center lg:justify-end">
+      <img src="images/upen (1).png" alt="Enterprise Solutions" 
+           class="rounded-3xl shadow-2xl max-w-[300px]">
     </div>
+  </div>
 
-    <!-- 2 side-by-side images -->
-    <div class="w-full lg:w-1/2 flex justify-center gap-3 items-start">
-      <img src="images/upen (1).png" alt="Enterprise 1" class="w-44 h-60 object-cover rounded-xl shadow-md">
-    </div>
+</section>
 
-  </section>
+<script>lucide.createIcons();</script>
 
 
   <!-- ── OUR PROCESS ── -->
-  <section class="max-w-7xl mx-auto py-16 bg-black">
-    <!-- Header -->
-    <div class="mb-16">
-      <h2 class="text-4xl font-bold mb-4">Our Process</h2>
-      <p class="text-gray-400 max-w-2xl">
-        From discovery through handoff and beyond, our process is built for continuous improvement.
-      </p>
-    </div>
+  <section class="process-section">
+    <h2>Our Process</h2>
+    <p class="subtitle">From discovery through launch and beyond, our process is built for continuous improvement.</p>
 
-    <!-- Process Flow -->
-    <div class="relative">
-      
-      <!-- Top Row - Linear Flow -->
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-        
-        <!-- 01 - Define Scope -->
-        <div class="process-card">
-          <div class="process-number">01</div>
-          <h3 class="process-title">Define Scope</h3>
-          <p class="process-desc">
-            We start by understanding your goals, challenges, and success metrics.
-          </p>
-        </div>
+    <div class="process-diagram">
 
-        <div class="flex items-center justify-center">
-          <span class="arrow">→</span>
-        </div>
+      <!-- SVG layer: arrows -->
+      <svg class="process-svg" viewBox="0 0 870 460" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <marker id="arrowW" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+            <path d="M0,0 L8,4 L0,8 Z" fill="rgba(255,255,255,0.35)"/>
+          </marker>
+          <marker id="arrowC" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+            <path d="M0,0 L8,4 L0,8 Z" fill="rgba(255,255,255,0.25)"/>
+          </marker>
+        </defs>
 
-        <!-- 02 - Build Backlog -->
-        <div class="process-card">
-          <div class="process-number">02</div>
-          <h3 class="process-title">Build Backlog</h3>
-          <p class="process-desc">
-            We break down work into clear, actionable tasks.
-          </p>
-        </div>
+        <!-- 1 → 2: straight horizontal -->
+        <line x1="128" y1="249" x2="183" y2="249"
+          stroke="rgba(255,255,255,0.3)" stroke-width="1" marker-end="url(#arrowW)"/>
 
-        <div class="flex items-center justify-center">
-          <span class="arrow">→</span>
-        </div>
+        <!-- 2 → 3a: straight horizontal -->
+        <line x1="313" y1="249" x2="363" y2="249"
+          stroke="rgba(255,255,255,0.3)" stroke-width="1" marker-end="url(#arrowW)"/>
 
+        <!-- 3a top-right corner → 3b bottom (diagonal entry) -->
+        <line x1="491" y1="205" x2="556" y2="152"
+          stroke="rgba(255,255,255,0.25)" stroke-width="1" marker-end="url(#arrowC)"/>
+
+        <!--
+          THE CYCLE: one smooth ellipse centred around x=660, y=255
+          rx=155, ry=145
+          Cards sit at:
+            3b  centre ≈ (574, 109)   → top of ellipse
+            3c  centre ≈ (759, 194)   → right-top of ellipse
+            3d  centre ≈ (759, 359)   → right-bottom of ellipse
+            3e  centre ≈ (574, 424)   → bottom of ellipse
+          We draw 4 arcs with arrows, each going clockwise (sweep-flag=1).
+        -->
+
+        <!-- Arc 3b → 3c  (top → right-top) -->
+        <path d="M 638,112 A 155,145 0 0 1 823,194"
+          stroke="rgba(255,255,255,0.22)" stroke-width="1" fill="none"
+          marker-end="url(#arrowC)"/>
+
+        <!-- Arc 3c → 3d  (right-top → right-bottom) -->
+        <path d="M 823,228 A 155,145 0 0 1 823,330"
+          stroke="rgba(255,255,255,0.22)" stroke-width="1" fill="none"
+          marker-end="url(#arrowC)"/>
+
+        <!-- Arc 3d → 3e  (right-bottom → bottom) -->
+        <path d="M 759,363 A 155,145 0 0 1 638,425"
+          stroke="rgba(255,255,255,0.22)" stroke-width="1" fill="none"
+          marker-end="url(#arrowC)"/>
+
+        <!-- Arc 3e → 3a  (bottom → centre-left, returning to 3a) -->
+        <path d="M 510,405 A 155,145 0 0 1 457,310"
+          stroke="rgba(255,255,255,0.22)" stroke-width="1" fill="none"
+          marker-end="url(#arrowC)"/>
+
+      </svg>
+
+      <!-- Step 1 -->
+      <div class="pcard" id="pc1">
+        <span class="pnum">1</span>
+        <div class="ptitle">Initial Discovery</div>
+        <div class="pdesc">We identify user needs and market opportunities using our telecom and enterprise expertise.</div>
       </div>
 
-      <!-- Middle Section with SVG Circle -->
-      <div class="relative flex justify-center items-center" style="min-height: 500px;">
-        
-        <!-- SVG Circle Path -->
-        <svg class="absolute" width="600" height="500" style="left: 50%; top: 50%; transform: translate(-50%, -50%);">
-          <!-- Curved arrow path -->
-          <defs>
-            <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-              <polygon points="0 0, 10 3, 0 6" fill="#ef4444" />
-            </marker>
-          </defs>
-          
-          <!-- Top right curve -->
-          <path d="M 300 0 Q 450 50, 500 200" class="circular-arrow" marker-end="url(#arrowhead)" />
-          
-          <!-- Right side down -->
-          <path d="M 500 200 L 500 280" class="circular-arrow" marker-end="url(#arrowhead)" />
-          
-          <!-- Bottom right curve -->
-          <path d="M 500 280 Q 450 380, 300 420" class="circular-arrow" marker-end="url(#arrowhead)" />
-          
-          <!-- Bottom left curve -->
-          <path d="M 300 420 Q 150 380, 100 280" class="circular-arrow" marker-end="url(#arrowhead)" />
-          
-          <!-- Left side up -->
-          <path d="M 100 280 L 100 200" class="circular-arrow" marker-end="url(#arrowhead)" />
-          
-          <!-- Top left curve -->
-          <path d="M 100 200 Q 150 100, 250 50" class="circular-arrow" marker-end="url(#arrowhead)" />
-        </svg>
+      <!-- Step 2 -->
+      <div class="pcard" id="pc2">
+        <span class="pnum">2</span>
+        <div class="ptitle">Initial Analysis</div>
+        <div class="pdesc">We turn requirements into actionable specs and prioritise what to build.</div>
+      </div>
 
-        <!-- Process Cards in Circle -->
-        
-        <!-- 03 - DESIGN AND SPEC (top right) -->
-        <div class="process-card absolute" style="top: 0; right: 20%; width: 280px;">
-          <div class="process-number">03</div>
-          <h3 class="process-title">Design and Spec</h3>
-          <p class="process-desc">
-            We create detailed designs and technical specifications to guide development.
-          </p>
-        </div>
+      <!-- Step 3a -->
+      <div class="pcard" id="pc3a">
+        <span class="pnum">3a</span>
+        <div class="ptitle">Feature Discovery</div>
+        <div class="pdesc">We explore potential solutions, validate assumptions, and refine the feature direction before building.</div>
+      </div>
 
-        <!-- 04 - DEVELOP & TEST (right side) -->
-        <div class="process-card absolute" style="top: 35%; right: 5%; width: 280px;">
-          <div class="process-number">04</div>
-          <h3 class="process-title">Develop & Test</h3>
-          <p class="process-desc">
-            Our team builds, tests, and refines until everything works flawlessly.
-          </p>
-        </div>
+      <!-- Step 3b -->
+      <div class="pcard" id="pc3b">
+        <span class="pnum">3b</span>
+        <div class="ptitle">Feature Analysis</div>
+        <div class="pdesc">We break down user stories and edge cases to ensure scalability and performance.</div>
+      </div>
 
-        <!-- HANDOVER AND CYCLE (center right) -->
-        <div class="absolute flex items-center justify-center" style="top: 50%; right: 25%; background: #000; padding: 1rem; border: 2px solid #ef4444; border-radius: 50%; width: 150px; height: 150px;">
-          <span class="text-center text-sm font-semibold">HANDOVER<br/>AND CYCLE</span>
-        </div>
+      <!-- Step 3c -->
+      <div class="pcard" id="pc3c">
+        <span class="pnum">3c</span>
+        <div class="ptitle">Feature Design</div>
+        <div class="pdesc">We create system architecture, API contracts, and UI mockups with rigour.</div>
+      </div>
 
-        <!-- 05 - DEPLOY (bottom right) -->
-        <div class="process-card absolute" style="bottom: 0; right: 20%; width: 280px;">
-          <div class="process-number">05</div>
-          <h3 class="process-title">Deploy</h3>
-          <p class="process-desc">
-            We launch your solution smoothly and monitor for optimal performance.
-          </p>
-        </div>
+      <!-- Step 3d -->
+      <div class="pcard" id="pc3d">
+        <span class="pnum">3d</span>
+        <div class="ptitle">Feature Development &amp; Testing</div>
+        <div class="pdesc">We build and rigorously test to meet reliability standards.</div>
+      </div>
 
-        <!-- 06 - MONITOR & UPDATE (bottom left) -->
-        <div class="process-card absolute" style="bottom: 0; left: 20%; width: 280px;">
-          <div class="process-number">06</div>
-          <h3 class="process-title">Monitor & Update</h3>
-          <p class="process-desc">
-            We track performance, gather feedback, and continuously improve.
-          </p>
-        </div>
+      <!-- Step 3e -->
+      <div class="pcard" id="pc3e">
+        <span class="pnum">3e</span>
+        <div class="ptitle">Feature Launch</div>
+        <div class="pdesc">We deploy to production and monitor real-world performance under live traffic.</div>
+      </div>
 
-        <!-- 07 - ITERATE (left side) -->
-        <div class="process-card absolute" style="top: 35%; left: 5%; width: 280px;">
-          <div class="process-number">07</div>
-          <h3 class="process-title">Iterate</h3>
-          <p class="process-desc">
-            Based on insights, we refine and enhance for even better results.
-          </p>
-        </div>
-
+      <!-- Centre cycle label -->
+      <div class="cycle-label">
+        <span class="cn">3</span>
+        <span class="ct">Feature Dev Cycle</span>
       </div>
 
     </div>
-
   </section>
 
 
   <!-- ── FOOTER ── -->
   <footer class="bg-[#D9D9D9] py-20 px-8">
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16">
-
       <div>
         <h3 class="text-3xl font-bold font-mono mb-12">Let's Talk.</h3>
         <div class="flex items-center gap-3 mb-3">
@@ -409,7 +451,6 @@
           <span class="text-xs tracking-widest text-gray-700 uppercase">Message</span>
         </div>
       </div>
-
       <div class="md:col-span-2">
         <p class="text-gray-700 text-sm mb-8">Tell us the problem you're solving; we'll show you the tool to solve it. Here is how to reach us:</p>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
@@ -430,7 +471,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </footer>
 

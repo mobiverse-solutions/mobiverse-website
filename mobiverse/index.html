@@ -48,18 +48,25 @@
       border-radius: 4px;
     }
 
-    .carousel-slide {
+    .carousel-slide-link {
+      text-decoration: none;
+      color: inherit;
       flex: 0 0 340px;
       width: 340px;
+      scroll-snap-align: start;
+    }
+
+    .carousel-slide {
+      width: 100%;
       height: 480px;                 
       background: transparent;       
       border: none;                 
       box-shadow: none;             
       overflow: hidden;
-      scroll-snap-align: start;
       transition: transform 0.3s ease;
       display: flex;
       flex-direction: column;
+      cursor: pointer;
     }
 
     .carousel-slide:hover {
@@ -82,17 +89,21 @@
     }
 
     @media (max-width: 640px) {
-      .carousel-slide {
+      .carousel-slide-link {
         flex: 0 0 92vw;              
         width: 92vw;
+      }
+      .carousel-slide {
         height: 520px;               
       }
     }
 
     @media (min-width: 1024px) {
-      .carousel-slide {
+      .carousel-slide-link {
         flex: 0 0 380px;
         width: 380px;
+      }
+      .carousel-slide {
         height: 520px;               
       }
     }
@@ -108,7 +119,6 @@
         <a href="index.html">
           <img src="images/1697717667618.jpg" alt="Mobiverse Logo" class="h-10 w-auto">
         </a>
-
 
         <nav class="flex items-start gap-x-12 md:gap-x-16 lg:gap-x-24 text-sm md:text-base font-medium">
           <div class="flex flex-col items-center">
@@ -130,7 +140,8 @@
 
   <!-- Hero section -->
   <section class="w-full relative pb-32 px-8 max-w-7xl mx-auto">
-    <img src="images/bg.png" class="absolute inset-0 w-full h-full object-cover z-0">
+    <img src="images/bg.png"
+      class="absolute inset-0 w-full-screen h-full-screen object-cover z-0">
     <div class="relative z-10 flex flex-col items-start mt-24 max-w-6xl mx-auto">
       <h1 class="text-3xl md:text-4xl font-bold mb-12 font-mono text-center md:text-left">
         Mobile and telecom is just the beginning.<br>
@@ -155,7 +166,7 @@
     </div>
   </section>
 
-  <!-- Solutions Carousel – square-ish, no rounded edges, no extra white -->
+  <!-- Solutions Carousel -->
   <section class="py-16 md:py-24 bg-white px-6 md:px-12">
     <div class="max-w-7xl mx-auto">
       <h2 class="text-4xl md:text-5xl font-bold mb-12 font-mono text-center md:text-left tracking-tight">
@@ -163,210 +174,220 @@
       </h2>
       
       <div class="carousel-container">
+        <!-- Slide 1 - Truefactor -->
+        <a href="true.html" class="carousel-slide-link">
+          <div class="carousel-slide">
+            <div class="slide-image-wrapper">
+              <img src="images/Trueee.png" alt="Truefactor" loading="lazy">
+            </div>
+          </div>
+        </a>
+
+        <!-- Slide 2 - AuralConnect -->
+        <a href="auralconnect.html" class="carousel-slide-link">
+          <div class="carousel-slide">
+            <div class="slide-image-wrapper">
+              <img src="images/0af0defeedf2c1f1e987750b98edbf08886bddc2.png" alt="AuralConnect" loading="lazy">
+            </div>
+          </div>
+        </a>
+
+        <!-- Slide 3 - Mobi -->
+        <a href="mobi.html" class="carousel-slide-link">
+          <div class="carousel-slide">
+            <div class="slide-image-wrapper">
+              <img src="images/course.png" alt="Mobi" loading="lazy">
+            </div>
+          </div>
+        </a>
+
+        <!-- Slide 4 - UZO -->
+        <a href="uz.html" class="carousel-slide-link">
+          <div class="carousel-slide">
+            <div class="slide-image-wrapper">
+              <img src="images/uzoussd.png" alt="UZO" loading="lazy">
+            </div>
+          </div>
+        </a>
+
+        <!-- Slide 5 - Upenza -->
+        <a href="upcase.html" class="carousel-slide-link">
+          <div class="carousel-slide">
+            <div class="slide-image-wrapper">
+              <img src="images/upen (1).png" alt="Upenza" loading="lazy">
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Expertise Driven Results Section -->
+  <section class="py-16 md:py-24 bg-gray-50 px-6 md:px-12">
+    <div class="max-w-7xl mx-auto ">
+      <h2 class="text-4xl md:text-3xl font-bold mb-6 font-mono tracking-tight text-gray-900">
+        Expertise Driven Results
+      </h2>
+      <p class="text-md text-gray-700 mb-8  text-left">
+        We provide end-to-end digital transformation services focused on the African telecom ecosystem.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
         
-        <div class="carousel-slide">
-          <div class="slide-image-wrapper">
-            <img src="images/Trueee.png" alt="Truefactor" loading="lazy">
+        <!-- Card 1: Mobile Application Development -->
+        <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center hover:shadow-xl transition-shadow">
+          <div class="w-20 h-20 mb-6 bg-blue-100 rounded-full flex items-center justify-center">
           </div>
+          <h3 class="text-xl font-semibold mb-4 text-gray-900">Mobile Application Development</h3>
+          <p class="text-gray-600 leading-relaxed">
+            High performance apps tailored for African markets and user needs.
+          </p>
         </div>
 
-        <div class="carousel-slide">
-          <div class="slide-image-wrapper">
-            <img src="images/Arual.png" alt="AuralConnect" loading="lazy">
+        <!-- Card 2: Telecom Driven Applications & VAS -->
+        <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center hover:shadow-xl transition-shadow">
+          <div class="w-10 h-10 mb-6 bg-green-100 rounded-full flex items-center justify-center">
+            <span class="text-4xl">📡</span>
           </div>
+          <h3 class="text-2xl font-bold mb-4 text-gray-900">Telecom Driven Applications & VAS Solutions</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Innovative VAS, SMS, USSD, billing & integration solutions for telecom operators.
+          </p>
         </div>
 
-        <div class="carousel-slide">
-          <div class="slide-image-wrapper">
-            <img src="images/course.png" alt="Mobi" loading="lazy">
+        <!-- Card 3: Enterprise Software Development -->
+        <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center hover:shadow-xl transition-shadow">
+          <div class="w-20 h-20 mb-6 bg-purple-100 rounded-full flex items-center justify-center">
+            <span class="text-4xl">🏢</span>
           </div>
+          <h3 class="text-2xl font-bold mb-4 text-gray-900">Enterprise Software Development</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Scalable custom ERP, CRM, back-office & business operations tools.
+          </p>
         </div>
 
-        <div class="carousel-slide">
-          <div class="slide-image-wrapper">
-            <img src="images/uzoussd.png" alt="UZO" loading="lazy">
+        <!-- Card 4: IT Consultancy Services -->
+        <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center hover:shadow-xl transition-shadow">
+          <div class="w-20 h-20 mb-6 bg-orange-100 rounded-full flex items-center justify-center">
+            <span class="text-4xl">💼</span>
           </div>
-        </div>
-
-        <div class="carousel-slide">
-          <div class="slide-image-wrapper">
-            <img src="images/upen (1).png" alt="Upenza" loading="lazy">
-          </div>
+          <h3 class="text-2xl font-bold mb-4 text-gray-900">IT Consultancy Services</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Strategic technology advisory to help you navigate & leverage the digital landscape.
+          </p>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- Expertise Driven Results Section -->
-<section class="py-16 md:py-24 bg-gray-50 px-6 md:px-12">
-  <div class="max-w-7xl mx-auto ">
-    <h2 class="text-4xl md:text-3xl font-bold mb-6 font-mono tracking-tight text-gray-900">
-      Expertise Driven Results
-    </h2>
-    <p class="text-md text-gray-700 mb-8  text-left">
-      We provide end-to-end digital transformation services focused on the African telecom ecosystem.
-    </p>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+  <div class="bg-white py-12">
+    <div class="max-w-6xl mx-auto px-8">
+      <h2 class="text-3xl md:text-2xl font-sem mb-12 font-mono text-center md:text-left">Trusted By Industry Leaders.</h2>
+      <div class="grid grid-cols-6 gap-10 items-center mb-12">
+          <div class="flex items-center justify-center py-6 px-3"><img src="images/FIDO-logo.webp"></div>
+          <div class="flex items-center justify-center py-6 px-3"><img src="images/login-img2.png"></div>
+          <div class="flex items-center justify-center py-6 px-3"><img src="images/health.png"></div>
+          <div class="flex items-center justify-center py-6 px-3"><img src="images/giz.png"></div>
+          <div class="flex items-center justify-center py-6 px-3"><img src="images/pisen-.png"></div>
+          <div class="flex items-center justify-center py-6 px-3"><img src="images/download.jpg"></div>
+          <div class="flex items-center justify-center py-6 px-3"><img src="images/images.jpg"></div>
+          <div class="flex items-center justify-center py-6 px-3"><img src="images/bookmate.png"></div>
+          <div class="flex items-center justify-center py-6 px-3"><img src="images/viamo.png"></div>
+          <div class="flex items-center justify-center py-6 px-3"><img src="images/rabito.jpg"></div>
+          <div class="flex items-center justify-center py-6 px-3"><img src="images/bima.png"></div>
+          <div class="flex items-center justify-center py-6 px-3"><img src="images/ghana.png"></div>
+      </div>
       
-      <!-- Card 1: Mobile Application Development -->
-      <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center hover:shadow-xl transition-shadow">
-        <div class="w-20 h-20 mb-6 bg-blue-100 rounded-full flex items-center justify-center">
+      <!-- Partners -->
+      <h2 class="text-3xl md:text-2xl font-semibold mb-12 font-mono text-center md:text-left">Our Collaborators</h2>
+        <div class="grid grid-cols-6 gap-10 items-center">
+          <div class="flex items-center justify-center py-6 px-3"><img src="images/antcellular.jpg"></div>
+          <div class="flex items-center justify-center py-6 px-3"><img src="images/info.png"></div>
+          <div class="flex items-center justify-center py-6 px-3"><img src="images/Promasidor.jpg"></div>
+          <div class="flex items-center justify-center py-6 px-3"><img src="images/melcom.png"></div>
+          <div class="flex items-center justify-center py-6 px-3"><img src="images/New-mtn-logo.jpg"></div>
+          <div class="flex items-center justify-center py-6 px-3"><img src="images/Telecel-Icon-Red.png"></div>
+          <div class="flex items-center justify-center py-6 px-3"><img src="images/at.png"></div>
         </div>
-        <h3 class="text-xl font-semibold mb-4 text-gray-900">Mobile Application Development</h3>
-        <p class="text-gray-600 leading-relaxed">
-          High performance apps tailored for African markets and user needs.
-        </p>
-      </div>
-
-      <!-- Card 2: Telecom Driven Applications & VAS -->
-      <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center hover:shadow-xl transition-shadow">
-        <div class="w-10 h-10 mb-6 bg-green-100 rounded-full flex items-center justify-center">
-          <span class="text-4xl">📡</span>
-        </div>
-        <h3 class="text-2xl font-bold mb-4 text-gray-900">Telecom Driven Applications & VAS Solutions</h3>
-        <p class="text-gray-600 leading-relaxed">
-          Innovative VAS, SMS, USSD, billing & integration solutions for telecom operators.
-        </p>
-      </div>
-
-      <!-- Card 3: Enterprise Software Development -->
-      <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center hover:shadow-xl transition-shadow">
-        <div class="w-20 h-20 mb-6 bg-purple-100 rounded-full flex items-center justify-center">
-          <span class="text-4xl">🏢</span>
-        </div>
-        <h3 class="text-2xl font-bold mb-4 text-gray-900">Enterprise Software Development</h3>
-        <p class="text-gray-600 leading-relaxed">
-          Scalable custom ERP, CRM, back-office & business operations tools.
-        </p>
-      </div>
-
-      <!-- Card 4: IT Consultancy Services -->
-      <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center hover:shadow-xl transition-shadow">
-        <div class="w-20 h-20 mb-6 bg-orange-100 rounded-full flex items-center justify-center">
-          <span class="text-4xl">💼</span>
-        </div>
-        <h3 class="text-2xl font-bold mb-4 text-gray-900">IT Consultancy Services</h3>
-        <p class="text-gray-600 leading-relaxed">
-          Strategic technology advisory to help you navigate & leverage the digital landscape.
-        </p>
-      </div>
-
     </div>
   </div>
-</section>
 
-        <div class="bg-white py-12">
-          <div class="max-w-6xl mx-auto px-8">
-            <h2 class="text-3xl md:text-2xl font-sem mb-12 font-mono text-center md:text-left">Trusted By Industry Leaders.</h2>
-            <div class="grid grid-cols-6 gap-10 items-center mb-12">
-                <div class="flex items-center justify-center py-6 px-3"><img src="images/FIDO-logo.webp"></div>
-                <div class="flex items-center justify-center py-6 px-3"><img src="images/login-img2.png"></div>
-                <div class="flex items-center justify-center py-6 px-3"><img src="images/health.png"></div>
-                <div class="flex items-center justify-center py-6 px-3"><img src="images/giz.png"></div>
-                <div class="flex items-center justify-center py-6 px-3"><img src="images/pisen-.png"></div>
-                <div class="flex items-center justify-center py-6 px-3"><img src="images/download.jpg"></div>
-                <div class="flex items-center justify-center py-6 px-3"><img src="images/images.jpg"></div>
-                <div class="flex items-center justify-center py-6 px-3"><img src="images/bookmate.png"></div>
-                <div class="flex items-center justify-center py-6 px-3"><img src="images/viamo.png"></div>
-                <div class="flex items-center justify-center py-6 px-3"><img src="images/rabito.jpg"></div>
-                <div class="flex items-center justify-center py-6 px-3"><img src="images/bima.png"></div>
-                <div class="flex items-center justify-center py-6 px-3"><img src="images/ghana.png"></div>
-            </div>
+  <!--Footer-->
+  <footer class="bg-gray-200 w-full py-20 px-8">
+    <div class="max-w-6xl mx-auto">
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+
+        <!-- Column 1: Let's Talk -->
+        <div>
+          <h3 class="text-3xl font-semibold mb-8">Let's Talk.</h3>
+
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-6 h-[1px] bg-gray-600"></span>
+            <span class="text-xs tracking-[4px] text-gray-700 uppercase">Information</span>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <span class="w-6 h-[1px] bg-gray-600"></span>
+            <span class="text-xs tracking-[4px] text-gray-700 uppercase">Message</span>
+          </div>
+        </div>
+
+        <!-- Column 2 & 3 Container -->
+        <div class="md:col-span-2">
+          <!-- Top intro text -->
+          <p class="text-gray-700 leading-relaxed text-sm mb-8" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+             Tell us the problem you're solving; we'll show you the tool to solve it.
+              Here is how to reach us:
+          </p>
+
+          <!-- Contact and Address in 2 columns -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
             
-            <!-- Partners -->
-            <h2 class="text-3xl md:text-2xl font-semibold mb-12 font-mono text-center md:text-left">Our Collaborators</h2>
-              <div class="grid grid-cols-6 gap-10 items-center">
-                <div class="flex items-center justify-center py-6 px-3"><img src="images/antcellular.jpg"></div>
-                <div class="flex items-center justify-center py-6 px-3"><img src="images/info.png"></div>
-                <div class="flex items-center justify-center py-6 px-3"><img src="images/Promasidor.jpg"></div>
-                <div class="flex items-center justify-center py-6 px-3"><img src="images/melcom.png"></div>
-                <div class="flex items-center justify-center py-6 px-3"><img src="images/New-mtn-logo.jpg"></div>
-                <div class="flex items-center justify-center py-6 px-3"><img src="images/Telecel-Icon-Red.png"></div>
-                <div class="flex items-center justify-center py-6 px-3"><img src="images/at.png"></div>
+            <!-- Contact Information -->
+            <div>
+              <div class="flex flex-col gap-3 mb-4">
+                <span class="w-12 h-[2px] bg-black mt-2"></span>
+                <h4 class="font-semibold text-sm">Contact</h4>
               </div>
+
+              <p class="text-gray-700 text-sm mb-1">
+                Call: <span class="text-black">(+233) 20 823 0106</span>
+              </p>
+              <p class="text-gray-700 text-sm mb-3 ml-9">
+                <span class="text-black">(+233) 24 496 9220</span>
+              </p>
+
+              <p class="text-gray-700 text-sm mb-4">
+                Email: <span class="text-black">clientservices@mobivs.com</span>
+              </p>
+
+              <!-- LinkedIn icon -->
+              <div class="w-7 h-7 bg-black rounded-full flex items-center justify-center">
+                <span class="text-white font-bold text-xs">in</span>
+              </div>
+            </div>
+
+            <!-- Address -->
+            <div>
+              <div class="flex flex-col gap-3 mb-4">
+                <span class="w-12 h-[2px] bg-gray-700 mt-2"></span>
+                <h4 class="font-semibold text-sm">Address</h4>
+              </div>
+
+              <p class="text-gray-700 text-sm leading-relaxed">
+                P.O.Box LG 265<br>
+                Legon, Accra, Ghana
+              </p>
+            </div>
+
           </div>
         </div>
 
-        
-
-
-    <!--Footer-->
-    <footer class="bg-gray-200 w-full py-20 px-8">
-      <div class="max-w-6xl mx-auto">
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
-
-          <!-- Column 1: Let's Talk -->
-          <div>
-            <h3 class="text-3xl font-semibold mb-8">Let's Talk.</h3>
-
-            <div class="flex items-center gap-3 mb-3">
-              <span class="w-6 h-[1px] bg-gray-600"></span>
-              <span class="text-xs tracking-[4px] text-gray-700 uppercase">Information</span>
-            </div>
-
-            <div class="flex items-center gap-3">
-              <span class="w-6 h-[1px] bg-gray-600"></span>
-              <span class="text-xs tracking-[4px] text-gray-700 uppercase">Message</span>
-            </div>
-          </div>
-
-          <!-- Column 2 & 3 Container -->
-          <div class="md:col-span-2">
-            <!-- Top intro text -->
-            <p class="text-gray-700 leading-relaxed text-sm mb-8" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-               Tell us the problem you’re solving; we’ll show you the tool to solve it.
-                Here is how to reach us:
-            </p>
-
-            <!-- Contact and Address in 2 columns -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
-              
-              <!-- Contact Information -->
-              <div>
-                <div class="flex flex-col gap-3 mb-4">
-                  <span class="w-12 h-[2px] bg-black mt-2"></span>
-                  <h4 class="font-semibold text-sm">Contact</h4>
-                </div>
-
-                <p class="text-gray-700 text-sm mb-1">
-                  Call: <span class="text-black">(+233) 20 823 0106</span>
-                </p>
-                <p class="text-gray-700 text-sm mb-3 ml-9">
-                  <span class="text-black">(+233) 24 496 9220</span>
-                </p>
-
-                <p class="text-gray-700 text-sm mb-4">
-                  Email: <span class="text-black">clientservices@mobivs.com</span>
-                </p>
-
-                <!-- LinkedIn icon -->
-                <div class="w-7 h-7 bg-black rounded-full flex items-center justify-center">
-                  <span class="text-white font-bold text-xs">in</span>
-                </div>
-              </div>
-
-              <!-- Address -->
-              <div>
-                <div class="flex flex-col gap-3 mb-4">
-                  <span class="w-12 h-[2px] bg-gray-700 mt-2"></span>
-                  <h4 class="font-semibold text-sm">Address</h4>
-                </div>
-
-                <p class="text-gray-700 text-sm leading-relaxed">
-                  P.O.Box LG 265<br>
-                  Legon, Accra, Ghana
-                </p>
-              </div>
-
-            </div>
-          </div>
-
-        </div>
       </div>
-    </footer>
-</div>
+    </div>
+  </footer>
+
 </body>
 </html>
