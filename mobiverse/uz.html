@@ -66,34 +66,6 @@
   </div>
 </header>
 
-<script>
-  lucide.createIcons();
-  const menuBtn=document.getElementById('menuBtn'),closeMenu=document.getElementById('closeMenu'),mobileOverlay=document.getElementById('mobileOverlay'),mobilePanel=document.getElementById('mobilePanel');
-  function openMenu(){mobileOverlay.classList.add('open');mobilePanel.classList.add('open');document.body.style.overflow='hidden';}
-  function closeMenuFn(){mobileOverlay.classList.remove('open');mobilePanel.classList.remove('open');document.body.style.overflow='';}
-  menuBtn.addEventListener('click',openMenu);closeMenu.addEventListener('click',closeMenuFn);mobileOverlay.addEventListener('click',closeMenuFn);
-  document.querySelectorAll('.reveal').forEach(el=>new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:0.1}).observe(el));
-
-  // Active nav highlight
-  const path = window.location.pathname.split('/').pop();
-  const map = {
-    'do.html':      ['line-do',      'mobile-line-do'],
-    'about.html':   ['line-about',   'mobile-line-about'],
-    'careers.html': ['line-careers', 'mobile-line-careers'],
-    'sms.html':     ['line-do',      'mobile-line-do'],
-    'uz.html':      ['line-do',      'mobile-line-do'],
-    'upcase.html':  ['line-do',      'mobile-line-do'],
-    'aural.html':   ['line-do',      'mobile-line-do'],
-    'true.html':    ['line-do',      'mobile-line-do'],
-  };
-  if (map[path]) {
-    map[path].forEach(id => {
-      const el = document.getElementById(id);
-      if (el) el.classList.add('active-line');
-    });
-  }
-</script>
-
   <!-- HERO -->
   <section class="w-full relative pb-32 px-8 max-w-7xl mx-auto">
     <img src="images/bg.png" class="absolute inset-0 w-full h-full object-cover z-0">
@@ -116,7 +88,7 @@
   </section>
 
   <!-- THE CHALLENGE -->
- <section class="max-w-6xl mx-auto px-6 lg:px-12 py-20 reveal">
+<section class="max-w-6xl mx-auto px-6 lg:px-12 py-20">
   <h2 class="text-3xl md:text-4xl font-bold mb-3">The Challenge</h2>
   <p class="text-gray-400 text-sm max-w-md mb-16 leading-relaxed">Reaching offline customers shouldn't be a technical or financial hurdle. Most businesses face three major roadblocks when trying to scale with USSD.</p>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -138,34 +110,34 @@
       <h3 class="font-semibold text-sm mb-4">Prohibitive Entry Costs</h3>
       <p class="text-gray-400 text-xs leading-relaxed">High setup fees and opaque pricing models often make USSD feel like an inaccessible luxury for growing enterprises.</p>
     </div>
-
   </div>
+</section>
 
 
   <!-- THE SOLUTION -->
+<section class="w-full bg-gray-50 py-20">
   <div class="max-w-6xl mx-auto px-6 lg:px-12">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-
     <!-- Left: Images -->
-<div class="relative w-full" style="min-height: 500px;">
+      <div class="relative w-full" style="min-height: 500px;">
 
-  <!-- Laptop — takes up left ~70% -->
-  <img
-    src="images/c7c16385ba204a56b21b313b66a87ade6417f094.png"
-    alt="UZO USSD builder"
-    class="absolute left-0 top-0 h-auto object-contain"
-    style="width: 72%;"
-  >
+        <!-- Laptop — takes up left ~70% -->
+        <img
+          src="images/c7c16385ba204a56b21b313b66a87ade6417f094.png"
+          alt="UZO USSD builder"
+          class="absolute left-0 top-0 h-auto object-contain"
+          style="width: 72%;"
+        >
 
-  <!-- Phone — right side, vertically centered -->
-  <img
-    src="images/f8177266829ac23d672388eaec40e1bc0a6823f8.png"
-    alt="UZO USSD menu display"
-    class="absolute object-contain drop-shadow-2xl"
-    style="width: 60%; left: 22%; top: 62%; transform: translateY(-50%);"
-  >
+        <!-- Phone — right side, vertically centered -->
+        <img
+          src="images/f8177266829ac23d672388eaec40e1bc0a6823f8.png"
+          alt="UZO USSD menu display"
+          class="absolute object-contain drop-shadow-2xl"
+          style="width: 60%; left: 22%; top: 62%; transform: translateY(-50%);"
+        >
 
-</div>
+      </div>
 
       <div>
         <h2 class="text-3xl font-bold mb-3 text-gray-900">The Solution</h2>
@@ -211,13 +183,12 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
   
 <!-- KEY RESULTS -->
-<section class="text-white py-16 reveal" style="background-color:#F59E0B;">
+<section class="text-white py-16" style="background-color:#F59E0B;">
   <div class="max-w-6xl mx-auto px-6 lg:px-12">
     <p class="text-base font-semibold mb-10">Key Results</p>
     <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
@@ -238,7 +209,7 @@
 </section>
 
 <!-- THE COMMUNITY OF TRUST -->
-<section class="w-full bg-white py-20 reveal">
+<section class="w-full bg-white py-20">
   <div class="max-w-6xl mx-auto px-6 lg:px-12">
 
     <!-- Header -->
@@ -260,7 +231,7 @@
 </section>
 
  <!-- EXPLORE MORE SOLUTIONS -->
-  <section class="bg-black text-white py-16 md:py-24 px-6 md:px-12 reveal">
+  <section class="bg-black text-white py-16 md:py-24 px-6 md:px-12">
     <div class="max-w-7xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Explore More Solutions</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

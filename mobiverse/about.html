@@ -71,44 +71,56 @@
 
 <body>
   <!-- Navigation Bar -->
- <header class="sticky top-0 bg-white z-50 border-b border-gray-100">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-5 flex items-center justify-between">
-      <a href="index.html">
-        <img src="images/1697717667618.jpg" alt="Mobiverse" class="h-10 w-auto">
-      </a>
-      <nav class="hidden md:flex gap-x-12 md:gap-x-20 text-sm font-medium">
-        <div class="flex flex-col items-center">
-          <div class="nav-line  w-16"></div>
-          <a href="do.html" class="text-gray-600 hover:text-black">What we do</a>
-        </div>
-        <div class="flex flex-col items-center">
-          <div class="nav-line active-line w-16"></div>
-          <a href="about.html" class="font-semibold text-black">What we're about</a>
-        </div>
-        <div class="flex flex-col items-center">
-          <div class="nav-line w-16"></div>
-          <a href="work.html" class="text-gray-600 hover:text-black">Work with us</a>
-        </div>
-      </nav>
-      <button id="menuBtn" class="md:hidden flex flex-col gap-1.5 p-2 z-50" aria-label="Open menu">
-        <span class="block w-6 h-0.5 bg-gray-900"></span>
-        <span class="block w-6 h-0.5 bg-gray-900"></span>
-        <span class="block w-6 h-0.5 bg-gray-900"></span>
-      </button>
+ <!-- Navigation Bar -->
+  <header class="sticky top-0 bg-white z-50 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-5 md:py-6">
+      <div class="flex items-center justify-between">
+        <a href="index.html">
+          <img src="images/1697717667618.jpg" alt="Mobiverse Logo" class="h-10 w-auto">
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-start gap-x-12 md:gap-x-16 lg:gap-x-24 text-sm md:text-sm font-medium">
+          <div class="flex flex-col items-center">
+            <div class="nav-line w-16 md:w-20"></div>
+            <a href="do.html" class="text-gray-700 hover:text-black transition">What we do</a>
+          </div>
+          <div class="flex flex-col items-center">
+            <div class="nav-line active-line w-16 md:w-20"></div>
+            <a href="about.html"  class="font-semibold text-black">What we're about</a>
+          </div>
+          <div class="flex flex-col items-center">
+            <div class="nav-line w-16 md:w-20"></div>
+            <a href="work.html" class="text-gray-700 hover:text-black transition">Work with us</a>
+          </div>
+        </nav>
+
+        <!-- Mobile Hamburger -->
+        <button id="menuBtn" class="md:hidden flex flex-col gap-1.5 p-2 z-50" aria-label="Open menu">
+          <span class="block w-6 h-0.5 bg-gray-900 transition-all duration-300" id="bar1"></span>
+          <span class="block w-6 h-0.5 bg-gray-900 transition-all duration-300" id="bar2"></span>
+          <span class="block w-6 h-0.5 bg-gray-900 transition-all duration-300" id="bar3"></span>
+        </button>
+      </div>
     </div>
+
+    <!-- Mobile Menu Overlay -->
     <div class="mobile-overlay fixed inset-0 bg-black/40 z-40" id="mobileOverlay"></div>
     <div class="mobile-panel fixed top-0 right-0 w-72 h-full bg-white z-50 shadow-2xl flex flex-col" id="mobilePanel">
       <div class="flex items-center justify-between px-6 py-5 border-b border-gray-100">
         <img src="images/1697717667618.jpg" alt="Mobiverse" class="h-8 w-auto">
-        <button id="closeMenu" class="p-2" aria-label="Close menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+        <button id="closeMenu" class="p-2" aria-label="Close menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
       </div>
       <nav class="flex flex-col gap-1 px-6 py-8">
-        <a href="do.html" class="py-3 px-4 bg-red-50 text-red-600 rounded-lg font-semibold">What we do</a>
+        <a href="do.html" class="py-3 px-4 text-gray-700 hover:bg-gray-50 rounded-lg font-medium transition">What we do</a>
         <a href="about.html" class="py-3 px-4 text-gray-700 hover:bg-gray-50 rounded-lg font-medium transition">What we're about</a>
         <a href="work.html" class="py-3 px-4 text-gray-700 hover:bg-gray-50 rounded-lg font-medium transition">Work with us</a>
       </nav>
     </div>
   </header>
+
 
   <!-- Hero section -->
   <section class="w-full relative pb-32 px-8 max-w-7xl mx-auto">

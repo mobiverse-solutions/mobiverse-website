@@ -61,13 +61,23 @@
         <nav class="hidden md:flex items-start gap-x-12 md:gap-x-16 lg:gap-x-24 text-sm md:text-base font-medium">
           <div class="flex flex-col items-center"><div class="nav-line w-16 md:w-20"></div><a href="do.html" class="text-gray-700 hover:text-black transition">What we do</a></div>
           <div class="flex flex-col items-center"><div class="nav-line w-16 md:w-20"></div><a href="about.html" class="text-gray-700 hover:text-black transition">What we're about</a></div>
-          <div class="flex flex-col items-center"><div class="nav-line w-16 md:w-20"></div><a href="careers.html" class="text-gray-700 hover:text-black transition">Work with us</a></div>
+          <div class="flex flex-col items-center"><div class="nav-line w-16 md:w-20"></div><a href="work.html" class="text-gray-700 hover:text-black transition">Work with us</a></div>
         </nav>
         <button id="menuBtn" class="md:hidden flex flex-col gap-1.5 p-2 z-50" aria-label="Open menu">
           <span class="block w-6 h-0.5 bg-gray-900"></span><span class="block w-6 h-0.5 bg-gray-900"></span><span class="block w-6 h-0.5 bg-gray-900"></span>
         </button>
       </div>
     </div>
+
+ <!-- Mobile Hamburger -->
+        <button id="menuBtn" class="md:hidden flex flex-col gap-1.5 p-2 z-50" aria-label="Open menu">
+          <span class="block w-6 h-0.5 bg-gray-900 transition-all duration-300" id="bar1"></span>
+          <span class="block w-6 h-0.5 bg-gray-900 transition-all duration-300" id="bar2"></span>
+          <span class="block w-6 h-0.5 bg-gray-900 transition-all duration-300" id="bar3"></span>
+        </button>
+      </div>
+    </div>
+
     <div class="mobile-overlay fixed inset-0 bg-black/40 z-40" id="mobileOverlay"></div>
     <div class="mobile-panel fixed top-0 right-0 w-72 h-full bg-white z-50 shadow-2xl flex flex-col" id="mobilePanel">
       <div class="flex items-center justify-between px-6 py-5 border-b border-gray-100">
@@ -77,7 +87,7 @@
       <nav class="flex flex-col gap-1 px-6 py-8">
         <a href="do.html" class="py-3 px-4 text-gray-700 hover:bg-gray-50 rounded-lg font-medium transition">What we do</a>
         <a href="about.html" class="py-3 px-4 text-gray-700 hover:bg-gray-50 rounded-lg font-medium transition">What we're about</a>
-        <a href="careers.html" class="py-3 px-4 text-gray-700 hover:bg-gray-50 rounded-lg font-medium transition">Work with us</a>
+        <a href="work.html" class="py-3 px-4 text-gray-700 hover:bg-gray-50 rounded-lg font-medium transition">Work with us</a>
       </nav>
     </div>
   </header>
@@ -102,7 +112,7 @@
   </section>
 
   <!-- THE CHALLENGE -->
-  <section class="max-w-6xl mx-auto px-6 lg:px-12 py-20 reveal">
+  <section class="max-w-6xl mx-auto px-6 lg:px-12 py-20">
     <h2 class="text-3xl md:text-4xl font-bold mb-3">The Challenge</h2>
     <p class="text-gray-400 text-sm max-w-md mb-16 leading-relaxed">Businesses struggle to connect with offline customers, face high costs for custom USSD development, or lack the technical resources to manage USSD services. Legacy authentication methods are failing businesses and frustrating customers across the continent.</p>
    
@@ -134,7 +144,7 @@
   </section>
 
   <!-- THE SOLUTION -->
-  <section class="w-full bg-gray-50 py-20 reveal">
+  <section class="w-full bg-gray-50 py-20">
     <div class="max-w-6xl mx-auto px-6 lg:px-16">
       <div class="flex flex-col lg:flex-row gap-16 items-center">
         <div class="w-full lg:w-1/2 flex justify-center">
@@ -215,7 +225,7 @@
   </section>
 
   <<!-- KEY RESULTS -->
-<section class="text-white py-16 reveal" style="background-color: #2563eb;">
+<section class="text-white py-16" style="background-color: #2563eb;">
   <div class="max-w-6xl mx-auto px-6 lg:px-12">
     <p class="text-base font-semibold mb-10">Key Results</p>
     <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
@@ -240,7 +250,7 @@
 </section>
 
 <!-- THE COMMUNITY OF TRUST -->
-<section class="w-full bg-white py-20 reveal">
+<section class="w-full bg-white py-20">
   <div class="max-w-6xl mx-auto px-6 lg:px-12">
 
     <!-- Header -->
@@ -288,7 +298,7 @@
 </section>
 
   <!-- EXPLORE MORE SOLUTIONS -->
-  <section class="bg-black text-white py-16 md:py-24 px-6 md:px-12 reveal">
+  <section class="bg-black text-white py-16 md:py-24 px-6 md:px-12">
     <div class="max-w-7xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Explore More Solutions</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
