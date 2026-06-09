@@ -3,40 +3,62 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>What We're About | Mobiverse Solutions</title>
+  <title>Upenza | Mobiverse Solutions</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
   <style>
-    body { 
-      font-family: 'Inter', sans-serif;
-      background: white;
-      color: #111827;
-      margin: 0;
-      padding: 0;
-    }
-
-    .nav-line {
-      height: 1px;
-      background: #9ca3af;
-      margin-bottom: 6px;
-    }
-
-    .active-line {
-      background: #ef4444;
-    }
-
-    /* Phone Wrap */
-    .phone-wrap {
-      position: relative;
-      width: 340px;
-      height: 480px;
-      flex-shrink: 0;
+    body 
+      { 
+        font-family: 'Inter', sans-serif; 
+        background: white;
+        color: #111827;
+        margin: 0; 
+        padding: 0; 
+      }
+    .nav-line
+      {
+        height: 1px;
+        background: #9ca3af;
+        margin-bottom: 6px;
+      }
+    .active-line 
+      { 
+        background: #ef4444;
+      }
+    .reveal
+      {
+        opacity:0;
+        transform:translateY(32px);
+        transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1)
+      }
+    .reveal.visible
+      {
+        opacity:1;
+        transform:translateY(0)
+      }
+    .mobile-overlay
+      {
+        opacity:0;
+        pointer-events:none;
+        transition:opacity .3s ease
+      }
+    .mobile-overlay.open
+      {
+        opacity:1;
+        pointer-events:auto
+      }
+    .mobile-panel
+      {
+        transform:translateX(100%);
+        transition:transform .35s cubic-bezier(.4,0,.2,1)
+      }
+    .mobile-panel.open
+      {
+      transform:translateX(0)
     }
   </style>
 </head>
-
 <body class="bg-white">
 
   <!-- NAV -->
@@ -44,21 +66,43 @@
     <div class="max-w-7xl mx-auto px-6 lg:px-12 py-5 md:py-6">
       <div class="flex items-center justify-between">
         <a href="index.html"><img src="images/1697717667618.jpg" alt="Mobiverse Logo" class="h-10 w-auto"></a>
-        <nav class="flex items-start gap-x-12 md:gap-x-16 lg:gap-x-24 text-sm md:text-base font-medium">
+
+        <nav class="hidden md:flex items-start gap-x-12 md:gap-x-16 lg:gap-x-24 text-sm md:text-base font-medium">
           <div class="flex flex-col items-center">
             <div class="nav-line w-16 md:w-20"></div>
             <a href="do.html" class="text-gray-700 hover:text-black transition">What we do</a>
           </div>
           <div class="flex flex-col items-center">
-            <div class="nav-line active-line w-16 md:w-20"></div>
-            <a href="about.html" class="text-black font-semibold">What we're about</a>
+            <div class="nav-line w-16 md:w-20"></div>
+            <a href="about.html" class="text-gray-700 hover:text-black transition">What we're about</a>
           </div>
           <div class="flex flex-col items-center">
             <div class="nav-line w-16 md:w-20"></div>
             <a href="careers.html" class="text-gray-700 hover:text-black transition">Work with us</a>
           </div>
         </nav>
+
+        <button id="menuBtn" class="md:hidden flex flex-col gap-1.5 p-2 z-50" aria-label="Open menu"><span class="block w-6 h-0.5 bg-gray-900"></span><span class="block w-6 h-0.5 bg-gray-900"></span><span class="block w-6 h-0.5 bg-gray-900"></span></button>
       </div>
+    </div>
+
+    <div class="mobile-overlay fixed inset-0 bg-black/40 z-40" id="mobileOverlay"></div>
+    <div class="mobile-panel fixed top-0 right-0 w-72 h-full bg-white z-50 shadow-2xl flex flex-col" id="mobilePanel">
+      <div class="flex items-center justify-between px-6 py-5 border-b border-gray-100">
+        <img src="images/1697717667618.jpg" alt="Mobiverse" class="h-8 w-auto">
+        <button id="closeMenu" class="p-2" aria-label="Close menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+      </button>
+      </div>
+
+      <nav class="flex flex-col gap-1 px-6 py-8">
+        <a href="do.html" class="py-3 px-4 text-gray-700 hover:bg-gray-50 rounded-lg font-medium transition">What we do</a>
+        <a href="about.html" class="py-3 px-4 text-gray-700 hover:bg-gray-50 rounded-lg font-medium transition">What we're about</a>
+        <a href="careers.html" class="py-3 px-4 text-gray-700 hover:bg-gray-50 rounded-lg font-medium transition">Work with us</a>
+      </nav>
     </div>
   </header>
 
@@ -71,7 +115,7 @@
     </div>
   </section>
 
-  <!-- UPENZA -->
+  <!-- UPENZA BAND -->
   <section class="bg-[#D9D9D9] w-full py-24 px-8">
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
       <div>
@@ -84,18 +128,13 @@
   </section>
 
   <!-- THE CHALLENGE -->
-  <section class="max-w-6xl mx-auto px-6 lg:px-12 py-20">
+  <section class="max-w-6xl mx-auto px-6 lg:px-12 py-20 reveal">
     <h2 class="text-3xl md:text-4xl font-bold mb-3">The Challenge</h2>
     <p class="text-gray-400 text-sm max-w-md mb-16 leading-relaxed">Social groups often struggle with fragmented communication and messy tracking of their financial contributions</p>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-
       <div class="border border-gray-200 rounded-lg p-8 flex flex-col items-center text-center">
         <div class="mb-5 text-gray-400">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/>
-            <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/>
-            <line x1="1" y1="1" x2="23" y2="23"/>
-          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
         </div>
         <h3 class="font-semibold text-sm mb-4">The Transparency Crisis</h3>
         <p class="text-gray-400 text-xs leading-relaxed">Members often felt uncertain about their standing. "Did I pay for March?" became a recurring point of friction.</p>
@@ -103,114 +142,126 @@
 
       <div class="border border-gray-200 rounded-lg p-8 flex flex-col items-center text-center">
         <div class="mb-5 text-gray-400">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
-            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
-          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
         </div>
         <h3 class="font-semibold text-sm mb-4">The "Nag" Fatigue</h3>
         <p class="text-gray-400 text-xs leading-relaxed">Executives had to manually send hundreds of individual WhatsApp messages and make phone calls to remind members to pay.</p>
       </div>
-
+      
       <div class="border border-gray-200 rounded-lg p-8 flex flex-col items-center text-center">
         <div class="mb-5 text-gray-400">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
-            <rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
-          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
         </div>
         <h3 class="font-semibold text-sm mb-4">The Disengagement Fade</h3>
         <p class="text-gray-400 text-xs leading-relaxed">The group starts to feel like a financial chore rather than a thriving community.</p>
       </div>
-
     </div>
   </section>
 
   <!-- THE SOLUTION -->
-  <section class="w-full bg-gray-50 py-20">
-    <div class="max-w-6xl mx-auto px-6 lg:px-16">
-      <div class="flex flex-col lg:flex-row gap-16 items-center">
+  <section class="w-full bg-gray-50 py-20 reveal">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
 
-        <!-- LEFT: Phone screenshots -->
-        <div class="w-full lg:w-1/2 flex justify-center">
-          <div class="phone-wrap">
-            <img
-              src="images/264a87ae543179088c7fed9e298e487882449c53.jpg"
-              alt="Mobiverse app - member dashboard"
-              class="absolute left-0 top-0 rounded-3xl shadow-2xl border-4 border-gray-800 z-10"
-              style="width:220px;height:460px;object-fit:cover;object-position:top;"
-            />
-            <img
-              src="images/a08c4dd321eaa44702e152eb67af400822d8cc7e.png"
-              alt="Mobiverse app - dues overview"
-              class="absolute rounded-3xl shadow-2xl border-2 border-gray-100 z-20"
-              style="width:175px;height:330px;object-fit:cover;object-position:top;left:120px;top:140px;"
-            />
-          </div>
-        </div>
+        <!-- Left: Two phone images overlapping -->
+<div class="relative flex justify-start" style="min-height: 580px;">
 
-        <!-- RIGHT: Title + features -->
-        <div class="w-full lg:w-1/2">
-          <h2 class="text-3xl font-bold mb-3">The Solution</h2>
+  <!-- Large phone — CSS frame -->
+  <div style="
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 240px;
+    height: 500px;
+    background: #111;
+    border: 10px solid #1a1a1a;
+    border-radius: 36px;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+    overflow: hidden;
+    z-index: 1;
+  ">
+    <!-- Notch -->
+    <div style="
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 90px; height: 20px;
+      background: #1a1a1a;
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+      z-index: 10;
+    "></div>
+    <img
+      src="images/264a87ae543179088c7fed9e298e487882449c53.jpg"
+      alt="Upenza member dashboard"
+      style="width:100%; height:100%; object-fit:cover; object-position:top;"
+    >
+  </div>
+
+  <!-- Small phone — has its own frame already -->
+  <img
+    src="images/a08c4dd321eaa44702e152eb67af400822d8cc7e.png"
+    alt="Upenza dues overview"
+    style="
+      position: absolute;
+      top: 230px;
+      left: -50px;
+      width: 620px;
+      object-fit: contain;
+      z-index: 2;
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3));
+    "
+  >
+
+</div>
+
+        <!-- Right: Content -->
+        <div>
+          <h2 class="text-3xl font-bold mb-3 text-gray-900">The Solution</h2>
           <p class="text-gray-400 text-sm mb-10 leading-relaxed max-w-sm">A central hub to manage members, dues, finances, and fundraising with ease.</p>
 
-          <!-- 1. Real-time Clarity — eye/visibility -->
-          <div class="flex gap-4 mb-7">
-            <div class="w-10 h-10 bg-red-100 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                <circle cx="12" cy="12" r="3"/>
-              </svg>
+          <!-- Feature 1 -->
+          <div class="flex gap-4 mb-7 items-start">
+            <div class="w-10 h-10 bg-red-50 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
             </div>
             <div>
-              <h4 class="font-semibold text-sm mb-1 text-gray-900">Real-time Clarity</h4>
-              <p class="text-gray-500 text-sm leading-relaxed">Upenza provides a transparent, self-service dashboard where members can view their payment history bridging the "Trust Gap."</p>
+              <h4 class="font-semibold text-sm text-gray-900 mb-1">Real-time Clarity</h4>
+              <p class="text-gray-500 text-xs leading-relaxed">Upenza provides a transparent, self-service dashboard where members can view their payment history bridging the "Trust Gap."</p>
             </div>
           </div>
 
-          <!-- 2. Unified Accuracy — clipboard check -->
-          <div class="flex gap-4 mb-7">
-            <div class="w-10 h-10 bg-red-100 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/>
-                <rect x="9" y="3" width="6" height="4" rx="1"/>
-                <path d="m9 12 2 2 4-4"/>
-              </svg>
+          <!-- Feature 2 -->
+          <div class="flex gap-4 mb-7 items-start">
+            <div class="w-10 h-10 bg-red-50 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="m9 12 2 2 4-4"/></svg>
             </div>
             <div>
-              <h4 class="font-semibold text-sm mb-1 text-gray-900">Unified Accuracy (Manual + Digital)</h4>
-              <p class="text-gray-500 text-sm leading-relaxed">Whether payments are made through the automated wallet or entered manually by the treasurer, Upenza instantly reconciles the data into a single source of truth for your group.</p>
+              <h4 class="font-semibold text-sm text-gray-900 mb-1">Unified Accuracy (Manual + Digital)</h4>
+              <p class="text-gray-500 text-xs leading-relaxed">Whether payments are made through the automated wallet or entered manually by the treasurer, Upenza instantly reconciles the data into a single source of truth for your group.</p>
             </div>
           </div>
 
-          <!-- 3. Effortless Collections — bolt -->
-          <div class="flex gap-4 mb-7">
-            <div class="w-10 h-10 bg-red-100 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-              </svg>
+          <!-- Feature 3 -->
+          <div class="flex gap-4 mb-7 items-start">
+            <div class="w-10 h-10 bg-red-50 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
             </div>
             <div>
-              <h4 class="font-semibold text-sm mb-1 text-gray-900">Effortless Collections</h4>
-              <p class="text-gray-500 text-sm leading-relaxed">One-tap payment reminders via Email and WhatsApp handle the "nagging" for you, resulting in 90% faster collections.</p>
+              <h4 class="font-semibold text-sm text-gray-900 mb-1">Effortless Collections</h4>
+              <p class="text-gray-500 text-xs leading-relaxed">One-tap payment reminders via Email and WhatsApp handle the "nagging" for you, resulting in 90% faster collections.</p>
             </div>
           </div>
 
-          <!-- 4. Strengthened Connection — diversity/people -->
-          <div class="flex gap-4 mb-7">
-            <div class="w-10 h-10 bg-red-100 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="7" r="3"/>
-                <path d="M5.5 21a7.5 7.5 0 0 1 13 0"/>
-                <circle cx="5" cy="13" r="2.5"/>
-                <path d="M2 21a5 5 0 0 1 7-4.6"/>
-                <circle cx="19" cy="13" r="2.5"/>
-                <path d="M15 16.4A5 5 0 0 1 22 21"/>
-              </svg>
+          <!-- Feature 4 -->
+          <div class="flex gap-4 items-start">
+            <div class="w-10 h-10 bg-red-50 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2"><circle cx="12" cy="7" r="3"/><path d="M5.5 21a7.5 7.5 0 0 1 13 0"/><circle cx="5" cy="13" r="2.5"/><path d="M2 21a5 5 0 0 1 7-4.6"/><circle cx="19" cy="13" r="2.5"/><path d="M15 16.4A5 5 0 0 1 22 21"/></svg>
             </div>
             <div>
-              <h4 class="font-semibold text-sm mb-1 text-gray-900">Strengthened Connection</h4>
-              <p class="text-gray-500 text-sm leading-relaxed">By removing the friction of financial administration, leadership can focus on the group's mission, turning a "financial chore" back into a thriving community.</p>
+              <h4 class="font-semibold text-sm text-gray-900 mb-1">Strengthened Connection</h4>
+              <p class="text-gray-500 text-xs leading-relaxed">By removing the friction of financial administration, leadership can focus on the group's mission, turning a "financial chore" back into a thriving community.</p>
             </div>
           </div>
 
@@ -220,172 +271,117 @@
   </section>
 
   <!-- KEY RESULTS -->
-  <section class="bg-[#6B0EFF] text-white py-16">
+ <section class="bg-[#5400C2] text-white py-16 reveal">
     <div class="max-w-6xl mx-auto px-6 lg:px-12">
-      <h2 class="text-2xl font-bold mb-10 text-center">Key Results</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+      <p class="text-base font-semibold mb-10">Key Results</p>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
         <div>
-          <div class="text-5xl font-bold mb-2">95%</div>
-          <p class="text-white/80">User satisfaction rate</p>
+          <p class="text-5xl font-bold leading-none">95<span class="text-2xl">%</span></p>
+          <p class="text-xs text-white mt-2">Average Dues Collection Rate</p>
         </div>
         <div>
-          <div class="text-5xl font-bold mb-2">15 Days</div>
-          <p class="text-white/80">Average time to get first payment</p>
+          <p class="text-5xl font-bold leading-none">15 <span class="text-2xl font-normal">Days</span></p>
+          <p class="text-xs text-white mt-2">Admin Time Saved</p>
         </div>
         <div>
-          <div class="text-5xl font-bold mb-2">4.9/5.0</div>
-          <p class="text-white/80">Average app rating</p>
+          <p class="text-4xl font-bold leading-none">4.9<span class="text-2xl font-normal">/5.0</span></p>
+          <p class="text-xs text-white mt-2">Member Satisfaction</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- THE COMMUNITY OF TRUST -->
-<section class="max-w-6xl mx-auto px-6 lg:px-12 py-20 bg-white">
-  <div class="max-w-4xl mx-auto">
-    
-    <!-- Header -->
-    <div class="text-center mb-16">
-       <h2 class="text-2xl font-bold mb-10 text-center">The Community of Trust</h2>
-      <p class="text-gray-600 text-lg">Join the growing network of organised communities</p>
-      <div class="flex justify-center mt-6">
-        <div class="h-px w-24 bg-gray-300"></div>
-      </div>
-      <p class="text-gray-500 mt-4 text-sm tracking-widest">WWW.UPENZA.COM</p>
-    </div>
+  <section class="w-full bg-white py-20 reveal">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12">
 
-    <!-- Testimonials Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-
-      <!-- Left Testimonial -->
-      <div class="text-center">
-        <div class="flex justify-center mb-6">
-          <img src="images/MMM.png" alt="Mary Mother of Good Counsel" class="h-16 w-16">
+      <!-- Header -->
+      <div class="mb-16">
+        <h2 class="text-2xl font-bold mb-4">The Community of Trust</h2>
+        <p class="text-gray-500 text-sm mb-4">Join the growing network of organised communities</p>
+        <div class="flex items-center gap-3">
+          <span class="w-8 h-[1px] bg-gray-400"></span>
+          <span class="text-xs tracking-widest text-gray-400 uppercase">www.upenza.com</span>
         </div>
-        <p class="font-bold">Mary Mother of Good Counsel Parish Chair</p>
-        <p class="text-gray-600 text-md leading-relaxed mb-6">
-          “We hit our dues payments goal of over 75% in 2025. The automated reminders and one-tap payments made it so easy for our members to contribute.”
-        </p>
-        <p class="text-md font-bold text-gray-800 mt-1">~Treasurer</p>
       </div>
 
-      <!-- Right Testimonial -->
-      <div class="text-center">
-        <div class="flex justify-center mb-6">
-          <img src="images/AOGA.png" alt="AOGA 95 Year Group" class="h-16 w-16">
+      <!-- Testimonials -->
+      <div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-200">
+
+        <!-- Left -->
+        <div class="flex flex-col items-center text-center px-8 pb-12 md:pb-0">
+          <div class="flex flex-col items-center gap-2 mt-auto">
+            <img src="images/MMM.png" class="h-16 w-16 object-contain">
+            <p class="text-xs font-semibold text-gray-800 text-center">Mary Mother of Good Counsel Parish Choir</p>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed mb-5 ">"We hit our dues payments goal of over 75% in 2025. The <br> automated reminders and one-tap payments made it so <br>easy for our members to contribute."</p>
+          <p class="text-sm font-semibold text-gray-800 mb-6">~ Treasurer</p>
+          
         </div>
-        <p class="font-bold">AOGA 95 Year Group</p>
-        <p class="text-gray-600  text-md leading-relaxed mb-6">
-          “Updating the group on collections so far is so easy” 
-        </p>
-        <p class="text-md font-bold text-gray-800 mt-1">~Treasurer</p>
-      </div>
 
-    </div>
-  </div>
-</section>
+        <!-- Right -->
+        <div class="flex flex-col items-center text-center px-8 pt-12 md:pt-0">
+          <div class="flex flex-col items-center gap-2 mt-auto">
+            <img src="images/AOGA.png" alt="AOGA 95 Year Group" class="h-16 w-16 object-contain">
+            <p class="text-xs font-semibold text-gray-800 text-center">AOGA 95 Year Group</p>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed mb-5">"Updating the group on collections so far is so easy."</p>
+          <p class="text-sm font-semibold text-gray-800 mb-6">~ Treasurer</p>
+        </div>
 
-<!-- EXPLORE MORE SOLUTIONS - Now a clean grid (No Carousel) -->
-  <section class="bg-black text-white py-16 md:py-24 px-6 md:px-12">
-    <div class="max-w-7xl mx-auto">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Explore More Solutions</h2>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <a href="mobi.html" class="block group">
-          <img src="images/course.png" alt="Reach Your Audience Instantly" class="w-full h-100 object-cover">
-        </a>
-
-        <a href="uz.html" class="block group">
-          <img src="images/uzoussd.png" alt="USSD Made Simple" class="w-full h-100 object-cover">
-        </a>
-
-        <a href="true.html" class="block group">
-          <img src="images/Trueee.png" alt="Truefactor" class="w-full h-100 object-cover">
-        </a>
-
-        <a href="auralconnect.html" class="block group">
-          <img src="images/Aural.png" alt="Yelgi" class="w-full h-100 object-cover">
-        </a>
       </div>
     </div>
   </section>
 
-  <script>lucide.createIcons();</script>
+  <!-- EXPLORE MORE -->
+  <section class="bg-black text-white py-16 md:py-24 px-6 md:px-12 reveal">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Explore More Solutions</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <a href="mobi.html" class="block group"><img src="images/course.png" class="w-full h-48 object-cover rounded-lg group-hover:scale-105 transition-transform"></a>
+        <a href="uz.html" class="block group"><img src="images/uzoussd.png" class="w-full h-48 object-cover rounded-lg group-hover:scale-105 transition-transform"></a>
+        <a href="aural.html" class="block group"><img src="images/Aural.png" class="w-full h-48 object-cover rounded-lg group-hover:scale-105 transition-transform"></a>
+        <a href="true.html" class="block group"><img src="images/Trueee.png" class="w-full h-48 object-cover rounded-lg group-hover:scale-105 transition-transform"></a>
+      </div>
+    </div>
+  </section>
 
-   <!--Footer-->
+  <!-- FOOTER -->
   <footer class="bg-gray-200 w-full py-20 px-8">
     <div class="max-w-6xl mx-auto">
-      
       <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
-
-        <!-- Column 1: Let's Talk -->
         <div>
           <h3 class="text-3xl font-semibold mb-8">Let's Talk.</h3>
-
-          <div class="flex items-center gap-3 mb-3">
-            <span class="w-6 h-[1px] bg-gray-600"></span>
-            <span class="text-xs tracking-[4px] text-gray-700 uppercase">Information</span>
-          </div>
-
-          <div class="flex items-center gap-3">
-            <span class="w-6 h-[1px] bg-gray-600"></span>
-            <span class="text-xs tracking-[4px] text-gray-700 uppercase">Message</span>
-          </div>
+          <div class="flex items-center gap-3 mb-3"><span class="w-6 h-[1px] bg-gray-600"></span><span class="text-xs tracking-[4px] text-gray-700 uppercase">Information</span></div>
+          <div class="flex items-center gap-3"><span class="w-6 h-[1px] bg-gray-600"></span><span class="text-xs tracking-[4px] text-gray-700 uppercase">Message</span></div>
         </div>
-
-        <!-- Column 2 & 3 Container -->
         <div class="md:col-span-2">
-          <!-- Top intro text -->
-          <p class="text-gray-700 leading-relaxed text-sm mb-8" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-             Tell us the problem you're solving; we'll show you the tool to solve it.
-              Here is how to reach us:
-          </p>
-
-          <!-- Contact and Address in 2 columns -->
+          <p class="text-gray-700 leading-relaxed text-sm mb-8">Tell us the problem you're solving; we'll show you the tool to solve it. Here is how to reach us:</p>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
-            
-            <!-- Contact Information -->
             <div>
-              <div class="flex flex-col gap-3 mb-4">
-                <span class="w-12 h-[2px] bg-black mt-2"></span>
-                <h4 class="font-semibold text-sm">Contact</h4>
-              </div>
-
-              <p class="text-gray-700 text-sm mb-1">
-                Call: <span class="text-black">(+233) 20 823 0106</span>
-              </p>
-              <p class="text-gray-700 text-sm mb-3 ml-9">
-                <span class="text-black">(+233) 24 496 9220</span>
-              </p>
-
-              <p class="text-gray-700 text-sm mb-4">
-                Email: <span class="text-black">clientservices@mobivs.com</span>
-              </p>
-
-              <!-- LinkedIn icon -->
-              <div class="w-7 h-7 bg-black rounded-full flex items-center justify-center">
-                <span class="text-white font-bold text-xs">in</span>
-              </div>
+              <div class="flex flex-col gap-3 mb-4"><span class="w-12 h-[2px] bg-black mt-2"></span><h4 class="font-semibold text-sm">Contact</h4></div>
+              <p class="text-gray-700 text-sm mb-1">Call: <span class="text-black">(+233) 20 823 0106</span></p>
+              <p class="text-gray-700 text-sm mb-3 ml-9"><span class="text-black">(+233) 24 496 9220</span></p>
+              <p class="text-gray-700 text-sm mb-4">Email: <span class="text-black">clientservices@mobivs.com</span></p>
+              <div class="w-7 h-7 bg-black rounded-full flex items-center justify-center"><span class="text-white font-bold text-xs">in</span></div>
             </div>
-
-            <!-- Address -->
             <div>
-              <div class="flex flex-col gap-3 mb-4">
-                <span class="w-12 h-[2px] bg-gray-700 mt-2"></span>
-                <h4 class="font-semibold text-sm">Address</h4>
-              </div>
-
-              <p class="text-gray-700 text-sm leading-relaxed">
-                P.O.Box LG 265<br>
-                Legon, Accra, Ghana
-              </p>
+              <div class="flex flex-col gap-3 mb-4"><span class="w-12 h-[2px] bg-gray-700 mt-2"></span><h4 class="font-semibold text-sm">Address</h4></div>
+              <p class="text-gray-700 text-sm leading-relaxed">P.O.Box LG 265<br>Legon, Accra, Ghana</p>
             </div>
-
           </div>
         </div>
-
       </div>
     </div>
   </footer>
+
+  <script>
+    lucide.createIcons();
+    const menuBtn=document.getElementById('menuBtn'),closeMenu=document.getElementById('closeMenu'),mobileOverlay=document.getElementById('mobileOverlay'),mobilePanel=document.getElementById('mobilePanel');
+    function openMenu(){mobileOverlay.classList.add('open');mobilePanel.classList.add('open');document.body.style.overflow='hidden';}
+    function closeMenuFn(){mobileOverlay.classList.remove('open');mobilePanel.classList.remove('open');document.body.style.overflow='';}
+    menuBtn.addEventListener('click',openMenu);closeMenu.addEventListener('click',closeMenuFn);mobileOverlay.addEventListener('click',closeMenuFn);
+    document.querySelectorAll('.reveal').forEach(el=>new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:0.1}).observe(el));
+  </script>
 </body>
 </html>

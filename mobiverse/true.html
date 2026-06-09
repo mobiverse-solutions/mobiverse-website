@@ -3,114 +3,338 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>What We're About | Mobiverse Solutions</title>
+  <title>Truefactor | Mobiverse Solutions</title>
+  <meta name="description" content="Truefactor — secure, network-based authentication that eliminates fraud without passwords or OTPs.">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background: white;
-      color: #111827;
-      margin: 0;
-      padding: 0;
-    }
-
-    .nav-line {
-      height: 1px;
-      background: #9ca3af;
-      margin-bottom: 6px;
-    }
-
-    .active-line {
-      background: #ef4444;
-    }
-
-    .diamond {
-      width: 26px;
-      height: 26px;
-      background: #dc2626;
-      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-    }
+    body { font-family:'Inter',sans-serif; background:#fff; color:#111827; margin:0; padding:0; }
+    .nav-line { height:1px; background:#9ca3af; margin-bottom:6px; }
+    .active-line { background:#ef4444; }
+    .reveal { opacity:0; transform:translateY(32px); transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1); }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    .mobile-overlay { opacity:0; pointer-events:none; transition:opacity .3s ease; }
+    .mobile-overlay.open { opacity:1; pointer-events:auto; }
+    .mobile-panel { transform:translateX(100%); transition:transform .35s cubic-bezier(.4,0,.2,1); }
+    .mobile-panel.open { transform:translateX(0); }
+    .phone-wrap { position:relative; width:340px; height:480px; flex-shrink:0; }
     
-    @media (max-width: 640px) {
-      .carousel-slide {
-        flex: 0 0 88%;
-      }
+    /* Modern Phone Frame Mockup */
+    .phone-frame {
+      position: relative;
+      width: 280px;
+      height: 560px;
+      background: #111;
+      border: 12px solid #222;
+      border-radius: 40px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+    }
+    .phone-frame::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 25px;
+      background: #222;
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+      z-index: 20;
+    }
+    .phone-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
     }
   </style>
 </head>
+<body class="bg-white">
 
-<body>
-  <!-- Navigation Bar -->
-  <header class="sticky top-0 bg-white z-50">
+  <!-- NAV -->
+  <header class="sticky top-0 bg-white z-50 border-b border-gray-100">
     <div class="max-w-7xl mx-auto px-6 lg:px-12 py-5 md:py-6">
       <div class="flex items-center justify-between">
-
-        <!-- Logo – make it a link back to home -->
-        <a href="index.html">
-          <img src="images/1697717667618.jpg" alt="Mobiverse Logo" class="h-10 w-auto">
-        </a>
-
-        <!-- Right: Nav links -->
-        <nav class="flex items-start gap-x-12 md:gap-x-16 lg:gap-x-24 text-sm md:text-base font-medium">
-          <div class="flex flex-col items-center">
-            <div class="nav-line w-16 md:w-20"></div>
-            <a href="do.html" class="text-gray-700 hover:text-black transition">What we do</a>
-          </div>
-
-          <div class="flex flex-col items-center">
-            <div class="nav-line active-line w-16 md:w-20"></div>
-            <a href="about.html" class="text-black font-semibold">What we're about</a>
-          </div>
-
-          <div class="flex flex-col items-center">
-            <div class="nav-line w-16 md:w-20"></div>
-            <a href="careers.html" class="text-gray-700 hover:text-black transition">Work with us</a>
-          </div>
+        <a href="index.html"><img src="images/1697717667618.jpg" alt="Mobiverse Logo" class="h-10 w-auto"></a>
+        <nav class="hidden md:flex items-start gap-x-12 md:gap-x-16 lg:gap-x-24 text-sm md:text-base font-medium">
+          <div class="flex flex-col items-center"><div class="nav-line w-16 md:w-20"></div><a href="do.html" class="text-gray-700 hover:text-black transition">What we do</a></div>
+          <div class="flex flex-col items-center"><div class="nav-line w-16 md:w-20"></div><a href="about.html" class="text-gray-700 hover:text-black transition">What we're about</a></div>
+          <div class="flex flex-col items-center"><div class="nav-line w-16 md:w-20"></div><a href="careers.html" class="text-gray-700 hover:text-black transition">Work with us</a></div>
         </nav>
-
+        <button id="menuBtn" class="md:hidden flex flex-col gap-1.5 p-2 z-50" aria-label="Open menu">
+          <span class="block w-6 h-0.5 bg-gray-900"></span><span class="block w-6 h-0.5 bg-gray-900"></span><span class="block w-6 h-0.5 bg-gray-900"></span>
+        </button>
       </div>
+    </div>
+    <div class="mobile-overlay fixed inset-0 bg-black/40 z-40" id="mobileOverlay"></div>
+    <div class="mobile-panel fixed top-0 right-0 w-72 h-full bg-white z-50 shadow-2xl flex flex-col" id="mobilePanel">
+      <div class="flex items-center justify-between px-6 py-5 border-b border-gray-100">
+        <img src="images/1697717667618.jpg" alt="Mobiverse" class="h-8 w-auto">
+        <button id="closeMenu" class="p-2" aria-label="Close menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      </div>
+      <nav class="flex flex-col gap-1 px-6 py-8">
+        <a href="do.html" class="py-3 px-4 text-gray-700 hover:bg-gray-50 rounded-lg font-medium transition">What we do</a>
+        <a href="about.html" class="py-3 px-4 text-gray-700 hover:bg-gray-50 rounded-lg font-medium transition">What we're about</a>
+        <a href="careers.html" class="py-3 px-4 text-gray-700 hover:bg-gray-50 rounded-lg font-medium transition">Work with us</a>
+      </nav>
     </div>
   </header>
 
-  <!-- Hero section -->
+  <!-- HERO -->
   <section class="w-full relative pb-32 px-8 max-w-7xl mx-auto">
-
-    <!-- Background Image -->
-    <img src="images/bg.png"
-      class="absolute inset-0 w-full-screen h-full-screen object-cover z-0">
-      
-    <!-- Body Content -->
+    <img src="images/bg.png" class="absolute inset-0 w-full h-full object-cover z-0">
     <div class="max-w-6xl mx-auto relative z-10 flex flex-col items-start mt-24">
-      <h1 class="text-2xl md:text-4xl font-bold mb-12 font-mono text-center md:text-left;">
-      Everything Your Group Needs In One Place
-      </h1>
-
-      <!-- Logo -->
-       <img src="images/truefaktor.png" class="w-40 h-auto mt-10">
+      <h1 class="text-2xl md:text-4xl font-bold mb-12 font-mono text-center md:text-left">Everything Your Group Needs In One Place</h1>
+      <img src="images/truefaktor.png" class="w-40 h-auto mt-10">
     </div>
-
   </section>
 
-
-
-
-  <!-- Section -->
+  <!-- STRATEGY BAND -->
   <section class="bg-[#D9D9D9] w-full py-24 px-8">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
-
-      <!-- Left Text -->
-      <div>
-        <h2 class="text-2xl md:text-4xl font-bold mb-12 font-mono text-center md:text-left">The Strategy</h2>
-      </div>
-
-      <!-- Right Paragraph -->
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 reveal">
+      <div><h2 class="text-2xl md:text-4xl font-bold mb-12 font-mono text-center md:text-left">The Strategy</h2></div>
       <div class="text-gray-700 leading-relaxed">
-        <p>
-        Most tech is built for the best-case scenario. We build for the reality of the African landscape. Whether it's a feature phone in a remote village or a high-velocity call centre in the city, our tools ensure no one is left out of the digital economy.
-        </p>
+        <p>Most tech is built for the best-case scenario. We build for the reality of the African landscape. Whether it's a feature phone in a remote village or a high-velocity call centre in the city, our tools ensure no one is left out of the digital economy.</p>
       </div>
-      
     </div>
   </section>
+
+  <!-- THE CHALLENGE -->
+  <section class="max-w-6xl mx-auto px-6 lg:px-12 py-20 reveal">
+    <h2 class="text-3xl md:text-4xl font-bold mb-3">The Challenge</h2>
+    <p class="text-gray-400 text-sm max-w-md mb-16 leading-relaxed">Businesses struggle to connect with offline customers, face high costs for custom USSD development, or lack the technical resources to manage USSD services. Legacy authentication methods are failing businesses and frustrating customers across the continent.</p>
+   
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div class="border border-gray-200 rounded-lg p-8 flex flex-col items-center text-center">
+        <div class="mb-5 text-gray-400">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="1" y1="1" x2="23" y2="23"/><path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"/><path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"/><path d="M10.71 5.05A16 16 0 0 1 22.56 9"/> <path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"/> <path d="M8.53 16.11a6 6 0 0 1 6.95 0"/> <circle cx="12" cy="20" r="1" fill="currentColor"/></svg>
+        </div>
+        <h3 class="font-semibold text-sm mb-4">The Connectivity Blind Spot</h3>
+        <p class="text-gray-400 text-xs leading-relaxed">Apps and websites exclude millions who still use basic feature phones. Businesses focused only on "connected" customers are leaving the majority behind.</p>
+      </div>
+
+      <div class="border border-gray-200 rounded-lg p-8 flex flex-col items-center text-center">
+        <div class="mb-5 text-gray-400">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+        </div>
+           <h3 class="font-semibold text-sm mb-4">The Maintenance Nightmare</h3>
+           <p class="text-gray-400 text-xs leading-relaxed">Updating a USSD menu means going back to the developer every time. Simple changes take days or weeks, killing agility.</p>
+      </div>
+
+      <div class="border border-gray-200 rounded-lg p-8 flex flex-col items-center text-center">
+        <div class="mb-5 text-gray-400">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+        </div>
+          <h3 class="font-semibold text-sm mb-4">The Cost Barrier</h3>
+          <p class="text-gray-400 text-xs leading-relaxed">Custom USSD development is slow and expensive—requiring telecom expertise and ongoing developer support that most businesses can't afford.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE SOLUTION -->
+  <section class="w-full bg-gray-50 py-20 reveal">
+    <div class="max-w-6xl mx-auto px-6 lg:px-16">
+      <div class="flex flex-col lg:flex-row gap-16 items-center">
+        <div class="w-full lg:w-1/2 flex justify-center">
+          <img
+            src="images/imockup.png" class="w-full max-w-xs h-auto object-contain">
+        </div>
+        <div class="w-full lg:w-1/2">
+          <h2 class="text-3xl font-bold mb-3">The Solution</h2>
+          <p class="text-gray-400 text-sm mb-10 leading-relaxed max-w-sm">A central hub to manage members, dues, finances, and fundraising with ease.</p>
+         
+          <!-- Feature 1 -->
+          <div class="flex gap-4 mb-7 items-start">
+            <div class="w-10 h-10 bg-red-50 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-sm text-gray-900 mb-1">The Brainwave</h4>
+              <p class="text-gray-500 text-xs leading-relaxed">A drag-and-drop USSD platform that lets any business launch and manage interactive mobile services, no coding required.</p>
+            </div>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="flex gap-4 mb-7 items-start">
+            <div class="w-10 h-10 bg-red-50 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2">
+                <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="m9 12 2 2 4-4"/>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-sm text-gray-900 mb-1">Real-time Reach</h4>
+              <p class="text-gray-500 text-xs leading-relaxed">UZO enables businesses to engage customers on any mobile phone, anywhere. No internet. No smartphone. Just a simple dial code and instant connection.</p>
+            </div>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="flex gap-4 mb-7 items-start">
+            <div class="w-10 h-10 bg-red-50 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-sm text-gray-900 mb-1">Unified Simplicity</h4>
+              <p class="text-gray-500 text-xs leading-relaxed">Whether you need a farmer advisory line, a banking verification portal, or a hospital appointment checker, UZO handles it all from one intuitive dashboard.</p>
+            </div>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="flex gap-4 mb-7 items-start">
+            <div class="w-10 h-10 bg-red-50 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2">
+                <circle cx="12" cy="7" r="3"/><path d="M5.5 21a7.5 7.5 0 0 1 13 0"/><circle cx="5" cy="13" r="2.5"/><path d="M2 21a5 5 0 0 1 7-4.6"/><circle cx="19" cy="13" r="2.5"/><path d="M15 16.4A5 5 0 0 1 22 21"/>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-sm text-gray-900 mb-1">Effortless Deployment</h4>
+              <p class="text-gray-500 text-xs leading-relaxed">Launch USSD applications in days, not weeks. Drag, drop, and publish — without waiting on developers or telecom consultants.</p>
+            </div>
+          </div>
+
+          <!-- Feature 5 -->
+          <div class="flex gap-4 items-start">
+            <div class="w-10 h-10 bg-red-50 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-sm text-gray-900 mb-1">Cost-Efficient Scale</h4>
+              <p class="text-gray-500 text-xs leading-relaxed">Cut development costs by eliminating the need for specialized USSD programmers. Scale from 100 interactions a day to 1 million without re-architecting your solution.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <<!-- KEY RESULTS -->
+<section class="text-white py-16 reveal" style="background-color: #2563eb;">
+  <div class="max-w-6xl mx-auto px-6 lg:px-12">
+    <p class="text-base font-semibold mb-10">Key Results</p>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+
+      <div>
+        <p class="text-5xl font-bold leading-none">25<span class="text-2xl">%</span></p>
+        <p class="text-xs text-blue-200 mt-2 leading-relaxed">Reduction in average call duration</p>
+      </div>
+
+      <div>
+        <p class="text-5xl font-bold leading-none">100<span class="text-2xl">%</span></p>
+        <p class="text-xs text-blue-200 mt-2 leading-relaxed">Calls analyzed automatically by AI</p>
+      </div>
+
+      <div>
+        <p class="text-5xl font-bold leading-none">15<span class="text-2xl">%</span></p>
+        <p class="text-xs text-blue-200 mt-2 leading-relaxed">Decrease in support costs within 6 months</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- THE COMMUNITY OF TRUST -->
+<section class="w-full bg-white py-20 reveal">
+  <div class="max-w-6xl mx-auto px-6 lg:px-12">
+
+    <!-- Header -->
+    <div class="mb-12">
+      <h2 class="text-2xl font-bold mb-2">The Community of Trust</h2>
+      <p class="text-gray-500 text-sm mb-4">Join the growing network of organised communities</p>
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-[1px] bg-gray-400"></span>
+        <span class="text-xs tracking-widest text-black uppercase">www.truefaktor.com</span>
+      </div>
+    </div>
+
+    <!-- 3 Testimonial cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <!-- Card 1 -->
+      <div class="border border-gray-200 rounded-lg p-6 flex flex-col">
+        <p class="text-gray-600 text-xs leading-relaxed mb-6 flex-grow">"We hit our dues payments goal of over 75% in 2025. The automated reminders and one-tap payments made it so easy for our members to contribute." ~Treasurer</p>
+        <div class="flex flex-col items-center gap-2 mt-auto pt-4 border-t border-gray-100">
+          <img src="images/MMM.png" alt="Mary Mother of Good Counsel" class="h-12 w-12 object-contain">
+          <p class="text-xs font-semibold text-gray-600 text-center">Mary Mother of Good Counsel Parish Choir</p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="border border-gray-200 rounded-lg p-6 flex flex-col">
+        <p class="text-gray-600 text-xs leading-relaxed mb-6 flex-grow">"We hit our dues payments goal of over 75% in 2025. The automated reminders and one-tap payments made it so easy for our members to contribute." ~Treasurer</p>
+        <div class="flex flex-col items-center gap-2 mt-auto pt-4 border-t border-gray-100">
+          <img src="images/MMM.png" alt="Mary Mother of Good Counsel" class="h-12 w-12 object-contain">
+          <p class="text-xs font-semibold text-gray-600 text-center">Mary Mother of Good Counsel Parish Choir</p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="border border-gray-200 rounded-lg p-6 flex flex-col">
+        <p class="text-gray-600 text-xs leading-relaxed mb-6 flex-grow">"Updating the group on collections so far is so easy." ~Treasurer</p>
+        <div class="flex flex-col items-center gap-2 mt-auto pt-4 border-t border-gray-100">
+          <img src="images/AOGA.png" alt="AOGA 95 Year Group" class="h-12 w-12 object-contain">
+          <p class="text-xs font-semibold text-gray-600 text-center">AOGA 95 Year Group</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- EXPLORE MORE SOLUTIONS -->
+  <section class="bg-black text-white py-16 md:py-24 px-6 md:px-12 reveal">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Explore More Solutions</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <a href="mobi.html" class="block group"><img src="images/course.png" alt="MobiSMS" class="w-full h-48 object-cover rounded-lg group-hover:scale-105 transition-transform"></a>
+        <a href="uz.html" class="block group"><img src="images/uzoussd.png" alt="UZO" class="w-full h-48 object-cover rounded-lg group-hover:scale-105 transition-transform"></a>
+        <a href="upcase.html" class="block group"><img src="images/upen (1).png" alt="Upenza" class="w-full h-48 object-cover rounded-lg group-hover:scale-105 transition-transform"></a>
+        <a href="aural.html" class="block group"><img src="images/Aural.png" alt="AuralConnect" class="w-full h-48 object-cover rounded-lg group-hover:scale-105 transition-transform"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-200 w-full py-20 px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+        <div>
+          <h3 class="text-3xl font-semibold mb-8">Let's Talk.</h3>
+          <div class="flex items-center gap-3 mb-3"><span class="w-6 h-[1px] bg-gray-600"></span><span class="text-xs tracking-[4px] text-gray-700 uppercase">Information</span></div>
+          <div class="flex items-center gap-3"><span class="w-6 h-[1px] bg-gray-600"></span><span class="text-xs tracking-[4px] text-gray-700 uppercase">Message</span></div>
+        </div>
+        <div class="md:col-span-2">
+          <p class="text-gray-700 leading-relaxed text-sm mb-8">Tell us the problem you're solving; we'll show you the tool to solve it. Here is how to reach us:</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+            <div>
+              <div class="flex flex-col gap-3 mb-4"><span class="w-12 h-[2px] bg-black mt-2"></span><h4 class="font-semibold text-sm">Contact</h4></div>
+              <p class="text-gray-700 text-sm mb-1">Call: <span class="text-black">(+233) 20 823 0106</span></p>
+              <p class="text-gray-700 text-sm mb-3 ml-9"><span class="text-black">(+233) 24 496 9220</span></p>
+              <p class="text-gray-700 text-sm mb-4">Email: <span class="text-black">clientservices@mobivs.com</span></p>
+              <div class="w-7 h-7 bg-black rounded-full flex items-center justify-center"><span class="text-white font-bold text-xs">in</span></div>
+            </div>
+            <div>
+              <div class="flex flex-col gap-3 mb-4"><span class="w-12 h-[2px] bg-gray-700 mt-2"></span><h4 class="font-semibold text-sm">Address</h4></div>
+              <p class="text-gray-700 text-sm leading-relaxed">P.O.Box LG 265<br>Legon, Accra, Ghana</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn=document.getElementById('menuBtn'),closeMenu=document.getElementById('closeMenu'),mobileOverlay=document.getElementById('mobileOverlay'),mobilePanel=document.getElementById('mobilePanel');
+    function openMenu(){mobileOverlay.classList.add('open');mobilePanel.classList.add('open');document.body.style.overflow='hidden';}
+    function closeMenuFn(){mobileOverlay.classList.remove('open');mobilePanel.classList.remove('open');document.body.style.overflow='';}
+    menuBtn.addEventListener('click',openMenu);closeMenu.addEventListener('click',closeMenuFn);mobileOverlay.addEventListener('click',closeMenuFn);
+    document.querySelectorAll('.reveal').forEach(el=>new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:0.1}).observe(el));
+  </script>
+</body>
+</html>

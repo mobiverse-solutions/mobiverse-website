@@ -3,114 +3,263 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>What We're About | Mobiverse Solutions</title>
+  <title>MobiSMS | Mobiverse Solutions</title>
+  <meta name="description" content="MobiSMS — reliable bulk and transactional SMS platform with developer-friendly APIs for the African market.">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background: white;
-      color: #111827;
-      margin: 0;
-      padding: 0;
-    }
-
-    .nav-line {
-      height: 1px;
-      background: #9ca3af;
-      margin-bottom: 6px;
-    }
-
-    .active-line {
-      background: #ef4444;
-    }
-
-    .diamond {
-      width: 26px;
-      height: 26px;
-      background: #dc2626;
-      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-    }
-    
-    @media (max-width: 640px) {
-      .carousel-slide {
-        flex: 0 0 88%;
-      }
-    }
+    body{font-family:'Inter',sans-serif;background:#fff;color:#111827;margin:0;padding:0}
+    .nav-line{height:1px;background:#9ca3af;margin-bottom:6px}.active-line{background:#ef4444}
+    .reveal{opacity:0;transform:translateY(32px);transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1)}.reveal.visible{opacity:1;transform:translateY(0)}
+    .mobile-overlay{opacity:0;pointer-events:none;transition:opacity .3s ease}.mobile-overlay.open{opacity:1;pointer-events:auto}
+    .mobile-panel{transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1)}.mobile-panel.open{transform:translateX(0)}
   </style>
 </head>
+<body class="bg-white">
 
-<body>
-  <!-- Navigation Bar -->
-  <header class="sticky top-0 bg-white z-50">
+  <!-- NAV -->
+  <header class="sticky top-0 bg-white z-50 border-b border-gray-100">
     <div class="max-w-7xl mx-auto px-6 lg:px-12 py-5 md:py-6">
       <div class="flex items-center justify-between">
-
-        <!-- Logo – make it a link back to home -->
-        <a href="index.html">
-          <img src="images/1697717667618.jpg" alt="Mobiverse Logo" class="h-10 w-auto">
-        </a>
-
-        <!-- Right: Nav links -->
-        <nav class="flex items-start gap-x-12 md:gap-x-16 lg:gap-x-24 text-sm md:text-base font-medium">
-          <div class="flex flex-col items-center">
-            <div class="nav-line w-16 md:w-20"></div>
-            <a href="do.html" class="text-gray-700 hover:text-black transition">What we do</a>
-          </div>
-
-          <div class="flex flex-col items-center">
-            <div class="nav-line active-line w-16 md:w-20"></div>
-            <a href="about.html" class="text-black font-semibold">What we're about</a>
-          </div>
-
-          <div class="flex flex-col items-center">
-            <div class="nav-line w-16 md:w-20"></div>
-            <a href="careers.html" class="text-gray-700 hover:text-black transition">Work with us</a>
-          </div>
+        <a href="index.html"><img src="images/1697717667618.jpg" alt="Mobiverse Logo" class="h-10 w-auto"></a>
+        <nav class="hidden md:flex items-start gap-x-12 md:gap-x-16 lg:gap-x-24 text-sm md:text-base font-medium">
+          <div class="flex flex-col items-center"><div class="nav-line w-16 md:w-20"></div><a href="do.html" class="text-gray-700 hover:text-black transition">What we do</a></div>
+          <div class="flex flex-col items-center"><div class="nav-line w-16 md:w-20"></div><a href="about.html" class="text-gray-700 hover:text-black transition">What we're about</a></div>
+          <div class="flex flex-col items-center"><div class="nav-line w-16 md:w-20"></div><a href="careers.html" class="text-gray-700 hover:text-black transition">Work with us</a></div>
         </nav>
-
+        <button id="menuBtn" class="md:hidden flex flex-col gap-1.5 p-2 z-50" aria-label="Open menu"><span class="block w-6 h-0.5 bg-gray-900"></span><span class="block w-6 h-0.5 bg-gray-900"></span><span class="block w-6 h-0.5 bg-gray-900"></span></button>
       </div>
+    </div>
+    <div class="mobile-overlay fixed inset-0 bg-black/40 z-40" id="mobileOverlay"></div>
+    <div class="mobile-panel fixed top-0 right-0 w-72 h-full bg-white z-50 shadow-2xl flex flex-col" id="mobilePanel">
+      <div class="flex items-center justify-between px-6 py-5 border-b border-gray-100">
+        <img src="images/1697717667618.jpg" alt="Mobiverse" class="h-8 w-auto">
+        <button id="closeMenu" class="p-2" aria-label="Close menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      </div>
+      <nav class="flex flex-col gap-1 px-6 py-8">
+        <a href="do.html" class="py-3 px-4 text-gray-700 hover:bg-gray-50 rounded-lg font-medium transition">What we do</a>
+        <a href="about.html" class="py-3 px-4 text-gray-700 hover:bg-gray-50 rounded-lg font-medium transition">What we're about</a>
+        <a href="careers.html" class="py-3 px-4 text-gray-700 hover:bg-gray-50 rounded-lg font-medium transition">Work with us</a>
+      </nav>
     </div>
   </header>
 
-  <!-- Hero section -->
+  <!-- HERO -->
   <section class="w-full relative pb-32 px-8 max-w-7xl mx-auto">
-
-    <!-- Background Image -->
-    <img src="images/bg.png"
-      class="absolute inset-0 w-full-screen h-full-screen object-cover z-0">
-      
-    <!-- Body Content -->
+    <img src="images/bg.png" class="absolute inset-0 w-full h-full object-cover z-0">
     <div class="max-w-6xl mx-auto relative z-10 flex flex-col items-start mt-24">
-      <h1 class="text-2xl md:text-4xl font-bold mb-12 font-mono text-center md:text-left;">
-      Reach Your Audience Instantly!
-      </h1>
-
-      <!-- Logo -->
-       <img src="images/29ad1c967eed21473e5bd254697f363933211726.png" class="w-40 h-auto mt-10">
+      <h1 class="text-2xl md:text-4xl font-bold mb-12 font-mono text-center md:text-left">Reach Your Audience Instantly!</h1>
+      <img src="images/29ad1c967eed21473e5bd254697f363933211726.png" class="w-40 h-auto mt-10" alt="MobiSMS logo">
     </div>
-
   </section>
 
-
-
-
-  <!-- Section -->
+  <!-- STRATEGY BAND -->
   <section class="bg-[#D9D9D9] w-full py-24 px-8">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
-
-      <!-- Left Text -->
-      <div>
-        <h2 class="text-2xl md:text-4xl font-bold mb-12 font-mono text-center md:text-left">Bulk & Transactional SMS Made Effortless</h2>
-      </div>
-
-      <!-- Right Paragraph -->
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 reveal">
+      <div><h2 class="text-2xl md:text-4xl font-bold mb-12 font-mono text-center md:text-left">Bulk & Transactional SMS Made Effortless</h2></div>
       <div class="text-gray-700 leading-relaxed">
-        <p>
-        Reach your customers instantly with reliable, high-delivery messaging through our powerful platform and developer-friendly API
-        </p>
+        <p>Reach your customers instantly with reliable, high-delivery messaging through our powerful platform and developer-friendly API.</p>
       </div>
-      
     </div>
   </section>
+
+  <!-- THE CHALLENGE -->
+  <section class="max-w-6xl mx-auto px-6 lg:px-12 py-20 reveal">
+    <h2 class="text-3xl md:text-4xl font-bold mb-3">The Challenge</h2>
+    <p class="text-gray-400 text-sm max-w-md mb-16 leading-relaxed">Businesses across Africa need reliable, scalable SMS but face significant barriers to effective messaging.</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div class="border border-gray-200 rounded-lg p-8 flex flex-col items-center text-center">
+        <div class="mb-5 text-gray-400"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="9" y1="10" x2="15" y2="10"/></svg></div>
+        <h3 class="font-semibold text-sm mb-4">Poor Delivery Rates</h3>
+        <p class="text-gray-400 text-xs leading-relaxed">Many SMS providers deliver less than 70% of messages, meaning critical alerts and marketing campaigns never reach the customer.</p>
+      </div>
+      <div class="border border-gray-200 rounded-lg p-8 flex flex-col items-center text-center">
+        <div class="mb-5 text-gray-400"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <h3 class="font-semibold text-sm mb-4">Complex Integration</h3>
+        <p class="text-gray-400 text-xs leading-relaxed">Existing SMS APIs are poorly documented and hard to integrate, costing developers days of work for basic functionality.</p>
+      </div>
+      <div class="border border-gray-200 rounded-lg p-8 flex flex-col items-center text-center">
+        <div class="mb-5 text-gray-400"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h3 class="font-semibold text-sm mb-4">Unpredictable Pricing</h3>
+        <p class="text-gray-400 text-xs leading-relaxed">Hidden fees, per-network surcharges, and opaque pricing models make budgeting for SMS campaigns nearly impossible.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE SOLUTION -->
+  <section class="w-full bg-gray-50 py-20 reveal">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+        <div>
+          <img src="images/mob.jpg" alt="MobiSMS platform in action" class="w-full h-[360px] object-cover rounded-sm shadow-md">
+        </div>
+        <div>
+          <h2 class="text-3xl font-bold mb-3 text-gray-900">The Solution</h2>
+          <p class="text-gray-400 text-sm mb-10 leading-relaxed max-w-sm">A powerful, developer-friendly SMS platform that makes bulk campaigns and transactional messaging simple, reliable, and instant.</p>
+          <div class="flex gap-4 mb-7 items-start">
+            <div class="w-10 h-10 bg-red-50 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-sm text-gray-900 mb-1">Bulk SMS Campaigns</h4>
+              <p class="text-gray-500 text-xs leading-relaxed">Send thousands of personalized messages with ease. Schedule campaigns, segment your audience, and track results.</p>
+            </div>
+          </div>
+          <div class="flex gap-4 mb-7 items-start">
+            <div class="w-10 h-10 bg-red-50 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-sm text-gray-900 mb-1">Transactional Messaging via API</h4>
+              <p class="text-gray-500 text-xs leading-relaxed">Seamlessly integrate secure SMS (like OTPs and order alerts) directly into your apps and workflows.</p>
+            </div>
+          </div>
+          <div class="flex gap-4 mb-7 items-start">
+            <div class="w-10 h-10 bg-red-50 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-sm text-gray-900 mb-1">Real-Time Delivery Reports</h4>
+              <p class="text-gray-500 text-xs leading-relaxed">Know exactly when and how your messages are delivered with detailed engagement tracking.</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="w-10 h-10 bg-red-50 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-sm text-gray-900 mb-1">Secure &amp; Scalable Infrastructure</h4>
+              <p class="text-gray-500 text-xs leading-relaxed">Rest easy with a platform built for high performance, privacy, and reliability, handling millions of messages effortlessly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY RESULTS -->
+  <section class="bg-red-600 text-white py-16 reveal">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12">
+      <p class="text-base font-semibold mb-10">Key Results</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div>
+          <p class="text-5xl font-bold leading-none">98<span class="text-2xl">%</span></p>
+          <p class="text-xs text-red-200 mt-2 uppercase tracking-wide">Market Reach</p>
+        </div>
+        <div>
+          <p class="leading-none">
+            <span class="text-lg font-normal">below&nbsp;</span><span class="text-5xl font-bold">2</span><span class="text-2xl font-normal"> Hrs</span>
+          </p>
+          <p class="text-xs text-red-200 mt-2 uppercase tracking-wide">Integration Speed</p>
+        </div>
+        <div>
+          <p class="text-5xl font-bold leading-none">40<span class="text-2xl">%</span></p>
+          <p class="text-xs text-red-200 mt-2 uppercase tracking-wide">Cost Efficiency Savings</p>
+        </div>
+        <div>
+          <p class="text-4xl font-bold leading-none">Real-time</p>
+          <p class="text-xs text-red-200 mt-2 uppercase tracking-wide">Delivery &amp; Engagement Reporting</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE COMMUNITY OF TRUST -->
+  <section class="w-full bg-white py-20 reveal">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12">
+
+      <!-- Header -->
+      <div class="mb-16">
+        <h2 class="text-2xl font-bold mb-4">The Community of Trust</h2>
+        <p class="text-gray-500 text-sm">Join the growing network of organised communities</p>
+        <p class="text-gray-400 text-xs tracking-widest mt-3 uppercase">www.mobimessenger.com</p>
+      </div>
+
+      <!-- Testimonials: 2-col on md+, divider in between -->
+      <div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-200 gap-0">
+
+        <!-- Left Testimonial -->
+        <div class="flex flex-col items-center text-center px-8 pb-12 md:pb-0">
+          <!-- Quote -->
+          <p class="text-gray-600 text-sm leading-relaxed mb-5 italic">
+            "Maintaining USSD codes used to require a developer on retainer. Now, our call centre manager updates the menu herself. It has cut our operational costs by half and we can respond to customer needs in real-time."
+          </p>
+          <!-- Attribution -->
+          <p class="text-sm font-semibold text-gray-800 mb-6">~ Product Manager</p>
+          <!-- Logo + Org name -->
+          <div class="flex flex-col items-center gap-2 mt-auto">
+            <img src="images/MMM.png" alt="Mary Mother of Good Counsel Parish Choir" class="h-16 w-16 object-contain">
+            <p class="text-xs font-semibold text-gray-600 text-center">Mary Mother of Good Counsel Parish Choir</p>
+          </div>
+        </div>
+
+        <!-- Right Testimonial -->
+        <div class="flex flex-col items-center text-center px-8 pt-12 md:pt-0">
+          <!-- Quote -->
+          <p class="text-gray-600 text-sm leading-relaxed mb-5 italic">
+            "Collections for our harvest planning program increased by 60% because we could finally talk to everyone, not just the ones with data."
+          </p>
+          <!-- Attribution -->
+          <p class="text-sm font-semibold text-gray-800 mb-6">~ Operations Lead</p>
+          <!-- Logo + Org name -->
+          <div class="flex flex-col items-center gap-2 mt-auto">
+            <img src="images/AOGA.png" alt="AOGA 95 Year Group" class="h-16 w-16 object-contain">
+            <p class="text-xs font-semibold text-gray-600 text-center">AOGA 95 Year Group</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPLORE MORE -->
+  <section class="bg-black text-white py-16 md:py-24 px-6 md:px-12 reveal">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Explore More Solutions</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <a href="uz.html" class="block group"><img src="images/uzoussd.png" alt="UZO" class="w-full h-48 object-cover rounded-lg group-hover:scale-105 transition-transform"></a>
+        <a href="true.html" class="block group"><img src="images/Trueee.png" alt="Truefactor" class="w-full h-48 object-cover rounded-lg group-hover:scale-105 transition-transform"></a>
+        <a href="upcase.html" class="block group"><img src="images/upen (1).png" alt="Upenza" class="w-full h-48 object-cover rounded-lg group-hover:scale-105 transition-transform"></a>
+        <a href="aural.html" class="block group"><img src="images/Aural.png" alt="AuralConnect" class="w-full h-48 object-cover rounded-lg group-hover:scale-105 transition-transform"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-200 w-full py-20 px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+        <div>
+          <h3 class="text-3xl font-semibold mb-8">Let's Talk.</h3>
+          <div class="flex items-center gap-3 mb-3"><span class="w-6 h-[1px] bg-gray-600"></span><span class="text-xs tracking-[4px] text-gray-700 uppercase">Information</span></div>
+          <div class="flex items-center gap-3"><span class="w-6 h-[1px] bg-gray-600"></span><span class="text-xs tracking-[4px] text-gray-700 uppercase">Message</span></div>
+        </div>
+        <div class="md:col-span-2">
+          <p class="text-gray-700 leading-relaxed text-sm mb-8">Tell us the problem you're solving; we'll show you the tool to solve it. Here is how to reach us:</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+            <div>
+              <div class="flex flex-col gap-3 mb-4"><span class="w-12 h-[2px] bg-black mt-2"></span><h4 class="font-semibold text-sm">Contact</h4></div>
+              <p class="text-gray-700 text-sm mb-1">Call: <span class="text-black">(+233) 20 823 0106</span></p>
+              <p class="text-gray-700 text-sm mb-3 ml-9"><span class="text-black">(+233) 24 496 9220</span></p>
+              <p class="text-gray-700 text-sm mb-4">Email: <span class="text-black">clientservices@mobivs.com</span></p>
+              <div class="w-7 h-7 bg-black rounded-full flex items-center justify-center"><span class="text-white font-bold text-xs">in</span></div>
+            </div>
+            <div>
+              <div class="flex flex-col gap-3 mb-4"><span class="w-12 h-[2px] bg-gray-700 mt-2"></span><h4 class="font-semibold text-sm">Address</h4></div>
+              <p class="text-gray-700 text-sm leading-relaxed">P.O.Box LG 265<br>Legon, Accra, Ghana</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn=document.getElementById('menuBtn'),closeMenu=document.getElementById('closeMenu'),mobileOverlay=document.getElementById('mobileOverlay'),mobilePanel=document.getElementById('mobilePanel');
+    function openMenu(){mobileOverlay.classList.add('open');mobilePanel.classList.add('open');document.body.style.overflow='hidden';}
+    function closeMenuFn(){mobileOverlay.classList.remove('open');mobilePanel.classList.remove('open');document.body.style.overflow='';}
+    menuBtn.addEventListener('click',openMenu);closeMenu.addEventListener('click',closeMenuFn);mobileOverlay.addEventListener('click',closeMenuFn);
+    document.querySelectorAll('.reveal').forEach(el=>new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:0.1}).observe(el));
+  </script>
+</body>
+</html>
