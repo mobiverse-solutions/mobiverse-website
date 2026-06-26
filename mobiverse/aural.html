@@ -99,7 +99,6 @@
       </nav>
     </div>
   </header>
-g
 
   <!-- HERO -->
   <section class="w-full relative pb-32 px-8 max-w-7xl mx-auto">
@@ -333,12 +332,38 @@ g
     </div>
   </footer>
 
+ <!-- Scripts -->
   <script>
-    const menuBtn=document.getElementById('menuBtn'),closeMenu=document.getElementById('closeMenu'),mobileOverlay=document.getElementById('mobileOverlay'),mobilePanel=document.getElementById('mobilePanel');
-    function openMenu(){mobileOverlay.classList.add('open');mobilePanel.classList.add('open');document.body.style.overflow='hidden';}
-    function closeMenuFn(){mobileOverlay.classList.remove('open');mobilePanel.classList.remove('open');document.body.style.overflow='';}
-    menuBtn.addEventListener('click',openMenu);closeMenu.addEventListener('click',closeMenuFn);mobileOverlay.addEventListener('click',closeMenuFn);
-    document.querySelectorAll('.reveal').forEach(el=>new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:0.1}).observe(el));
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const closeMenu = document.getElementById('closeMenu');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+    const mobilePanel = document.getElementById('mobilePanel');
+
+    function openMenu() {
+      mobileOverlay.classList.add('open');
+      mobilePanel.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenuFn() {
+      mobileOverlay.classList.remove('open');
+      mobilePanel.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    menuBtn.addEventListener('click', openMenu);
+    closeMenu.addEventListener('click', closeMenuFn);
+    mobileOverlay.addEventListener('click', closeMenuFn);
+
+    // Scroll reveal
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => observer.observe(el));
   </script>
 </body>
 </html>

@@ -26,10 +26,25 @@
 
     .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1); }
     .reveal.visible { opacity: 1; transform: translateY(0); }
-    .mobile-overlay { opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
-    .mobile-overlay.open { opacity: 1; pointer-events: auto; }
-    .mobile-panel { transform: translateX(100%); transition: transform 0.35s cubic-bezier(.4,0,.2,1); }
-    .mobile-panel.open { transform: translateX(0); }
+    .mobile-overlay {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+    }
+
+    .mobile-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mobile-panel {
+      transform: translateX(100%);
+      transition: transform 0.35s ease;
+    }
+
+    .mobile-panel.open {
+      transform: translateX(0);
+    }
 
     .service {
       display: flex;
@@ -60,7 +75,8 @@
      /* ───────── OUR PROCESS ───────── */
     .process-section {
       background: #0c0c0c;
-      padding: 64px 56px 80px;
+      padding: 64px 0 80px;
+      overflow-x: auto;
     }
     .process-title {
       font-size: 34px;
@@ -131,48 +147,57 @@
   </style>
 </head>
 
-<body class="bg-white text-gray-900">
+<body>
 
   <!-- ── NAV ── -->
-  <header class="sticky top-0 bg-white z-50 border-b border-gray-100">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-5 flex items-center justify-between">
-      <a href="index.html">
-        <img src="images/1697717667618.jpg" alt="Mobiverse" class="h-10 w-auto">
-      </a>
-      <nav class="hidden md:flex gap-x-12 md:gap-x-20 text-sm font-medium">
-        <div class="flex flex-col items-center">
-          <div class="nav-line active-line w-16"></div>
-          <a href="do.html" class="font-semibold text-black">What we do</a>
-        </div>
-        <div class="flex flex-col items-center">
-          <div class="nav-line w-16"></div>
-          <a href="about.html" class="text-gray-600 hover:text-black">What we're about</a>
-        </div>
-        <div class="flex flex-col items-center">
-          <div class="nav-line w-16"></div>
-          <a href="work.html" class="text-gray-600 hover:text-black">Work with us</a>
-        </div>
-      </nav>
-      <button id="menuBtn" class="md:hidden flex flex-col gap-1.5 p-2 z-50" aria-label="Open menu">
-        <span class="block w-6 h-0.5 bg-gray-900"></span>
-        <span class="block w-6 h-0.5 bg-gray-900"></span>
-        <span class="block w-6 h-0.5 bg-gray-900"></span>
-      </button>
+  <header class="sticky top-0 bg-white z-50 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-5 md:py-6">
+      <div class="flex items-center justify-between">
+        <a href="index.html"">
+          <img src="images/1697717667618.jpg" alt="Mobiverse Logo" class="h-10 w-auto">
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-start gap-x-12 md:gap-x-16 lg:gap-x-24 text-sm md:text-sm font-medium">
+          <div class="flex flex-col items-center">
+            <div class="nav-line active-line w-16 md:w-20"></div>
+            <a href="do.html" class="font-semibold text-black">What we do</a>
+          </div>
+          <div class="flex flex-col items-center">
+            <div class="nav-line w-16 md:w-20"></div>
+            <a href="about.html" class="text-gray-700 hover:text-black transition ">What we're about</a>
+          </div>
+          <div class="flex flex-col items-center">
+            <div class="nav-line w-16 md:w-20"></div>
+            <a href="work.html" class="text-gray-700 hover:text-black transition">Work with us</a>
+          </div>
+        </nav>
+
+        <!-- Mobile Hamburger -->
+        <button id="menuBtn" class="md:hidden flex flex-col gap-1.5 p-2 z-50" aria-label="Open menu">
+          <span class="block w-6 h-0.5 bg-gray-900 transition-all duration-300" id="bar1"></span>
+          <span class="block w-6 h-0.5 bg-gray-900 transition-all duration-300" id="bar2"></span>
+          <span class="block w-6 h-0.5 bg-gray-900 transition-all duration-300" id="bar3"></span>
+        </button>
+      </div>
     </div>
+
+    <!-- Mobile Menu Overlay -->
     <div class="mobile-overlay fixed inset-0 bg-black/40 z-40" id="mobileOverlay"></div>
     <div class="mobile-panel fixed top-0 right-0 w-72 h-full bg-white z-50 shadow-2xl flex flex-col" id="mobilePanel">
       <div class="flex items-center justify-between px-6 py-5 border-b border-gray-100">
         <img src="images/1697717667618.jpg" alt="Mobiverse" class="h-8 w-auto">
-        <button id="closeMenu" class="p-2" aria-label="Close menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+        <button id="closeMenu" class="p-2" aria-label="Close menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
       </div>
       <nav class="flex flex-col gap-1 px-6 py-8">
-        <a href="do.html" class="py-3 px-4 bg-red-50 text-red-600 rounded-lg font-semibold">What we do</a>
+        <a href="do.html" class="py-3 px-4 text-gray-700 hover:bg-gray-50 rounded-lg font-medium transition">What we do</a>
         <a href="about.html" class="py-3 px-4 text-gray-700 hover:bg-gray-50 rounded-lg font-medium transition">What we're about</a>
         <a href="work.html" class="py-3 px-4 text-gray-700 hover:bg-gray-50 rounded-lg font-medium transition">Work with us</a>
       </nav>
     </div>
   </header>
-
 
   <!-- ── HERO ── -->
   <section class="w-full relative pb-32 px-8 max-w-7xl mx-auto">
@@ -266,21 +291,21 @@
             <div class="flex flex-col items-center gap-4">
 
               <!-- Top row: 2 phones -->
-              <div class="flex gap-6 items-end">
+              <div class="flex gap-0 items-end">
                 <div class="flex flex-col items-center gap-1">
                   <p class="text-xs text-gray-400 font-medium">Triv 5</p>
-                  <img src="images/cc866e6bb36a766f6e46daee5939cc12cf31f3fb.png" alt="Triv 5" class="w-36 h-auto object-contain drop-shadow-lg">
+                  <img src="images/cc866e6bb36a766f6e46daee5939cc12cf31f3fb.png" alt="Triv 5" class="w-36 h-auto object-contain ">
                 </div>
                 <div class="flex flex-col items-center gap-1">
                   <p class="text-xs text-gray-400 font-medium">Brainwave</p>
-                  <img src="images/5b6a8265b9242dfca6961d3146d2bab5dda1faa1.png" alt="Brainwave" class="w-36 h-auto object-contain drop-shadow-lg">
+                  <img src="images/5b6a8265b9242dfca6961d3146d2bab5dda1faa1.png" alt="Brainwave" class="w-36 h-auto object-contain ">
                 </div>
               </div>
 
               <!-- Bottom: 1 wider phone -->
               <div class="flex flex-col items-center gap-1">
                 <p class="text-xs text-gray-400 font-medium">Shuffle</p>
-                <img src="images/b86ba06771b5a52ad432449e7516fb5d5381bd56.png" alt="Shuffle" class="w-52 h-auto object-contain drop-shadow-lg">
+                <img src="images/b86ba06771b5a52ad432449e7516fb5d5381bd56.png" alt="Shuffle" class="w-36 h-auto object-contain ">
               </div>
 
             </div>
@@ -294,9 +319,9 @@
 
       <!-- Left: 2x2 image grid -->
       <div class="grid grid-cols-2 gap-3">
-        <img src="images/course.png" class="w-full h-auto object-cover rounded-lg shadow-sm">
-        <img src="images/uzoussd.png" class="w-full h-auto object-cover rounded-lg shadow-sm">
-        <img src="images/Trueee.png" class="w-full h-auto object-cover rounded-lg shadow-sm">
+        <img src="images/course.png" class="w-full h-60 object-cover rounded-lg shadow-sm">
+        <img src="images/uzoussd.png" class="w-full h-60 object-cover rounded-lg shadow-sm">
+        <img src="images/Trueee.png" class="w-full h-60 object-cover rounded-lg shadow-sm">
         <img src="images/0af0defeedf2c1f1e987750b98edbf08886bddc2.png" class="w-full h-auto object-cover rounded-lg shadow-sm">
       </div>
 
@@ -565,5 +590,26 @@
       </div>
     </div>
   </footer>
+  <!-- Scripts -->
+  <script>
+  const menuBtn = document.getElementById('menuBtn');
+  const closeMenu = document.getElementById('closeMenu');
+  const mobileOverlay = document.getElementById('mobileOverlay');
+  const mobilePanel = document.getElementById('mobilePanel');
+
+  function openMenu() {
+    mobileOverlay.classList.add('open');
+    mobilePanel.classList.add('open');
+  }
+
+  function closeMenuFn() {
+    mobileOverlay.classList.remove('open');
+    mobilePanel.classList.remove('open');
+  }
+
+  menuBtn.addEventListener('click', openMenu);
+  closeMenu.addEventListener('click', closeMenuFn);
+  mobileOverlay.addEventListener('click', closeMenuFn);
+</script>
 </body>
 </html>
